@@ -38,6 +38,8 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
           >
             <span />
+            <span />
+            <span />
           </button>
         </div>
       </div>
