@@ -23,7 +23,7 @@ export default function ProductsPage() {
               <div className="kicker">The system</div>
               <h2>Four components. <span>One warranty. One team.</span></h2>
             </div>
-            <p>Solar panels, inverters, lithium batteries and EV home chargers — specified, installed and serviced by our own engineers. Homes in Bihar, Delhi and Uttarakhand; business anywhere in India.</p>
+            <p>Solar panels, inverters, batteries and EV home chargers — specified, installed and serviced by our own engineers. Homes in Bihar, Delhi and Uttarakhand; business anywhere in India.</p>
           </div>
         </div>
       </section>
