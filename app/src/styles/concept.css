@@ -58,7 +58,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   /* real logo: transparent derivative of the supplied file; artwork untouched */
   .brand-logo{display:block;height:42px;width:auto}
   .nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)}
-  .nav a{font-size:12.5px;font-weight:400;color:rgba(247,246,242,.72);letter-spacing:.02em;position:relative;padding-block:6px;transition:color .25s}
+  .nav a{font-size:14.5px;font-weight:400;color:rgba(247,246,242,.72);letter-spacing:.02em;position:relative;padding-block:6px;transition:color .25s}
   .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold-light);transition:right .35s var(--ease)}
   .nav a:hover{color:var(--white)}
   .nav a:hover::after{right:0}
@@ -266,7 +266,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .foot h4{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:400}
   .foot ul{list-style:none}
   .foot li{margin-bottom:8px}
-  .foot li,.foot li a,.foot address{font-size:12.5px;color:rgba(247,246,242,.62);font-style:normal;line-height:1.8}
+  .foot li,.foot li a,.foot address{font-size:14.5px;color:rgba(247,246,242,.62);font-style:normal;line-height:1.8}
   .foot li a:hover{color:var(--gold-light)}
   .foot-bottom{border-top:1px solid rgba(228,209,142,.14);padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(247,246,242,.35);letter-spacing:.04em}
 
@@ -340,7 +340,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 .mobile-menu{display:flex;position:fixed;inset:78px 0 auto;flex-direction:column;
   background:#000;padding:28px 24px;border-bottom:1px solid rgba(228,209,142,.18);gap:18px;
   font-size:16px;z-index:99}
-.mobile-menu a{color:rgba(247,246,242,.78);padding-block:4px}
+.mobile-menu a{font-size:14.5px;color:rgba(247,246,242,.78);padding-block:4px}
 .mobile-menu a:hover{color:var(--gold-light)}
 
   /* rotating text between inner circle and outer ring */
