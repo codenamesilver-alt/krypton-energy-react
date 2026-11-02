@@ -1,0 +1,19 @@
+﻿.india-map-wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px}
+.india-map{width:100%;max-width:520px;margin:0 auto}
+.india-map svg{width:100%;height:auto;display:block}
+.india-map svg path{fill:#c48d48;stroke:#1e222a;stroke-width:.6;transition:fill .2s ease}
+.india-map svg path#br,.india-map svg path#ut,.india-map svg path#dl{fill:#e4d18e}
+.india-map svg path:hover{opacity:.85}
+.map-legend{display:flex;flex-direction:column;gap:14px}
+.map-legend .item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.map-legend .swatch{width:18px;height:18px;border-radius:2px;flex-shrink:0}
+.map-legend .swatch.res{background:#e4d18e}
+.map-legend .swatch.com{background:#c48d48}
+.map-cities{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.map-city{background:var(--ink-2);border:1px solid var(--hair-soft);border-top:2px solid var(--gold-light);
+  border-radius:10px;padding:24px 26px;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+.map-city:hover{transform:translateY(-4px);border-color:var(--hair)}
+.map-city h3{font-size:20px;font-weight:400;letter-spacing:-.015em;margin:0 0 6px;color:var(--white)}
+.map-city .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;display:block;font-weight:500}
+.map-city p{margin:0;color:var(--muted-2);font-size:13.5px;line-height:1.6}
+@media (max-width:860px){.india-map-wrap{grid-template-columns:1fr}}

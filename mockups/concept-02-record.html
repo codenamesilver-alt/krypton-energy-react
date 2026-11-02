@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krypton Energy — Concept 02: The Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1e222a;
+    --ink-2:#242932;
+    --gold:#b48c48;
+    --gold-light:#e4d18e;
+    --white:#f7f6f2;
+    --muted:rgba(247,246,242,.66);
+    --muted-2:rgba(247,246,242,.44);
+    --hair:rgba(228,209,142,.20);
+    --hair-soft:rgba(247,246,242,.10);
+    --shell:1400px;
+    --pad:clamp(20px,4vw,56px);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);color:var(--white);
+    font-family:'Poppins',system-ui,-apple-system,sans-serif;
+    font-weight:300;font-size:16px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  ::selection{background:var(--gold-light);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  button,input{font:inherit;color:inherit}
+  img{display:block;max-width:100%;height:auto}
+  .shell{max-width:var(--shell);margin:0 auto;padding-inline:var(--pad)}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--gold-light);color:var(--ink);padding:12px 18px;z-index:300;border-radius:2px}
+  .skip:focus{left:12px;top:12px}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+
+  /* ---------- header ---------- */
+  .site-head{position:fixed;inset:0 0 auto;z-index:100;background:#000;
+    border-bottom:1px solid transparent;transition:border-color .4s var(--ease)}
+  .site-head.is-stuck{border-bottom-color:rgba(228,209,142,.18)}
+  .head-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px}
+  .brand{display:flex;align-items:center;flex-shrink:0}
+  .brand-logo{height:42px;width:auto}
+  .nav{display:flex;align-items:center;gap:30px;font-size:12.5px;letter-spacing:.02em}
+  .nav a{color:rgba(247,246,242,.72);padding-block:6px;border-bottom:1px solid transparent;transition:.25s var(--ease)}
+  .nav a:hover,.nav a:focus-visible{color:var(--gold-light);border-bottom-color:rgba(228,209,142,.45)}
+  .head-right{display:flex;align-items:center;gap:16px}
+  .head-phone{font-size:12.5px;color:rgba(247,246,242,.66);white-space:nowrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.13em;
+    text-transform:uppercase;padding:12px 18px;border-radius:2px;font-weight:500;
+    border:1px solid transparent;transition:.25s var(--ease);cursor:pointer}
+  .btn-gold{background:var(--gold-light);color:var(--ink)}
+  .btn-gold:hover{background:#f0e2ad}
+  .btn-ghost{border-color:rgba(247,246,242,.26);color:var(--white)}
+  .btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light)}
+  .menu-btn{display:none;width:44px;height:44px;align-items:center;justify-content:center;
+    background:none;border:1px solid rgba(247,246,242,.2);border-radius:2px;cursor:pointer}
+  .menu-btn span{display:block;width:18px;height:1px;background:var(--gold-light);position:relative}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:1px;background:var(--gold-light)}
+  .menu-btn span::before{top:-6px}
+  .menu-btn span::after{top:6px}
+
+  /* ---------- opener ---------- */
+  .opener{padding-top:78px}
+  .kicker-row{display:flex;align-items:baseline;gap:clamp(14px,2.4vw,34px);flex-wrap:wrap;
+    padding-block:26px 0;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  .kicker-row .push{margin-left:auto;color:rgba(247,246,242,.42)}
+  .opener h1{font-size:clamp(40px,7.4vw,104px);font-weight:400;letter-spacing:-.045em;
+    line-height:.95;margin-block:clamp(20px,3vw,40px) 0;max-width:16ch}
+  .opener h1 em{font-style:normal;color:var(--gold-light)}
+  .lede{display:flex;gap:clamp(20px,4vw,64px);flex-wrap:wrap;align-items:flex-start;
+    margin-block:clamp(22px,2.6vw,36px) clamp(24px,3vw,40px)}
+  .lede p{font-size:clamp(15px,1.15vw,18px);color:var(--muted);max-width:56ch}
+  .lede .meta{margin-left:auto;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted-2);line-height:2;text-align:right}
+  .lede .meta b{display:block;color:var(--gold-light);font-weight:400;letter-spacing:.08em;font-size:12px}
+
+  .kit-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+    margin-bottom:clamp(24px,3.2vw,42px)}
+  .kit-item{padding:14px 20px 15px 0;border-right:1px solid var(--hair-soft);
+    display:flex;flex-direction:column;gap:3px}
+  .kit-item:not(:first-child){padding-left:20px}
+  .kit-item:last-child{border-right:0;padding-right:0}
+  .kit-item .k-idx{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .kit-item strong{font-size:14.5px;font-weight:400;color:var(--white);letter-spacing:-.01em}
+  .kit-item span{font-size:11px;color:var(--muted-2);letter-spacing:.02em}
+
+  .plate{position:relative;margin:0;background:#0c0f14}
+  .plate img{width:100%;aspect-ratio:2000/857;object-fit:cover}
+  .plate figcaption{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;
+    padding:13px var(--pad);border-top:1px solid var(--hair);
+    font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
+  .plate figcaption b{color:var(--gold-light);font-weight:400}
+  .plate .down{color:var(--gold-light);letter-spacing:.18em}
+
+  /* ---------- section frame ---------- */
+  .sec{padding-block:clamp(52px,6.6vw,96px);border-top:1px solid var(--hair)}
+  .sec-head{display:grid;grid-template-columns:minmax(0,.34fr) minmax(0,1fr);gap:clamp(20px,4vw,64px);
+    align-items:start;margin-bottom:clamp(28px,4vw,52px)}
+  .sec-num{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);padding-top:8px}
+  .sec-head h2{font-size:clamp(30px,3.8vw,54px);font-weight:300;letter-spacing:-.035em;line-height:1.02}
+  .sec-head .sub{margin-top:16px;font-size:14.5px;color:var(--muted);max-width:64ch}
+
+  /* ---------- record ---------- */
+  .record{list-style:none;border-top:1px solid var(--hair)}
+  .record li{display:grid;grid-template-columns:104px minmax(0,1.5fr) .75fr .85fr .7fr .8fr;
+    gap:clamp(10px,1.6vw,22px);align-items:center;padding-block:14px;
+    border-bottom:1px solid var(--hair-soft);transition:background .3s var(--ease)}
+  .record li:not(.record-head):hover{background:rgba(228,209,142,.045)}
+  .record-head{padding-block:0 10px!important;border-bottom:1px solid var(--hair)!important;
+    font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);align-items:end}
+  .record-head span{padding-bottom:8px}
+  .record .thumb img{width:104px;aspect-ratio:440/248;object-fit:cover;border-radius:1px;
+    filter:saturate(.86) brightness(.94);transition:filter .35s var(--ease)}
+  .record li:hover .thumb img{filter:saturate(1) brightness(1)}
+  .record .place strong{display:block;font-weight:400;font-size:14.5px;letter-spacing:-.01em}
+  .record .place span{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-top:3px}
+  .record .num{font-size:14.5px;font-variant-numeric:tabular-nums;color:rgba(247,246,242,.82)}
+  .record .after{color:var(--gold-light);font-weight:400}
+  .record .sys{font-size:13px;color:rgba(247,246,242,.82)}
+  .footnote{margin-top:18px;font-size:11px;color:var(--muted-2);max-width:72ch;line-height:1.7}
+
+  /* ---------- price ---------- */
+  .prices{border-top:1px solid var(--hair)}
+  .price-row{display:grid;grid-template-columns:minmax(0,.7fr) repeat(4,minmax(0,1fr));
+    gap:clamp(8px,1.4vw,20px);align-items:baseline;padding-block:18px;
+    border-bottom:1px solid var(--hair-soft)}
+  .price-head{padding-block:0 10px;border-bottom:1px solid var(--hair);
+    font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .price-row .size{font-size:clamp(18px,1.6vw,22px);font-weight:400;letter-spacing:-.02em}
+  .price-row .size small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-top:4px}
+  .price-row .val{font-size:clamp(14px,1.05vw,16px);font-variant-numeric:tabular-nums;color:rgba(247,246,242,.8)}
+  .price-row .val small{display:block;font-size:10px;letter-spacing:.06em;color:var(--muted-2);margin-top:2px}
+  .price-row .pay{color:var(--gold-light);font-weight:400;font-size:clamp(17px,1.35vw,21px)}
+
+  /* calculator */
+  .calc{margin-top:clamp(30px,4vw,52px);border:1px solid var(--hair);padding:clamp(20px,2.6vw,34px);
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(22px,3.4vw,52px);align-items:center;
+    background:linear-gradient(180deg,rgba(228,209,142,.035),transparent 60%)}
+  .calc h3{font-size:17px;font-weight:400;letter-spacing:-.01em;margin-bottom:6px}
+  .calc p{font-size:12.5px;color:var(--muted-2)}
+  .calc label{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);margin-block:22px 10px}
+  .calc .bill{display:flex;align-items:baseline;gap:8px;font-size:clamp(30px,3vw,42px);
+    font-weight:200;letter-spacing:-.03em;color:var(--gold-light);font-variant-numeric:tabular-nums}
+  .calc .bill small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:400}
+  input[type=range]{width:100%;-webkit-appearance:none;appearance:none;background:transparent;margin-top:6px}
+  input[type=range]::-webkit-slider-runnable-track{height:1px;background:rgba(247,246,242,.24)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;
+    background:var(--gold-light);margin-top:-6.5px;border:0;cursor:pointer;box-shadow:0 0 0 4px rgba(228,209,142,.14)}
+  input[type=range]::-moz-range-track{height:1px;background:rgba(247,246,242,.24)}
+  input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--gold-light);border:0;cursor:pointer}
+  .calc-out{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;
+    border-top:1px solid var(--hair-soft);padding-top:22px}
+  .calc-out div{display:flex;flex-direction:column;gap:5px}
+  .calc-out dt{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2)}
+  .calc-out dd{font-size:clamp(17px,1.5vw,22px);font-weight:300;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .calc-out dd.gold{color:var(--gold-light)}
+
+  /* ---------- paperwork ---------- */
+  .docs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair)}
+  .doc{padding:22px 26px 26px 0;border-right:1px solid var(--hair-soft);position:relative}
+  .doc:last-child{border-right:0;padding-right:0}
+  .doc .n{font-size:11px;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:26px}
+  .doc h3{font-size:16px;font-weight:400;letter-spacing:-.01em;margin-bottom:8px}
+  .doc .dur{display:inline-block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-light);border:1px solid rgba(228,209,142,.28);padding:4px 8px;border-radius:2px;margin-bottom:12px}
+  .doc p{font-size:12.5px;color:var(--muted-2);line-height:1.65}
+  .doc strong{display:block;font-weight:400;color:rgba(247,246,242,.9);font-size:13px;margin-bottom:4px}
+
+  /* ---------- after ---------- */
+  .timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    border-top:1px solid var(--hair);margin-top:6px}
+  .tl{padding:24px 24px 26px 0;border-right:1px solid var(--hair-soft);position:relative}
+  .tl:last-child{border-right:0}
+  .tl::before{content:"";position:absolute;top:-3px;left:0;width:5px;height:5px;border-radius:50%;background:var(--gold-light)}
+  .tl .yr{font-size:clamp(30px,3vw,44px);font-weight:200;letter-spacing:-.04em;color:var(--gold-light);line-height:1}
+  .tl .yr small{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-left:6px;font-weight:400}
+  .tl h3{font-size:14px;font-weight:400;margin-block:12px 6px}
+  .tl p{font-size:12.5px;color:var(--muted-2);line-height:1.65}
+
+  .wide{margin-top:clamp(34px,4.6vw,60px)}
+  .wide img{width:100%;aspect-ratio:2000/857;object-fit:cover;filter:saturate(.9) brightness(.92)}
+  .wide .cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding-top:11px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
+
+  /* ---------- gold close ---------- */
+  .close{background:var(--gold-light);color:var(--ink);padding-block:clamp(52px,6.6vw,96px)}
+  .close .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+    gap:clamp(24px,4vw,64px);align-items:end}
+  .close h2{font-size:clamp(32px,4.4vw,62px);font-weight:300;letter-spacing:-.04em;line-height:1}
+  .close p{font-size:14px;color:rgba(30,34,42,.72);max-width:46ch;margin-top:16px}
+  .close .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+  .btn-dark{background:var(--ink);color:var(--gold-light);padding:16px 24px}
+  .btn-dark:hover{background:#0b0e13}
+  .btn-line{border-color:rgba(30,34,42,.34);color:var(--ink);padding:16px 24px}
+  .btn-line:hover{border-color:var(--ink)}
+
+  /* ---------- footer ---------- */
+  .foot{background:#000;border-top:1px solid rgba(228,209,142,.18);padding-block:52px 26px}
+  .foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,.6fr));
+    gap:clamp(24px,4vw,56px);padding-bottom:40px}
+  .foot-brand p{font-size:12.5px;color:rgba(247,246,242,.5);margin-top:18px;max-width:38ch;line-height:1.7}
+  .foot h4{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:400}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:12.5px;color:rgba(247,246,242,.62)}
+  .foot a:hover{color:var(--gold-light)}
+  .foot-base{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    border-top:1px solid rgba(247,246,242,.09);padding-top:20px;
+    font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,246,242,.34)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1080px){
+    .nav{display:none}
+    .menu-btn{display:flex}
+    .head-phone{display:none}
+    .sec-head{grid-template-columns:1fr;gap:16px}
+    .record li{grid-template-columns:84px minmax(0,1.4fr) .8fr .8fr .7fr .8fr}
+    .record .thumb img{width:84px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:860px){
+    .kit-strip{grid-template-columns:1fr 1fr}
+    .kit-item:nth-child(2n){border-right:0;padding-right:0}
+    .kit-item:nth-child(2n+1){padding-left:0}
+    .kit-item:nth-child(-n+2){border-bottom:1px solid var(--hair-soft)}
+    .docs{grid-template-columns:1fr 1fr}
+    .doc:nth-child(2n){border-right:0}
+    .doc:nth-child(-n+2){border-bottom:1px solid var(--hair-soft)}
+    .timeline{grid-template-columns:1fr 1fr}
+    .tl:nth-child(2n){border-right:0}
+    .tl:nth-child(-n+2){border-bottom:1px solid var(--hair-soft)}
+    .calc{grid-template-columns:1fr}
+    .close .grid{grid-template-columns:1fr}
+    .close .actions{justify-content:flex-start}
+    .lede .meta{display:none}
+  }
+  @media (max-width:760px){
+    .record-head{display:none}
+    .record li{grid-template-columns:88px 1fr;gap:8px 16px;padding-block:16px;align-items:start}
+    .record .thumb{grid-row:span 5}
+    .record .place,.record .num,.record .sys{grid-column:2}
+    .record [data-label]::before{content:attr(data-label);
+      display:inline-block;min-width:96px;font-size:9px;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--muted-2)}
+    .record .place::before{display:none}
+    .price-head{display:none}
+    .price-row{grid-template-columns:1fr 1fr;gap:10px 18px;padding-block:20px}
+    .price-row .size{grid-column:1/-1}
+    .price-row .val[data-label]::before{content:attr(data-label);display:block;
+      font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:3px}
+    .plate figcaption{gap:8px 16px}
+    .kicker-row{font-size:9px;letter-spacing:.18em}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .brand-logo{height:32px}
+    .kit-item{padding:11px 12px 12px 0}
+    .kit-item:nth-child(2n){padding-left:12px}
+    .kit-item strong{font-size:13.5px}
+    .kit-item span{font-size:10px}
+    .docs,.timeline{grid-template-columns:1fr}
+    .doc,.tl{border-right:0;border-bottom:1px solid var(--hair-soft);padding-right:0}
+    .doc:last-child,.tl:last-child{border-bottom:0}
+    .calc-out{grid-template-columns:1fr 1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;
+      transition-duration:.001ms!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head" id="head">
+  <div class="shell head-inner">
+    <a class="brand" href="#" aria-label="Krypton Energy — home">
+      <img class="brand-logo" src="../assets/brand/krypton-logo-transparent.png" width="1023" height="218" alt="Krypton Energy — Electricity Redefined">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#record">The record</a>
+      <a href="#price">Prices</a>
+      <a href="#paperwork">Paperwork</a>
+      <a href="#after">After</a>
+    </nav>
+    <div class="head-right">
+      <a class="head-phone" href="tel:+911234567890">+91 12345 67890</a>
+      <a class="btn btn-gold" href="#price">Get a quote</a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ OPENER ============ -->
+  <section class="opener">
+    <div class="shell">
+      <div class="kicker-row">
+        <span>Patna</span><span>Delhi</span><span>Dehradun</span>
+        <span class="push">Pan-India for business</span>
+      </div>
+      <h1>Every roof we&rsquo;ve done, <em>on the record.</em></h1>
+      <div class="lede">
+        <p>Panels, inverters, lithium batteries and EV chargers &mdash; specified, installed and serviced by our own engineers. Below: the installations, what they cost, and what happened to the bill afterwards.</p>
+        <div class="meta">
+          <b>7 installations</b>
+          Bihar &middot; Delhi NCR &middot; Uttarakhand
+        </div>
+      </div>
+
+      <div class="kit-strip" aria-label="Core equipment">
+        <div class="kit-item">
+          <span class="k-idx">01 / Generation</span>
+          <strong>Solar Panels</strong>
+          <span>TOPCon N-Type &middot; 545&ndash;590 Wp</span>
+        </div>
+        <div class="kit-item">
+          <span class="k-idx">02 / Conversion</span>
+          <strong>Inverters</strong>
+          <span>Hybrid &amp; On-Grid &middot; 3&ndash;100 kW</span>
+        </div>
+        <div class="kit-item">
+          <span class="k-idx">03 / Storage</span>
+          <strong>Lithium Batteries</strong>
+          <span>LiFePO&#8324; Pack &middot; 5&ndash;30 kWh</span>
+        </div>
+        <div class="kit-item">
+          <span class="k-idx">04 / Mobility</span>
+          <strong>EV Home Chargers</strong>
+          <span>AC Type 2 &middot; 7.4&ndash;22 kW</span>
+        </div>
+      </div>
+    </div>
+
+    <figure class="plate">
+      <img src="../assets/record/wide-1.jpg" width="2000" height="857" alt="Rooftop solar installation by Krypton Energy">
+      <figcaption>
+        <span><b>Patna, Bihar</b></span>
+        <span>3.0 kW &middot; rooftop &middot; commissioned 2025</span>
+        <a class="down" href="#record">See the record &darr;</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ 01 RECORD ============ -->
+  <section class="sec" id="record">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-num">01 / The record</div>
+        <div>
+          <h2 class="reveal">Seven roofs.<br>Seven bills.</h2>
+          <p class="sub">We publish the before and after. If a number looks unremarkable, that is the point &mdash; most homes land between 40% and 70% off their bill, not 90%.</p>
+        </div>
+      </div>
+
+      <ol class="record">
+        <li class="record-head" aria-hidden="true">
+          <span></span><span>Location</span><span>System</span><span>Commissioned</span><span>Bill before</span><span>Bill after</span>
+        </li>
+        <li>
+          <div class="thumb"><img src="../assets/record/thumb-2.jpg" width="440" height="248" alt="Installation in Patna"></div>
+          <div class="place"><strong>Patna, Bihar</strong><span>Residential</span></div>
+          <div class="sys" data-label="System">3.0 kW</div>
+          <div class="num" data-label="Commissioned">Mar 2025</div>
+          <div class="num" data-label="Before">&#8377;3,400</div>
+          <div class="num after" data-label="After">&#8377;420</div>
+        </li>
+        <li>
+          <div class="thumb"><img src="../assets/record/thumb-3.jpg" width="440" height="248" alt="Installation in Danapur"></div>
+          <div class="place"><strong>Danapur, Bihar</strong><span>Residential</span></div>
+          <div class="sys" data-label="System">5.0 kW</div>
+          <div class="num" data-label="Commissioned">Jun 2025</div>
+          <div class="num" data-label="Before">&#8377;5,900</div>
+          <div class="num after" data-label="After">&#8377;610</div>
+        </li>
+        <li>
+          <div class="thumb"><img src="../assets/record/thumb-4.jpg" width="440" height="248" alt="Installation in Dehradun"></div>
+          <div class="place"><strong>Dehradun, Uttarakhand</strong><span>Residential</span></div>
+          <div class="sys" data-label="System">4.0 kW</div>
+          <div class="num" data-label="Commissioned">Jan 2025</div>
+          <div class="num" data-label="Before">&#8377;4,250</div>
+          <div class="num after" data-label="After">&#8377;780</div>
+        </li>
+        <li>
+          <div class="thumb"><img src="../assets/record/thumb-5.jpg" width="440" height="248" alt="Installation in Ghaziabad"></div>
+          <div class="place"><strong>Ghaziabad, Delhi NCR</strong><span>Residential</span></div>
+          <div class="sys" data-label="System">6.0 kW</div>
+          <div class="num" data-label="Commissioned">Sep 2025</div>
+          <div class="num" data-label="Before">&#8377;7,100</div>
+          <div class="num after" data-label="After">&#8377;940</div>
+        </li>
+        <li>
+          <div class="thumb"><img src="../assets/record/thumb-6.jpg" width="440" height="248" alt="Installation in Muzaffarpur"></div>
+          <div class="place"><strong>Muzaffarpur, Bihar</strong><span>Residential</span></div>
+          <div class="sys" data-label="System">2.0 kW</div>
+          <div class="num" data-label="Commissioned">Nov 2024</div>
+          <div class="num" data-label="Before">&#8377;2,300</div>
+          <div class="num after" data-label="After">&#8377;260</div>
+        </li>
+        <li>
+          <div class="thumb"><img src="../assets/record/thumb-8.jpg" width="440" height="248" alt="Installation in Roorkee"></div>
+          <div class="place"><strong>Roorkee, Uttarakhand</strong><span>Residential</span></div>
+          <div class="sys" data-label="System">10.0 kW</div>
+          <div class="num" data-label="Commissioned">Apr 2025</div>
+          <div class="num" data-label="Before">&#8377;11,400</div>
+          <div class="num after" data-label="After">&#8377;1,250</div>
+        </li>
+      </ol>
+      <p class="footnote">* Illustrative figures for layout only. Replace with commissioned project data before publishing: monthly average over the first full quarter after net metering, per the DISCOM bill.</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 PRICE ============ -->
+  <section class="sec" id="price">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-num">02 / The price</div>
+        <div>
+          <h2 class="reveal">What it costs.<br>In public.</h2>
+          <p class="sub">Most solar sites make you ask. These are the bands we work to in Bihar and Delhi NCR, with the central subsidy already deducted.</p>
+        </div>
+      </div>
+
+      <div class="prices">
+        <div class="price-row price-head" aria-hidden="true">
+          <span>System</span><span>Installed cost</span><span>PM Surya Ghar</span><span>You pay</span><span>Monthly saving</span>
+        </div>
+        <div class="price-row">
+          <div class="size">3 kW<small>2&ndash;3 BHK</small></div>
+          <div class="val" data-label="Installed cost">&#8377;1,74,000</div>
+          <div class="val" data-label="Subsidy">&minus; &#8377;78,000</div>
+          <div class="val pay" data-label="You pay">&#8377;96,000</div>
+          <div class="val" data-label="Saving">&#8377;2,980<small>per month</small></div>
+        </div>
+        <div class="price-row">
+          <div class="size">5 kW<small>3&ndash;4 BHK</small></div>
+          <div class="val" data-label="Installed cost">&#8377;2,90,000</div>
+          <div class="val" data-label="Subsidy">&minus; &#8377;78,000</div>
+          <div class="val pay" data-label="You pay">&#8377;2,12,000</div>
+          <div class="val" data-label="Saving">&#8377;5,290<small>per month</small></div>
+        </div>
+        <div class="price-row">
+          <div class="size">10 kW<small>Villa / small office</small></div>
+          <div class="val" data-label="Installed cost">&#8377;5,80,000</div>
+          <div class="val" data-label="Subsidy">&minus; &#8377;78,000</div>
+          <div class="val pay" data-label="You pay">&#8377;5,02,000</div>
+          <div class="val" data-label="Saving">&#8377;10,150<small>per month</small></div>
+        </div>
+      </div>
+      <p class="footnote">Includes modules, inverter, mounting, cabling, meter and commissioning. Subsidy is the central PM Surya Ghar slab, credited after net metering; state top-ups vary. Illustrative pricing &mdash; confirm before publishing.</p>
+
+      <div class="calc">
+        <div>
+          <h3>Not sure which size?</h3>
+          <p>Start from the bill you already pay.</p>
+          <label for="billRange">Your average monthly bill</label>
+          <div class="bill"><output id="billOut" for="billRange">4,000</output><small>rupees / month</small></div>
+          <input type="range" id="billRange" min="1000" max="20000" step="500" value="4000"
+                 aria-label="Average monthly electricity bill in rupees">
+        </div>
+        <dl class="calc-out" aria-live="polite">
+          <div><dt>Recommended</dt><dd id="rKw">4.0 kW</dd></div>
+          <div><dt>Subsidy</dt><dd class="gold" id="rSub">₹72,000</dd></div>
+          <div><dt>You pay</dt><dd id="rNet">₹1,60,000</dd></div>
+          <div><dt>Pays for itself</dt><dd id="rPay">4.2 yrs</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 PAPERWORK ============ -->
+  <section class="sec" id="paperwork">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-num">03 / The paperwork</div>
+        <div>
+          <h2 class="reveal">Four documents,<br>in this order.</h2>
+          <p class="sub">The subsidy is not complicated, it is sequenced. We file every step; you sign twice. Nothing gets installed before the feasibility letter.</p>
+        </div>
+      </div>
+
+      <div class="docs">
+        <article class="doc">
+          <span class="n">01</span>
+          <span class="dur">Day 1</span>
+          <h3>Application</h3>
+          <strong>PM Surya Ghar portal + DISCOM form</strong>
+          <p>We create the application with your consumer number and Aadhaar-linked bank details. You sign once.</p>
+        </article>
+        <article class="doc">
+          <span class="n">02</span>
+          <span class="dur">7&ndash;21 days</span>
+          <h3>Feasibility</h3>
+          <strong>Sanctioned load approval</strong>
+          <p>The DISCOM confirms how much roof capacity your connection can carry. This is the number that decides your system size.</p>
+        </article>
+        <article class="doc">
+          <span class="n">03</span>
+          <span class="dur">2&ndash;4 weeks</span>
+          <h3>Net meter</h3>
+          <strong>Bi-directional meter, sealed</strong>
+          <p>Fitted and sealed after commissioning. Until it is sealed, you are still buying every unit at full tariff.</p>
+        </article>
+        <article class="doc">
+          <span class="n">04</span>
+          <span class="dur">30&ndash;60 days</span>
+          <h3>Subsidy</h3>
+          <strong>Direct benefit transfer</strong>
+          <p>Credited to the bank account on the application after the first meter reading. We chase it, not you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 AFTER ============ -->
+  <section class="sec" id="after">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-num">04 / After</div>
+        <div>
+          <h2 class="reveal">Then we stay.</h2>
+          <p class="sub">The panel warranty is 25 years. The relationship has to last at least that long, so service is a schedule, not a phone number.</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl">
+          <div class="yr">1<small>year</small></div>
+          <h3>Monitoring &amp; first clean</h3>
+          <p>Generation checked against the design estimate. Panels cleaned after the first monsoon.</p>
+        </div>
+        <div class="tl">
+          <div class="yr">3<small>years</small></div>
+          <h3>Inverter service</h3>
+          <p>Thermal check, firmware, string readings. Inverter is the part that fails first.</p>
+        </div>
+        <div class="tl">
+          <div class="yr">5<small>years</small></div>
+          <h3>Full audit</h3>
+          <p>Mounting torque, cable insulation, earthing resistance, battery health where fitted.</p>
+        </div>
+        <div class="tl">
+          <div class="yr">10<small>years</small></div>
+          <h3>Performance test</h3>
+          <p>Measured output against day-one. If a module has drifted, we file the warranty claim.</p>
+        </div>
+      </div>
+
+      <figure class="wide reveal">
+        <img src="../assets/record/wide-8.jpg" width="2000" height="857" alt="Completed rooftop solar array">
+        <figcaption class="cap">
+          <span>Service visit &middot; year three</span>
+          <span>48-hour response, Patna &middot; Delhi &middot; Dehradun</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CLOSE ============ -->
+  <section class="close">
+    <div class="shell grid">
+      <div>
+        <h2>Start with your last bill.</h2>
+        <p>Send a photo of it. You get a system size, a price and an install date &mdash; not a sales call.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-dark" href="https://wa.me/911234567890">WhatsApp the bill</a>
+        <a class="btn btn-line" href="tel:+911234567890">Call +91 12345 67890</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#" aria-label="Krypton Energy — home">
+          <img class="brand-logo" src="../assets/brand/krypton-logo-transparent.png" width="1023" height="218" alt="Krypton Energy — Electricity Redefined">
+        </a>
+        <p>Solar panels, inverters, lithium batteries and EV chargers. Homes in Bihar, Delhi and Dehradun. Commercial and industrial projects across India.</p>
+      </div>
+      <div>
+        <h4>Installations</h4>
+        <ul>
+          <li><a href="#record">The record</a></li>
+          <li><a href="#price">Prices</a></li>
+          <li><a href="#paperwork">Subsidy &amp; paperwork</a></li>
+          <li><a href="#after">Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Solar panels</a></li>
+          <li><a href="#">Inverters</a></li>
+          <li><a href="#">Lithium batteries</a></li>
+          <li><a href="#">EV home chargers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+          <li><a href="mailto:hello@kryptonenergy.in">hello@kryptonenergy.in</a></li>
+          <li>Patna &middot; Delhi &middot; Dehradun</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Krypton Energy</span>
+      <span>Concept 02 &mdash; The Record</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const head = document.getElementById('head');
+  const onScroll = () => head.classList.toggle('is-stuck', window.scrollY > 24);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  const menuBtn = document.querySelector('.menu-btn');
+  menuBtn?.addEventListener('click', () => {
+    const nav = document.querySelector('.nav');
+    const open = nav.style.display === 'flex';
+    nav.style.cssText = open ? '' : 'display:flex;position:fixed;inset:78px 0 auto;flex-direction:column;align-items:flex-start;background:#000;padding:26px 24px;border-bottom:1px solid rgba(228,209,142,.18);gap:18px;font-size:16px';
+    menuBtn.setAttribute('aria-expanded', String(!open));
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const range = document.getElementById('billRange');
+  const billOut = document.getElementById('billOut');
+  const rKw = document.getElementById('rKw');
+  const rSub = document.getElementById('rSub');
+  const rNet = document.getElementById('rNet');
+  const rPay = document.getElementById('rPay');
+  const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
+
+  function calc() {
+    const bill = Number(range.value);
+    const units = bill / 8;
+    const kw = Math.max(1, Math.min(100, Math.round((units / 120) * 2) / 2));
+    const gross = kw * 58000;
+    let sub = kw <= 2 ? kw * 30000 : kw <= 3 ? 60000 + (kw - 2) * 18000 : 78000;
+    sub = Math.min(sub, 78000);
+    const net = Math.max(0, gross - sub);
+    const payback = net / (bill * 0.9 * 12);
+    billOut.value = bill.toLocaleString('en-IN');
+    rKw.textContent = kw.toFixed(1) + ' kW';
+    rSub.textContent = inr(sub);
+    rNet.textContent = inr(net);
+    rPay.textContent = payback.toFixed(1) + ' yrs';
+  }
+  range.addEventListener('input', calc);
+  calc();
+</script>
+</body>
+</html>

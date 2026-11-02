@@ -1,0 +1,23 @@
+# dependencies
+app/node_modules/
+node_modules/
+
+# build output
+app/dist/
+dist/
+
+# playwright artifacts
+.playwright-mcp/
+
+# local env
+.env
+.env.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# screenshots / mockups (not needed for build)
+app/*.png
+mockups/shots/
+*.standalone.html

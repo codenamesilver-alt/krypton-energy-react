@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krypton Energy — Glass surface test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1e222a;
+    --paper:#ecece7;
+    --gold:#b48c48;
+    --gold-light:#e4d18e;
+    --white:#f7f6f2;
+    --muted:rgba(247,246,242,.62);
+    --hair:rgba(228,209,142,.22);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--white);font-family:'Poppins',system-ui,sans-serif;
+    font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:70px}
+  a{color:inherit;text-decoration:none}
+  code{font-family:ui-monospace,monospace;font-size:.88em;color:var(--gold-light)}
+  .wrap{max-width:1280px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}
+
+  .top{border-bottom:1px solid var(--hair);padding-block:24px}
+  .top .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .top h1{font-size:14px;font-weight:400;letter-spacing:.22em;text-transform:uppercase}
+  .top p{font-size:12px;color:var(--muted)}
+  .top a{color:var(--gold-light);border-bottom:1px solid rgba(228,209,142,.32);padding-bottom:2px}
+
+  .lead{padding-block:34px 0}
+  .lead h2{font-size:clamp(24px,3vw,32px);font-weight:200;letter-spacing:-.022em;margin-bottom:10px}
+  .lead p{font-size:13.5px;color:var(--muted);max-width:66ch;line-height:1.75}
+
+  /* ---------- controls ---------- */
+  .switch{display:flex;gap:8px;margin:22px 0 2px;flex-wrap:wrap;align-items:center}
+  .switch button{font:inherit;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    padding:9px 15px;background:transparent;border:1px solid rgba(247,246,242,.2);
+    color:var(--muted);cursor:pointer;border-radius:2px;transition:.2s var(--ease)}
+  .switch button:hover{border-color:rgba(247,246,242,.4);color:var(--white)}
+  .switch button[aria-pressed="true"]{border-color:rgba(228,209,142,.55);color:var(--gold-light);
+    background:rgba(228,209,142,.07)}
+  .switch .hint{font-size:11px;color:rgba(247,246,242,.4);margin-left:4px}
+
+  /* ---------- stage: the real hero as backdrop ---------- */
+  .stage{position:relative;margin-top:18px;border:1px solid var(--hair);overflow:hidden;
+    aspect-ratio:1440/900;background:#000 url('shots/concept-01-hero-v3.png') center/cover no-repeat}
+  .stage .live{position:absolute;z-index:2}
+
+  /* the card under test — bottom right, sits over the orb */
+  .testcard{right:clamp(14px,3vw,44px);bottom:clamp(14px,3vw,44px);
+    width:min(370px,44%);padding:20px 22px 22px;display:flex;flex-direction:column;
+    min-height:250px;justify-content:flex-end;transition:background .3s,border-color .3s}
+  .testcard .kicker{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:9px}
+  .testcard h3{font-size:clamp(16px,1.4vw,20px);font-weight:300;letter-spacing:-.012em;margin-bottom:6px}
+  .testcard .spec{font-size:11.5px;color:rgba(247,246,242,.68);line-height:1.55;margin-bottom:16px}
+  .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    border-top:1px solid rgba(247,246,242,.16);padding-top:12px}
+  .price{font-size:13px;font-weight:300}
+  .price small{display:block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(247,246,242,.5);margin-top:3px}
+  .ghost{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);
+    border-bottom:1px solid rgba(228,209,142,.4);padding-bottom:2px;white-space:nowrap}
+
+  /* A — current build */
+  .testcard[data-treat="flat"]{background:#232830;border:1px solid var(--hair);border-radius:2px}
+  /* B — textbook glassmorphism */
+  .testcard[data-treat="glass"]{
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.28);border-radius:16px;
+    backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+    box-shadow:0 18px 50px -12px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+  /* C — black glass, radius kept at 2px */
+  .testcard[data-treat="black"]{
+    background:rgba(0,0,0,.55);border:1px solid rgba(228,209,142,.24);border-radius:2px;
+    backdrop-filter:blur(18px) saturate(115%);-webkit-backdrop-filter:blur(18px) saturate(115%)}
+
+  .badge{position:absolute;left:clamp(14px,3vw,44px);bottom:clamp(14px,3vw,44px);z-index:3;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,246,242,.75);
+    background:rgba(0,0,0,.5);border:1px solid rgba(247,246,242,.18);padding:7px 11px;border-radius:2px}
+
+  /* ---------- mobile menu stage ---------- */
+  .stage.menu{aspect-ratio:1440/760;background-position:center top}
+  .sheet{position:absolute;top:0;right:0;bottom:0;width:min(400px,46%);
+    padding:30px 28px;display:flex;flex-direction:column;justify-content:center;
+    transition:background .3s,backdrop-filter .3s}
+  .sheet[data-treat="flat"]{background:#000;border-left:1px solid rgba(228,209,142,.18)}
+  .sheet[data-treat="black"]{background:rgba(0,0,0,.55);border-left:1px solid rgba(228,209,142,.24);
+    backdrop-filter:blur(18px) saturate(115%);-webkit-backdrop-filter:blur(18px) saturate(115%)}
+  .sheet[data-treat="glass"]{background:rgba(255,255,255,.09);border-left:1px solid rgba(255,255,255,.26);
+    backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}
+  .sheet .mhead{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:22px}
+  .sheet nav{display:flex;flex-direction:column;gap:18px;font-size:15px}
+  .sheet nav a{color:rgba(247,246,242,.9)}
+  .sheet nav a:first-child{color:var(--gold-light)}
+  .sheet .cta{margin-top:26px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink);background:var(--gold-light);padding:12px 16px;text-align:center;border-radius:2px}
+
+  /* ---------- verdict ---------- */
+  .verdict{margin-top:54px;border-top:1px solid var(--hair);padding-top:26px}
+  .verdict h2{font-size:clamp(20px,2.4vw,26px);font-weight:200;letter-spacing:-.02em;margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th,td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid rgba(247,246,242,.1);
+    vertical-align:top;line-height:1.6;font-weight:300}
+  th{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);
+    border-bottom-color:rgba(228,209,142,.3)}
+  td:first-child{width:25%;color:var(--white)}
+  td{color:var(--muted)}
+  .no{color:#d98a7a}
+  .yes{color:var(--gold-light)}
+
+  footer{margin-top:46px;border-top:1px solid var(--hair);padding-top:20px;
+    font-size:11.5px;color:rgba(247,246,242,.45)}
+  footer a{color:var(--gold-light)}
+
+  @media (max-width:820px){
+    .stage{aspect-ratio:4/5;background-position:72% center}
+    .testcard{width:calc(100% - 28px);left:14px;right:14px;bottom:14px;min-height:0}
+    .badge{display:none}
+    .stage.menu{aspect-ratio:3/4;background-position:70% top}
+    .sheet{width:100%;background:rgba(0,0,0,.9)}
+    th,td{font-size:11.5px}
+    td:first-child{width:32%}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Glass surface test</h1>
+    <p>One card · the real hero behind it · <a href="./concept-01-instrument.html">back to the concept</a></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="lead">
+    <h2>Flip the treatment, keep your eye on the same spot</h2>
+    <p>The hero is not covered. There is one card, in one place, and the buttons swap only its surface. Watch the orb, the headline and the coordinates behind it — and watch whether the card ever stops reading as a separate object.</p>
+  </section>
+
+  <div class="switch" role="group" aria-label="Surface treatment">
+    <button type="button" data-treat="flat" aria-pressed="true">A · Flat (built today)</button>
+    <button type="button" data-treat="glass" aria-pressed="false">B · Full glassmorphism</button>
+    <button type="button" data-treat="black" aria-pressed="false">C · Black glass</button>
+    <span class="hint">← the only thing that changes is the card</span>
+  </div>
+
+  <div class="stage" id="heroStage">
+    <span class="badge">Behind the card: orb + headline, unchanged</span>
+    <div class="testcard live" id="card" data-treat="flat">
+      <span class="kicker">03 / Storage</span>
+      <h3>Lithium batteries</h3>
+      <p class="spec">LiFePO4, stackable<br>5–30 kWh usable</p>
+      <div class="price-row">
+        <span class="price">From ₹2,40,000<small>incl. BMS</small></span>
+        <a class="ghost" href="#">Specs</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="lead" style="padding-top:44px">
+    <h2>The one place it earns its keep</h2>
+    <p>The mobile menu is a genuine layer over the hero, not a card sitting on a flat page. Same swap, same hero behind it. A is what you have now; C is the version I would ship.</p>
+  </section>
+
+  <div class="switch" role="group" aria-label="Mobile menu treatment">
+    <button type="button" data-sheet="flat" aria-pressed="true">A · Solid black</button>
+    <button type="button" data-sheet="glass" aria-pressed="false">B · Full glassmorphism</button>
+    <button type="button" data-sheet="black" aria-pressed="false">C · Black glass</button>
+  </div>
+
+  <div class="stage menu">
+    <div class="sheet" id="sheet" data-treat="flat">
+      <p class="mhead">Menu</p>
+      <nav>
+        <a href="#">Products</a>
+        <a href="#">Homes</a>
+        <a href="#">Business</a>
+        <a href="#">How it works</a>
+        <a href="#">Why Krypton</a>
+      </nav>
+      <a class="cta" href="#">Get a quote</a>
+    </div>
+  </div>
+
+  <section class="verdict">
+    <h2>Verdict, surface by surface</h2>
+    <table>
+      <thead>
+        <tr><th>Surface</th><th>Glass?</th><th>Reason</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Header</td><td class="no">No</td><td>You just made it hard black so the logo sits on its native plate. Glass is the opposite instruction.</td></tr>
+        <tr><td>Product shelf, cards</td><td class="no">No</td><td>They sit on flat charcoal — nothing to blur — and the 1px rules are what make the row read as an instrument shelf.</td></tr>
+        <tr><td>Calculator, price table</td><td class="no">No</td><td>Numbers need a fixed background; glass makes contrast shift as things scroll behind it.</td></tr>
+        <tr><td>Footer</td><td class="no">No</td><td>Opaque black, matching the header. Nothing behind it to blur anyway.</td></tr>
+        <tr><td>Mobile menu sheet</td><td class="yes">Yes — black glass only</td><td>Genuinely floats over the hero. <code>rgba(0,0,0,.55)</code> keeps it dark and keeps gold at 6.8:1.</td></tr>
+        <tr><td>Quote dialog</td><td class="yes">Yes — black glass only</td><td>Same reason. Opened deliberately, so the GPU cost is paid once and briefly.</td></tr>
+        <tr><td>Sticky quote bar</td><td class="yes">Maybe</td><td>Only while over photography or the orb. Over flat sections, make it solid black.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    Explorer only — <a href="./concept-01-instrument.html">the live concept</a> is unchanged. Shots: <code>mockups/shots/glass-explorer-*.png</code>
+  </footer>
+</main>
+
+<script>
+  // hero card
+  const cardBtns = [...document.querySelectorAll('.switch [data-treat]')];
+  const card = document.getElementById('card');
+  cardBtns.forEach(b => b.addEventListener('click', () => {
+    cardBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    card.dataset.treat = b.dataset.treat;
+  }));
+  // menu sheet
+  const sheetBtns = [...document.querySelectorAll('.switch [data-sheet]')];
+  const sheet = document.getElementById('sheet');
+  sheetBtns.forEach(b => b.addEventListener('click', () => {
+    sheetBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    sheet.dataset.treat = b.dataset.sheet;
+  }));
+</script>
+</body>
+</html>
