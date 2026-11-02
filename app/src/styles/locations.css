@@ -1,4 +1,4 @@
-﻿.india-map-wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px}
+.india-map-wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px}
 .india-map{width:100%;max-width:520px;margin:0 auto}
 .india-map svg{width:100%;height:auto;display:block}
 .india-map svg path{fill:#c48d48;stroke:#1e222a;stroke-width:.6;transition:fill .2s ease}

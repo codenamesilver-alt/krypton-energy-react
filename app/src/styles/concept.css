@@ -1,4 +1,4 @@
-﻿
+
   @font-face{font-family:'Poppins';src:url('/fonts/poppins-200.woff2') format('woff2');font-weight:200;font-style:normal;font-display:swap}
   @font-face{font-family:'Poppins';src:url('/fonts/poppins-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
   @font-face{font-family:'Poppins';src:url('/fonts/poppins-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
@@ -128,7 +128,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
             mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
     opacity:.9}
 
-  /* orb as photo slideshow (desktop only â€” mobile keeps the glow) */
+  /* orb as photo slideshow (desktop only — mobile keeps the glow) */
   .orb-slides{position:absolute;inset:0;border-radius:50%;overflow:hidden;
     display:none;background:#ffffff}
   body.orb-photos .orb-slides{display:block}

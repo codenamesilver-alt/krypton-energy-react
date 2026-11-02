@@ -1,4 +1,4 @@
-﻿.calc .f{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.calc .f{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
 .calc .f label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .calc .f input[type=number]{background:var(--ink-2);border:1px solid rgba(228,209,142,.35);color:var(--white);
   padding:10px 12px;border-radius:2px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s var(--ease);

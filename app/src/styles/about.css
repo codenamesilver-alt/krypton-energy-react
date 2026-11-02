@@ -1,4 +1,4 @@
-﻿#about h2 span{background:linear-gradient(180deg,#f8e7a8,#c9a24f);
+#about h2 span{background:linear-gradient(180deg,#f8e7a8,#c9a24f);
   -webkit-background-clip:text;background-clip:text;color:transparent}
 .about-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:40px}

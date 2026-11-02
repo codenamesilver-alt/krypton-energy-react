@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react'
+import { useEffect } from 'react'
 import indiaMap from '../assets/india-map.svg?raw'
 import '../styles/locations.css'
 

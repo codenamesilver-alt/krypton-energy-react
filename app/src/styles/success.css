@@ -1,4 +1,4 @@
-﻿.testi-marquee-wrap{margin-top:24px;border:1px solid var(--hair);background:var(--ink-2);border-radius:12px;overflow:hidden;position:relative;height:288px;display:flex;align-items:center}
+.testi-marquee-wrap{margin-top:24px;border:1px solid var(--hair);background:var(--ink-2);border-radius:12px;overflow:hidden;position:relative;height:288px;display:flex;align-items:center}
 .testi-marquee-track{display:flex;gap:64px;white-space:nowrap;animation:marquee 30s linear infinite;will-change:transform;padding-inline:24px}
 .testi-marquee-track:hover{animation-play-state:paused}
 .testi-marquee-item{font-size:15px;font-weight:300;color:var(--muted);line-height:1.7;max-width:none;display:inline-block}

@@ -1,4 +1,4 @@
-﻿.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:32px}
 .faq-item{background:var(--ink-2);border:1px solid var(--hair-soft);border-radius:2px;overflow:hidden}
 .faq-item summary{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;list-style:none;user-select:none}
 .faq-item summary::-webkit-details-marker{display:none}

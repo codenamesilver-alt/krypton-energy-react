@@ -1,25 +1,25 @@
-﻿export type Product = {
+export type Product = {
   name: string
   spec: string
   note: string
 }
 
 export const products: Product[] = [
-  { name: 'Solar Panels', spec: 'TOPCon N-Type Â· 545â€“590 Wp', note: 'Tier 1 Â· ALMM listed' },
-  { name: 'Inverters', spec: 'Hybrid & On-Grid Â· 3â€“100 kW', note: 'String & central' },
-  { name: 'Batteries', spec: 'Li Â· Lead-Acid Â· AGM Â· 5â€“30 kWh', note: '5,000+ cycles (Li)' },
-  { name: 'EV Home Chargers', spec: 'AC Type 2 Â· 7.4â€“22 kW', note: 'OCPP 1.6' },
+  { name: 'Solar Panels', spec: 'TOPCon N-Type · 545–590 Wp', note: 'Tier 1 · ALMM listed' },
+  { name: 'Inverters', spec: 'Hybrid & On-Grid · 3–100 kW', note: 'String & central' },
+  { name: 'Batteries', spec: 'Li · Lead-Acid · AGM · 5–30 kWh', note: '5,000+ cycles (Li)' },
+  { name: 'EV Home Chargers', spec: 'AC Type 2 · 7.4–22 kW', note: 'OCPP 1.6' },
 ]
 
 export const processSteps = [
   { n: '01', title: 'Survey', body: 'Roof assessment, shadow analysis, and sanctioned-load check before any quote is issued.' },
   { n: '02', title: 'Design', body: 'System sized to your bill, not to a sales target. Single-line diagram and layout shared for approval.' },
-  { n: '03', title: 'Install', body: 'Our own crew. Mounting, cabling, earthing, and commissioning in 2â€“4 days for a typical home.' },
+  { n: '03', title: 'Install', body: 'Our own crew. Mounting, cabling, earthing, and commissioning in 2–4 days for a typical home.' },
   { n: '04', title: 'Handover', body: 'Net-meter application filed, subsidy paperwork submitted, monitoring app configured.' },
 ]
 
 export const locations = [
-  { city: 'Patna', region: 'Bihar', note: 'Head office Â· survey & install' },
+  { city: 'Patna', region: 'Bihar', note: 'Head office · survey & install' },
   { city: 'Delhi NCR', region: 'Delhi', note: 'Sales & commercial projects' },
   { city: 'Uttarakhand', region: 'Uttarakhand', note: 'Hill-region specialists' },
 ]

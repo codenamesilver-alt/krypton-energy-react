@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false)
@@ -9,7 +9,7 @@ export default function QuoteForm() {
     return (
       <div style={{ padding: '22px 24px', background: 'var(--ink-2)', border: '1px solid var(--hair)', borderRadius: 2 }}>
         <div className="kicker" style={{ marginBottom: 8 }}>Thank you</div>
-        <h3 style={{ fontSize: 18, fontWeight: 400, margin: '0 0 10px' }}>Weâ€™ll be in touch.</h3>
+        <h3 style={{ fontSize: 18, fontWeight: 400, margin: '0 0 10px' }}>We’ll be in touch.</h3>
         <p style={{ color: 'var(--muted)', fontSize: 13, lineHeight: 1.6, margin: 0 }}>
           Your request has been received. A Krypton engineer will reach out within one business day.
         </p>
@@ -33,10 +33,10 @@ export default function QuoteForm() {
       </div>
       <div className="qf">
         <label htmlFor="q-city">City</label>
-        <input id="q-city" required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} placeholder="Patna, Delhi, Uttarakhandâ€¦" />
+        <input id="q-city" required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} placeholder="Patna, Delhi, Uttarakhand…" />
       </div>
       <div className="qf">
-        <label htmlFor="q-type">Iâ€™m looking for</label>
+        <label htmlFor="q-type">I’m looking for</label>
         <select id="q-type" value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })}>
           <option>Residential</option>
           <option>Commercial</option>

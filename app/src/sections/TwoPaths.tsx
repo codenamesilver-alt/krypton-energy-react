@@ -1,4 +1,4 @@
-﻿export default function TwoPaths() {
+export default function TwoPaths() {
   return (
     <section className="section" id="homes">
       <div className="wrap">
@@ -7,7 +7,7 @@
             <div className="kicker">Two kinds of roofs</div>
             <h2>One company. Two very different jobs.</h2>
           </div>
-          <p>A 3 kW roof in Patna and a 3 MW plant in Pune are not the same project. We staff, price and design them separately â€” so neither gets a diluted version of the other.</p>
+          <p>A 3 kW roof in Patna and a 3 MW plant in Pune are not the same project. We staff, price and design them separately — so neither gets a diluted version of the other.</p>
         </div>
 
         <div className="paths">
@@ -30,7 +30,7 @@
           <article className="path path-biz" id="business">
             <div className="path-tag">For business</div>
             <h3>Solar at the scale your operations actually run.</h3>
-            <p>Feasibility, engineering, EPC and O&amp;M for industrial and commercial sites â€” anywhere in India, with production downtime treated as a design constraint.</p>
+            <p>Feasibility, engineering, EPC and O&amp;M for industrial and commercial sites — anywhere in India, with production downtime treated as a design constraint.</p>
             <ul className="path-list">
               <li>Load study and feasibility report</li>
               <li>Rooftop, ground-mount and hybrid systems</li>

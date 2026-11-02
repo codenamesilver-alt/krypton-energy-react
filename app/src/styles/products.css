@@ -1,4 +1,4 @@
-﻿.prod-section{padding-block:clamp(52px,6vw,88px);border-top:1px solid var(--hair)}
+.prod-section{padding-block:clamp(52px,6vw,88px);border-top:1px solid var(--hair)}
 .prod-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(28px,4vw,44px)}
 .prod-head .kicker{margin-bottom:10px}
 .prod-head h2{font-size:clamp(28px,3.4vw,46px);font-weight:300;letter-spacing:-.035em;line-height:1.05;margin:0}

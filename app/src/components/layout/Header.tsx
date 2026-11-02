@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/brand/krypton-logo.png'
 import { navLinks } from '../../data/content'
@@ -19,8 +19,8 @@ export default function Header() {
   return (
     <header className={`site-head${stuck ? ' is-stuck' : ''}`}>
       <div className="shell head-inner">
-        <Link className="brand" to="/" aria-label="Krypton Energy â€” home">
-          <img className="brand-logo" src={logo} width="1023" height="218" alt="Krypton Energy â€” Electricity Redefined" />
+        <Link className="brand" to="/" aria-label="Krypton Energy — home">
+          <img className="brand-logo" src={logo} width="1023" height="218" alt="Krypton Energy — Electricity Redefined" />
         </Link>
         <nav className="nav" aria-label="Primary">
           {navLinks.map((l) => (
