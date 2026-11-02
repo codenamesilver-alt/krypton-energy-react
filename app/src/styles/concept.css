@@ -80,7 +80,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .btn-ghost:hover{border-color:var(--gold-light);background:rgba(228,209,142,.07)}
   .btn-ink{background:var(--ink);color:var(--gold-light);border-color:var(--ink)}
   .btn-ink:hover{background:#111419}
-  .link-arrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:500;color:var(--gold-light);letter-spacing:.03em}
+  .link-arrow{display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:500;color:var(--gold-light);letter-spacing:.03em}
   .link-arrow svg{transition:transform .3s var(--ease)}
   .link-arrow:hover svg{transform:translateX(5px)}
 
@@ -190,7 +190,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .path-home p{color:var(--muted-dark)}
   .path-biz p{color:var(--muted)}
   .path-list{list-style:none;margin-bottom:32px}
-  .path-list li{font-size:12.5px;padding:11px 0;display:flex;gap:10px;align-items:flex-start;border-top:1px solid var(--hair-dark)}
+  .path-list li{font-size:16px;padding:11px 0;display:flex;gap:10px;align-items:flex-start;border-top:1px solid var(--hair-dark)}
   .path-biz .path-list li{border-top-color:rgba(228,209,142,.16)}
   .path-list li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);margin-top:8px;flex-shrink:0}
   .path-home .link-arrow{color:#7a5c22}
@@ -225,7 +225,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .step::before{content:"";position:absolute;top:-3px;left:0;width:5px;height:5px;border-radius:50%;background:var(--gold-light);box-shadow:0 0 8px rgba(228,209,142,.7)}
   .step .num{font-size:10px;letter-spacing:.16em;color:var(--gold);margin-bottom:14px}
   .step h3{font-size:16.5px;font-weight:400;letter-spacing:-.01em;margin-bottom:8px}
-  .step p{font-size:12.5px;line-height:1.65;color:var(--muted)}
+  .step p{font-size:16px;line-height:1.65;color:var(--muted)}
 
   /* ---------- places ---------- */
   .places-head{margin-bottom:8px}
@@ -235,7 +235,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .place-row:hover{background:rgba(228,209,142,.03)}
   .place-name{font-size:clamp(19px,2vw,25px);font-weight:300;letter-spacing:-.02em}
   .place-coord{font-size:13px;letter-spacing:.12em;color:rgba(228,209,142,.62);font-variant-numeric:tabular-nums}
-  .place-desc{font-size:12.5px;color:var(--muted);line-height:1.6;max-width:52ch}
+  .place-desc{font-size:16px;color:var(--muted);line-height:1.6;max-width:52ch}
   .place-row .link-arrow{font-size:11.5px;white-space:nowrap}
   .place-biz{background:rgba(228,209,142,.05)}
   .place-biz .place-name{color:var(--gold-light)}
@@ -245,7 +245,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .promise{display:grid;grid-template-columns:34px 1fr;gap:16px;padding-block:22px;border-top:1px solid var(--hair)}
   .promise .pnum{font-size:10px;color:var(--gold);letter-spacing:.12em;padding-top:4px}
   .promise h3{font-size:14.5px;font-weight:400;margin-bottom:6px}
-  .promise p{font-size:12.5px;color:var(--muted);line-height:1.6;max-width:38ch}
+  .promise p{font-size:16px;color:var(--muted);line-height:1.6;max-width:38ch}
 
   /* ---------- closing ---------- */
   .closing{background:var(--gold-light);color:var(--ink);padding-block:clamp(40px,5vw,64px)}

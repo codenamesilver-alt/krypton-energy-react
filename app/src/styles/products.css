@@ -11,7 +11,7 @@
 .prod-card::before{content:"";position:absolute;top:0;left:0;width:2px;height:100%;background:var(--gold-light);opacity:.7}
 .prod-card .idx{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:500}
 .prod-card h3{font-size:18px;font-weight:400;letter-spacing:-.01em;margin:0 0 6px;color:var(--white)}
-.prod-card .spec{font-size:12.5px;color:var(--gold-light);margin-bottom:12px;letter-spacing:.02em}
+.prod-card .spec{font-size:16px;color:var(--gold-light);margin-bottom:12px;letter-spacing:.02em}
 .prod-card p{margin:0;color:var(--muted-2);font-size:13.5px;line-height:1.6}
 .prod-card ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
 .prod-card li{font-size:13px;color:var(--muted-2);padding-left:14px;position:relative;line-height:1.5}
