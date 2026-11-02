@@ -2,7 +2,7 @@
 .calc .f label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .calc .f input[type=number]{background:var(--ink-2);border:1px solid rgba(228,209,142,.35);color:var(--white);
   padding:10px 12px;border-radius:2px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s var(--ease);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);width:100%}
 .calc .f input[type=number]:focus{border-color:var(--gold-light)}
 .calc .f select{background:var(--ink-2);border:1px solid rgba(228,209,142,.35);color:var(--white);
   padding:10px 12px;border-radius:2px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s var(--ease);
@@ -23,4 +23,9 @@
 .calc .turn .lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:6px}
 .calc .turn .big{font-size:clamp(28px,3vw,40px);font-weight:200;letter-spacing:-.03em;color:var(--gold-light)}
 .calc .turn .sub{font-size:12px;color:var(--muted-2);margin-top:4px}
-@media (max-width:640px){.calc .two{grid-template-columns:1fr}}
+@media (max-width:640px){.calc .two{grid-template-columns:1fr}
+  .calc .adv{padding:12px 14px}
+  .calc .turn{padding:16px 14px}
+  .calc .res-row{gap:8px}
+  .calc .res-row .rl{font-size:11px}
+  .calc-grid{gap:20px}}
