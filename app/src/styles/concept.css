@@ -356,7 +356,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     transform-origin:300px 300px;
     animation:orbTextSpin 32s linear infinite}
   @keyframes orbTextSpin{to{transform:rotate(360deg)}}
-  @media (max-width:1000px){.orb-text-ring{display:none}}
+  @media (max-width:1000px){.orb-text-ring text{font-size:14px}}
   @media (prefers-reduced-motion:reduce){.orb-text-ring text{animation:none}}
 
   /* ---------- quote modal ---------- */
