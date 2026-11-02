@@ -5,7 +5,7 @@
 .india-map svg path#br,.india-map svg path#ut,.india-map svg path#dl{fill:#e4d18e}
 .india-map svg path:hover{opacity:.85}
 .map-legend{display:flex;flex-direction:column;gap:14px}
-.map-legend .item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.map-legend .item{display:flex;align-items:center;gap:12px;font-size:16px;color:var(--muted)}
 .map-legend .swatch{width:18px;height:18px;border-radius:2px;flex-shrink:0}
 .map-legend .swatch.res{background:#e4d18e}
 .map-legend .swatch.com{background:#c48d48}

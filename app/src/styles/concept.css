@@ -107,7 +107,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .hero h1 em{font-style:normal;color:var(--gold-light);font-weight:200}
   .hero-sub{font-size:clamp(15px,1.25vw,17.5px);line-height:1.7;color:rgba(247,246,242,.66);max-width:44ch;margin-bottom:38px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
-  .hero-meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px;color:var(--muted);letter-spacing:.03em}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:16px;color:var(--muted);letter-spacing:.03em}
   .hero-meta span{display:flex;align-items:center;gap:8px}
   .hero-meta span::before{content:"";width:3px;height:3px;background:var(--gold);border-radius:50%}
 
@@ -186,7 +186,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .path-home .path-tag{color:rgba(30,34,42,.55)}
   .path-biz .path-tag{color:rgba(228,209,142,.7)}
   .path h3{font-size:clamp(28px,2.8vw,38px);font-weight:300;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
-  .path p{font-size:14px;line-height:1.7;max-width:36ch;margin-bottom:26px}
+  .path p{font-size:16px;line-height:1.7;max-width:36ch;margin-bottom:26px}
   .path-home p{color:var(--muted-dark)}
   .path-biz p{color:var(--muted)}
   .path-list{list-style:none;margin-bottom:32px}
@@ -201,7 +201,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .calc{background:var(--ink-2);border-block:1px solid var(--hair)}
   .calc-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,6vw,90px);align-items:start}
   .calc h2{font-size:clamp(28px,3.4vw,44px);font-weight:200;letter-spacing:-.035em;line-height:1.1;margin-bottom:18px}
-  .calc p.lede{font-size:14px;color:var(--muted);max-width:40ch;margin-bottom:34px}
+  .calc p.lede{font-size:16px;color:var(--muted);max-width:40ch;margin-bottom:34px}
   .bill-field{border-bottom:1px solid var(--hair);padding-bottom:14px;margin-bottom:10px}
   .bill-field label{display:block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
   .bill-row{display:flex;align-items:baseline;gap:8px}
@@ -310,7 +310,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero{padding-top:118px}
     .orb-label{font-size:8.5px;letter-spacing:.18em}
     .tile{padding:13px 14px 15px}
-    .tile-name{font-size:14px}
+    .tile-name{font-size:16px}
     .tile-spec{font-size:10px}
     .tile-arrow{display:none}
     .brand-logo{height:32px}
@@ -365,7 +365,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .qf{display:flex;flex-direction:column;gap:6px}
   .qf label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .qf input,.qf select{background:var(--ink);border:1px solid rgba(228,209,142,.3);color:var(--white);
-    padding:10px 12px;border-radius:2px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s var(--ease)}
+    padding:10px 12px;border-radius:2px;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s var(--ease)}
   .qf input:focus,.qf select:focus{border-color:var(--gold-light)}
   .qf select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold-light) 50%),
     linear-gradient(135deg,var(--gold-light) 50%,transparent 50%);

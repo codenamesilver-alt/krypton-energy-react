@@ -7,4 +7,4 @@
 .faq-q{flex:1;font-size:15px;font-weight:400;color:var(--white);letter-spacing:-.01em;line-height:1.4}
 .faq-toggle{font-size:20px;color:var(--gold);font-weight:300;transition:transform .25s var(--ease);flex-shrink:0}
 .faq-item[open] .faq-toggle{transform:rotate(45deg)}
-.faq-a{padding:0 22px 20px 52px;font-size:14px;color:var(--muted);line-height:1.7;border-top:1px solid var(--hair-soft);padding-top:16px}
+.faq-a{padding:0 22px 20px 52px;font-size:16px;color:var(--muted);line-height:1.7;border-top:1px solid var(--hair-soft);padding-top:16px}
