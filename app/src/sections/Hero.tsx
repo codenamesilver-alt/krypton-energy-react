@@ -65,7 +65,9 @@ export default function Hero() {
             </div>
             <div className="hero-meta">
               <span>MNRE-approved equipment</span>
+              <span className="sep">·</span>
               <span>25-year performance warranty</span>
+              <span className="sep">·</span>
               <span>Subsidy paperwork handled</span>
             </div>
           </div>

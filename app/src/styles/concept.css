@@ -65,6 +65,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .head-actions{display:flex;align-items:center;gap:16px;flex-shrink:0}
   .head-phone{font-size:16px;color:var(--muted);letter-spacing:.04em}
   .head-phone:hover{color:var(--gold-light)}
+
+  /* brand color signature: gold links, gold bullets, gold separators */
+  a.gold-link{color:var(--gold-light);border-bottom:1px solid rgba(228,209,142,.35);transition:border-color .2s var(--ease)}
+  a.gold-link:hover{border-bottom-color:var(--gold-light)}
+  .sep{color:var(--gold);font-weight:300;margin:0 4px}
+  .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(228,209,142,.35),transparent);border:0;margin:0}
   .menu-btn{display:none;background:none;border:1px solid var(--hair);border-radius:2px;width:42px;height:38px;cursor:pointer;align-items:center;justify-content:center;gap:5px;flex-direction:column}
   .menu-btn span{display:block;width:16px;height:1px;background:var(--gold-light)}
 
@@ -130,7 +136,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   /* orb as photo slideshow (desktop only — mobile keeps the glow) */
   .orb-slides{position:absolute;inset:0;border-radius:50%;overflow:hidden;
-    display:none;background:#ffffff}
+    display:block;background:#ffffff}
   body.orb-photos .orb-slides{display:block}
   .orb-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
     opacity:0;transition:opacity 1.5s var(--ease);
@@ -284,7 +290,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   @media (max-width:1000px){
     .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:24px;gap:44px}
     .orb-stage{order:-1;max-height:340px;max-width:340px;width:min(78vw,340px)}
-    body.orb-photos .orb-slides{display:none}
+    body.orb-photos .orb-slides{display:block}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
     .shelf-grid{grid-template-columns:1fr 1fr}

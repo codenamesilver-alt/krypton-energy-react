@@ -19,8 +19,9 @@ export default function Header() {
   return (
     <header className={`site-head${stuck ? ' is-stuck' : ''}`}>
       <div className="shell head-inner">
-        <Link className="brand" to="/" aria-label="Krypton Energy — home">
+        <Link className="brand" to="/" aria-label="Krypton Energy — Electricity Redefined">
           <img className="brand-logo" src={logo} width="1023" height="218" alt="Krypton Energy — Electricity Redefined" />
+
         </Link>
         <nav className="nav" aria-label="Primary">
           {navLinks.map((l) => (
