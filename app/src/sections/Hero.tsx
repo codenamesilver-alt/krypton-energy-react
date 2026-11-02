@@ -62,7 +62,6 @@ export default function Hero() {
             <p className="hero-sub">Solar panels, inverters, batteries and EV chargers — specified, installed and serviced by our own engineers. Homes in Bihar, Delhi and Uttarakhand; business anywhere in India.</p>
             <div className="hero-actions">
               <button className="btn btn-gold" onClick={openQuote}>Get a free rooftop plan</button>
-              <a className="btn btn-ghost" href="#business">Solar for business</a>
             </div>
             <div className="hero-meta">
               <span>MNRE-approved equipment</span>
