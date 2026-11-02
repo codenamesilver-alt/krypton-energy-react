@@ -21,14 +21,15 @@ export default function Hero() {
 
     const start = () => {
       if (timer) clearInterval(timer)
-      if (!isDesktop.matches || reducedMotion.matches) return
+      if (reducedMotion.matches) return
       timer = setInterval(() => setOrbIdx((v) => (v + 1) % roundImages.length), 2000)
     }
 
     if (isDesktop.matches) {
       document.body.classList.add('orb-photos')
-      start()
     }
+    setOrbIdx(0)
+    start()
 
     isDesktop.addEventListener('change', () => {
       if (isDesktop.matches) {
