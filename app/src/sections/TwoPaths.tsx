@@ -1,4 +1,7 @@
+import { useQuoteModal } from '../context/QuoteModal'
+
 export default function TwoPaths() {
+  const { open: openQuote } = useQuoteModal()
   return (
     <section className="section" id="homes">
       <div className="wrap">
@@ -21,7 +24,7 @@ export default function TwoPaths() {
               <li>Local engineers in Patna, Delhi and Uttarakhand</li>
               <li>Service response within 48 hours</li>
             </ul>
-            <a className="link-arrow" href="#quote">
+            <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>
               Plan my rooftop
               <svg width="16" height="8" viewBox="0 0 16 8" fill="none"><path d="M0 4h14M11 1l3 3-3 3" stroke="currentColor" strokeWidth="1.2" /></svg>
             </a>
@@ -37,7 +40,7 @@ export default function TwoPaths() {
               <li>Execution with zero-production-loss planning</li>
               <li>Monitoring and annual maintenance contracts</li>
             </ul>
-            <a className="link-arrow" href="#quote">
+            <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>
               Talk to our C&amp;I team
               <svg width="16" height="8" viewBox="0 0 16 8" fill="none"><path d="M0 4h14M11 1l3 3-3 3" stroke="currentColor" strokeWidth="1.2" /></svg>
             </a>
