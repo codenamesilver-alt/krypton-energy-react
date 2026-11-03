@@ -32,7 +32,6 @@ export default function Footer() {
           <div>
             <h4>Resources</h4>
             <ul>
-              <li><Link to="/success-stories">Success Stories</Link></li>
               <li><Link to="/faq">FAQs</Link></li>
               <li><Link to="/blog">Blog</Link></li>
             </ul>

@@ -9,7 +9,6 @@ import './styles/whatsapp.css'
 import Home from './pages/Home'
 import AboutPage from './pages/About'
 import ProductsPage from './pages/Products'
-import SuccessStoriesPage from './pages/SuccessStories'
 import CalculatorPage from './pages/Calculator'
 import FAQPage from './pages/FAQ'
 
@@ -37,7 +36,7 @@ function AppShell() {
         {/* the Locations page now lives inside About Us */}
         <Route path="/locations" element={<Navigate to="/about" replace />} />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/success-stories" element={<SuccessStoriesPage />} />
+        <Route path="/success-stories" element={<Navigate to="/" replace />} />
         <Route path="/calculator" element={<CalculatorPage />} />
         <Route path="/faq" element={<FAQPage />} />
       </Routes>

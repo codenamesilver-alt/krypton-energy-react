@@ -13,7 +13,7 @@ export default function Hero() {
               <span className="line"><span>Sunlight,</span></span>
               <span className="line"><span>made <em>useful.</em></span></span>
             </h1>
-            <p className="hero-sub">Solar panels, inverters, batteries and EV chargers — specified, installed and serviced by our team. Homes in Bihar, Delhi and Uttarakhand; business anywhere in India.</p>
+            <p className="hero-sub">Solar panels, inverters, batteries and EV chargers — specified, installed and serviced by our team.</p>
             <div className="hero-actions">
               <button className="btn btn-gold" onClick={openQuote}>Get your Free Solar consultation</button>
             </div>
