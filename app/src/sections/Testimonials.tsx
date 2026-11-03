@@ -16,8 +16,8 @@ export default function Testimonials() {
   const count = testimonials.length
 
   const gap = 24
-  const slidePct = 0.72 // each slide takes 72% of the viewport, leaving 14% peek on each side
-  const peek = (1 - slidePct) / 2
+  const slidePct = 1 // one full testimonial at a time
+  const peek = 0
 
   useEffect(() => {
     const measure = () => {
