@@ -32,10 +32,7 @@ export default function ContactPage() {
               <h3>Patna office</h3>
               <p>Shop #1 GF, Krishna Apt Coloney, More Kankarbagh, Patna, 800020</p>
             </div>
-            <div className="contact-card">
-              <h3>We serve</h3>
-              <p>Patna · Delhi · Uttarakhand · Commercial &amp; industrial projects across India</p>
-            </div>
+
           </div>
 
           <div className="contact-cta">
