@@ -45,18 +45,24 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   /* ---------- header ---------- */
   .site-head{
     position:fixed;inset:0 0 auto;z-index:100;
-    background:#000;
+    /* solid black on the left, fading into the page background on the right
+       so the header blends into the hero instead of sitting on it as a bar */
+    background:linear-gradient(90deg,#000 0%,#000 22%,rgba(30,34,42,.55) 60%,rgba(30,34,42,0) 100%);
     border-bottom:1px solid transparent;
     transition:border-color .4s var(--ease);
   }
   .site-head.is-stuck{
-    background:#000;
+    background:linear-gradient(90deg,#000 0%,#000 22%,var(--ink) 100%);
     border-bottom-color:rgba(228,209,142,.18);
   }
-  .head-inner{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+  .head-inner{display:flex;align-items:center;justify-content:space-between;height:92px;gap:24px}
   .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;margin-left:14px}
+  .site-head .brand{margin-left:clamp(14px,2.8vw,40px)}
+  /* keep the tight mid-size header from losing more horizontal room */
+  @media (max-width:1150px) and (min-width:1001px){ .site-head .brand{margin-left:14px} }
   /* real logo: transparent derivative of the supplied file; artwork untouched */
   .brand-logo{display:block;height:42px;width:auto}
+  .site-head .brand-logo{height:clamp(42px,4vw,54px)}
   .nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)}
   .nav a{font-size:14.5px;font-weight:400;color:rgba(247,246,242,.72);letter-spacing:.02em;position:relative;padding-block:6px;transition:color .25s}
   .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold-light);transition:right .35s var(--ease)}
@@ -91,7 +97,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .link-arrow:hover svg{transform:translateX(5px)}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;padding-top:150px;padding-bottom:0;overflow:hidden}
+  .hero{position:relative;padding-top:164px;padding-bottom:0;overflow:hidden}
   .hero::before{
     content:"";position:absolute;inset:0;pointer-events:none;
     background:
@@ -313,13 +319,14 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .menu-btn{display:flex}
   }
   @media (max-width:560px){
-    .hero{padding-top:118px}
+    .hero{padding-top:130px}
     .orb-label{font-size:8.5px;letter-spacing:.18em}
     .tile{padding:13px 14px 15px}
     .tile-name{font-size:16px}
     .tile-spec{font-size:10px}
     .tile-arrow{display:none}
     .brand-logo{height:32px}
+    .site-head .brand-logo{height:32px}
     .steps{grid-template-columns:1fr}
     .results{grid-template-columns:1fr}
     .place-row{grid-template-columns:1fr}
@@ -327,7 +334,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   }
   /* short laptop viewports: keep the product shelf on the first screen */
   @media (max-height:840px) and (min-width:1001px){
-    .hero{padding-top:110px}
+    .hero{padding-top:122px}
     .place-line{margin-bottom:22px}
     .hero h1{font-size:clamp(36px,4.8vw,62px);margin-bottom:20px}
     .hero-sub{font-size:15px;margin-bottom:26px}
@@ -343,8 +350,8 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
 
 /* ---------- mobile menu (React) ---------- */
-.mobile-menu{display:flex;position:fixed;inset:78px 0 auto;flex-direction:column;
-  background:#000;padding:28px 24px;border-bottom:1px solid rgba(228,209,142,.18);gap:18px;
+.mobile-menu{display:flex;position:fixed;inset:92px 0 auto;flex-direction:column;
+  background:linear-gradient(90deg,#000 0%,var(--ink) 100%);padding:28px 24px;border-bottom:1px solid rgba(228,209,142,.18);gap:18px;
   font-size:16px;z-index:99}
 .mobile-menu a{font-size:14.5px;color:rgba(247,246,242,.78);padding-block:4px}
 .mobile-menu a:hover{color:var(--gold-light)}

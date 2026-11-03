@@ -55,7 +55,6 @@ export default function Hero() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <div className="place-line"><span className="dot" aria-hidden="true" />Bihar · Delhi · Uttarakhand</div>
             <h1>
               <span className="line"><span>Sunlight,</span></span>
               <span className="line"><span>made <em>useful.</em></span></span>
