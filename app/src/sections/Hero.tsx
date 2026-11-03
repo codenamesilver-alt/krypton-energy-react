@@ -53,7 +53,7 @@ export default function Hero() {
               <span className="line"><span>Powering a Smarter,</span></span>
               <span className="line"><span>Greener <em>Tomorrow.</em></span></span>
             </h1>
-            <p className="hero-sub">Bringing Australian experience and innovative energy solutions to India. Empowering homes and businesses with cleaner energy, lower electricity costs and greater energy independence.</p>
+            <p className="hero-sub">Bringing Australian expertise to India with smarter energy solutions that help homes and businesses lower electricity bills and build a greener future.</p>
             <div className="hero-actions">
               <button className="btn btn-gold btn-pill" onClick={openQuote}>Get your Free Solar consultation</button>
             </div>
