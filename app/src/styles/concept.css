@@ -141,6 +141,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .hero-meta{display:flex;flex-wrap:nowrap;gap:6px 14px;font-size:11px;color:var(--muted);letter-spacing:.03em;width:100%;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
   .hero-meta::-webkit-scrollbar{display:none}
   .hero-meta span{display:flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap}
+  .hero-meta .sep{font-size:16px;color:var(--gold-light);opacity:1}
   /* subtle lift so the smaller copy stays crisp on the ink canvas */
   .hero h1,.hero-sub,.hero-meta{text-shadow:0 2px 20px rgba(0,0,0,.6)}
 
