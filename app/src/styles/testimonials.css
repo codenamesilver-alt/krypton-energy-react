@@ -157,6 +157,8 @@
 
 .testi-text {
   margin: 44px 0 0;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  font-style: italic;
   font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
