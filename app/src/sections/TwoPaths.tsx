@@ -33,10 +33,10 @@ export default function TwoPaths() {
             <h3>Commercial &amp; Industrial Solar Solutions</h3>
             <p>We provide solar solutions for factories, offices, warehouses, shops and other commercial spaces. Our systems help businesses generate their own electricity, reduce monthly power bills and depend less on grid electricity.</p>
             <ul className="path-list">
-              <li>Load study and feasibility report</li>
-              <li>Rooftop, ground-mount and hybrid systems</li>
-              <li>Execution with zero-production-loss planning</li>
-              <li>Monitoring and annual maintenance contracts</li>
+              <li>Site inspection and energy consumption assessment.</li>
+              <li>Customised solar solutions for businesses and industries.</li>
+              <li>Complete installation, setup and grid connection support.</li>
+              <li>Ongoing maintenance and after-sales service.</li>
             </ul>
             <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>
               Talk to our C&amp;I team
