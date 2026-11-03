@@ -101,34 +101,15 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:100svh;padding-top:314px;padding-bottom:0;overflow:hidden}
-  /* golden frame, brought 10px inwards on the left and right sides */
-  .hero::after{
-    content:"";position:absolute;
-    top:90px;left:10px;right:10px;bottom:auto;
-    width:auto;max-width:calc(100% - 20px);
-    height:auto;max-height:calc(100svh - 90px);
-    aspect-ratio:16/9;
-    margin-inline:auto;
-    z-index:3;pointer-events:none;
-    border:1px solid var(--gold);
-  }
   /* full-bleed background video, framed from just under the fixed header
      (92px bar + 1px border) so the whole frame, including the closing caption,
-     stays on screen and nothing sits behind the nav; cover fills the width so
-     there are no side bars/cutoff */
+     stays on screen and nothing sits behind the nav */
   .hero-media{
-    position:absolute;top:90px;left:10px;right:10px;bottom:auto;
-    width:auto;max-width:calc(100% - 20px);
-    height:auto;max-height:calc(100svh - 90px);
-    aspect-ratio:16/9;
-    margin-inline:auto;
-    z-index:0;overflow:hidden;pointer-events:none;
-    background:#0b0d11 url('/media/krypton-hero-poster.jpg') center/contain no-repeat;
+    position:absolute;inset:108px 0 0;z-index:0;overflow:hidden;pointer-events:none;
+    background:#0b0d11 url('/media/krypton-hero-poster.jpg') center/cover no-repeat;
   }
-  /* video fills the 16:9 frame exactly (zero cuts, no bars) */
-  .hero-media .hero-video{
-    display:block;width:100%;height:100%;
-    object-fit:contain;object-position:center center;
+  .hero-media video{
+    display:block;width:100%;height:100%;object-fit:cover;object-position:center bottom;
   }
   /* footage plays at full brightness; a soft scrim sits only under the copy */
   .hero-media::after{
