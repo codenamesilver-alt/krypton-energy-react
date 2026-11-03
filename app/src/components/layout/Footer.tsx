@@ -10,7 +10,6 @@ export default function Footer() {
             <a className="brand" href="#" aria-label="Krypton Energy - home">
               <img className="brand-logo" src={logo} width="1023" height="218" alt="Krypton Energy - Electricity Redefined" />
             </a>
-            <p>Solar panels, inverters, batteries and EV chargers. Homes in Bihar, Delhi and Uttarakhand. Commercial and industrial projects across India.</p>
           </div>
           <div>
             <h4>Explore</h4>

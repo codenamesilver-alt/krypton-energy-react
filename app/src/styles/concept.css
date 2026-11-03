@@ -62,6 +62,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     gap:clamp(32px,3.6vw,52px);padding-left:clamp(14px,5vw,72px)}
   .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;margin-left:70px}
   .foot-brand .brand{margin-left:150px}
+  .foot-brand .brand-logo{height:clamp(46px,4.4vw,60px);width:auto;max-width:none}
   /* keep the tight mid-size header from losing more horizontal room */
   @media (max-width:1150px) and (min-width:1001px){ .head-inner{padding-left:14px;gap:16px} }
 
