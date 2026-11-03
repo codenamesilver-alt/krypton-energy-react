@@ -42,6 +42,7 @@ export default function Footer() {
               <li><a href="mailto:info@kryptonenergy.in">info@kryptonenergy.in</a></li>
               <li>{'Patna \u00B7 Delhi \u00B7 Uttarakhand'}</li>
               <li>{'B-12, Okhla Industrial Area Phase-2, New Delhi \u2013 110020'}</li>
+              <li>{'Shop #1 GF, Krishna Apt Coloney, More Kankarbagh, Patna, 800020'}</li>
             </ul>
           </div>
         </div>
