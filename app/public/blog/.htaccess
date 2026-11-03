@@ -1,0 +1,32 @@
+# KRYPTON blog — Apache configuration
+#
+# Pretty article URLs plus hardening. Every rule is guarded so a host without
+# mod_rewrite still serves /blog/ and /blog/post.php?slug=... normally.
+
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Real files, folders, and symlinks win: /blog/admin/, /blog/assets/,
+    # /blog/uploads/ and index.php keep working untouched.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Sitemap at /blog/sitemap.xml
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+    # One slug segment -> post.php. Slugs are [a-z0-9-] only.
+    RewriteRule ^([a-z0-9-]+)/?$ post.php?slug=$1 [L,QSA]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<FilesMatch "^(config\.php|config\.example\.php|schema\.sql)$">
+    Require all denied
+</FilesMatch>

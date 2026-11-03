@@ -1,0 +1,11 @@
+# Uploaded media must never execute code.
+Options -Indexes
+
+<FilesMatch "\.(php|phtml|phar|cgi|pl|py|sh|htm|html)$">
+  Require all denied
+</FilesMatch>
+
+# Serve only known image types; anything else is a 403.
+<FilesMatch "\.(jpg|jpeg|png|webp)$">
+  Require all granted
+</FilesMatch>
