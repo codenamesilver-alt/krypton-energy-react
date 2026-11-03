@@ -30,7 +30,7 @@ export default function About() {
         <div className="founder-split">
           <div className="founder-message">
             <div className="kicker">A message from our founder</div>
-            <h3>Building a cleaner tomorrow, one rooftop at a time.</h3>
+            <h3>KRYPTON ENERGY IS COMING TO INDIA!</h3>
             <p>At Krypton, we believe every home and business deserves access to clean, affordable energy. Our mission is to make solar simple, reliable and within reach — for everyone.</p>
             <p className="founder-sign">— Founder, Krypton Energy</p>
           </div>
