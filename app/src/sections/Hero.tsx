@@ -33,19 +33,6 @@ export default function Hero() {
       <section className="hero">
         <div className="hero-media" aria-hidden="true">
           <video
-            key={`bg-${videoSrc}`}
-            className="hero-video-bg"
-            src={videoSrc}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            tabIndex={-1}
-            disablePictureInPicture
-            disableRemotePlayback
-          />
-          <video
             key={videoSrc}
             className="hero-video"
             src={videoSrc}
