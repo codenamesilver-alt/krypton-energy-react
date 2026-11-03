@@ -16,12 +16,14 @@ export default function CalculatorPage() {
 
   return (
     <main id="main">
-      <iframe
-        ref={iframeRef}
-        src="/solar-calculator.html"
-        title="Solar Savings Calculator"
-        style={{ width: '100%', height: `${height}px`, border: 'none', display: 'block' }}
-      />
+      <div style={{ paddingTop: 113 }}>
+        <iframe
+          ref={iframeRef}
+          src="/solar-calculator.html"
+          title="Solar Savings Calculator"
+          style={{ width: '100%', height: `${height}px`, border: 'none', display: 'block' }}
+        />
+      </div>
     </main>
   )
 }
