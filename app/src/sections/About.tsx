@@ -31,8 +31,11 @@ export default function About() {
           <div className="founder-message">
             <div className="kicker">A message from our founder</div>
             <h3>KRYPTON ENERGY IS COMING TO INDIA!</h3>
-            <p>At Krypton, we believe every home and business deserves access to clean, affordable energy. Our mission is to make solar simple, reliable and within reach — for everyone.</p>
-            <p className="founder-sign">— Founder, Krypton Energy</p>
+            <p>Our journey began with a vision to make energy smarter, cleaner and more affordable. Having built our experience in Australia, we're now bringing that vision home to India!</p>
+            <p>From Solar Solutions, Battery Storage, EV Chargers, Inverters and Smart Energy Solutions, we're here to power homes and businesses with technology built for a sustainable future.</p>
+            <p>Our mission is simple: help you take control of rising electricity costs, reduce those never-ending power bills and increase the long-term value of your home or business.</p>
+            <p>This is more than an expansion. It's a commitment to a greener future, greater energy independence and a better tomorrow for the next generation.</p>
+            <p className="founder-sign">Australia to India. One Vision. One Mission.</p>
           </div>
           <div className="founder-image" style={{ aspectRatio: '1200 / 800', overflow: 'hidden', borderRadius: 2, background: '#151922' }}>
             <img src={ptyImg} alt="Krypton installation team — residential rooftop commissioning in Patna" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
