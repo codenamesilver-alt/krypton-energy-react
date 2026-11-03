@@ -57,21 +57,21 @@ export default function Hero() {
             <div className="hero-actions">
               <button className="btn btn-gold btn-pill" onClick={openQuote}>Get your Free Solar consultation</button>
             </div>
-            <div className="hero-points-wrap">
-              <ul className="hero-points">
-                <li>Solar Solutions for Homes &amp; Businesses</li>
-                <li>Battery Storage &amp; Inverters</li>
-                <li>EV Charging Solutions</li>
-                <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
-                <li>Smart &amp; Sustainable Energy Solutions</li>
-                <li>Solar Solutions for Homes &amp; Businesses</li>
-                <li>Battery Storage &amp; Inverters</li>
-                <li>EV Charging Solutions</li>
-                <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
-                <li>Smart &amp; Sustainable Energy Solutions</li>
-              </ul>
-            </div>
           </div>
+        </div>
+        <div className="hero-points-wrap">
+          <ul className="hero-points">
+            <li>Solar Solutions for Homes &amp; Businesses</li>
+            <li>Battery Storage &amp; Inverters</li>
+            <li>EV Charging Solutions</li>
+            <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
+            <li>Smart &amp; Sustainable Energy Solutions</li>
+            <li>Solar Solutions for Homes &amp; Businesses</li>
+            <li>Battery Storage &amp; Inverters</li>
+            <li>EV Charging Solutions</li>
+            <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
+            <li>Smart &amp; Sustainable Energy Solutions</li>
+          </ul>
         </div>
         <div className="hero-rule" />
       </section>
