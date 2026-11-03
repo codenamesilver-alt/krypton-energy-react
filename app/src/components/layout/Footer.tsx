@@ -32,7 +32,7 @@ export default function Footer() {
             <h4>Resources</h4>
             <ul>
               <li><Link to="/faq">FAQs</Link></li>
-              <li><Link to="/blog">Our Blog</Link></li>
+              <li><a href="http://localhost/blog/">Our Blog</a></li>
             </ul>
           </div>
           <div>
