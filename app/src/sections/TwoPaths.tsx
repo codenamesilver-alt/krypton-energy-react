@@ -15,7 +15,7 @@ export default function TwoPaths() {
           <article className="path path-home">
             <div className="path-tag">For homes</div>
             <h3>Generate Your Own Solar Power</h3>
-            <p>Harness the power of the sun to generate clean electricity, lower your energy costs and move towards a more sustainable future.</p>
+            <p>We design your solar system around your energy needs, manage the DISCOM approvals and PM Surya Ghar subsidy process, and provide continued support even after installation and commissioning.</p>
             <ul className="path-list">
               <li>Free roof survey and shading check</li>
               <li>Subsidy and net-metering paperwork</li>
