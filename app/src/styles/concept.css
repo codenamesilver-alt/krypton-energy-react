@@ -157,6 +157,37 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);z-index:3}
 
+  /* ---------- blog admin ---------- */
+  .admin-login-form,.admin-form{display:flex;flex-direction:column;gap:16px;max-width:560px}
+  .admin-login-form .field,.admin-form .field{display:flex;flex-direction:column;gap:6px}
+  .admin-login-form label,.admin-form label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .admin-login-form input,.admin-login-form textarea,.admin-login-form select,
+  .admin-form input,.admin-form textarea,.admin-form select{
+    background:var(--ink-2);border:1px solid var(--hair);border-radius:8px;padding:10px 14px;
+    color:var(--white);font-size:14px;font-family:inherit;transition:border-color .2s}
+  .admin-login-form input:focus,.admin-login-form textarea:focus,.admin-login-form select:focus,
+  .admin-form input:focus,.admin-form textarea:focus,.admin-form select:focus{border-color:var(--gold);outline:none}
+  .admin-form textarea.admin-content-textarea{font-family:monospace;font-size:13px;min-height:200px}
+  .admin-error{color:#ff6b6b;font-size:13px;margin:0}
+  .admin-topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+  .admin-topbar-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .admin-user{font-size:12px;color:var(--muted)}
+  .admin-post-list{display:flex;flex-direction:column;gap:12px}
+  .admin-post-row{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:16px 20px;background:var(--ink-2);border:1px solid var(--hair);border-radius:10px}
+  .admin-post-info{flex:1;min-width:0}
+  .admin-post-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:4px}
+  .admin-post-meta{display:flex;gap:10px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+  .admin-status{padding:2px 8px;border-radius:999px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+  .admin-status-published{background:rgba(127,227,176,.15);color:#7fe3b0}
+  .admin-status-draft{background:rgba(228,209,142,.15);color:var(--gold-light)}
+  .admin-post-actions{display:flex;gap:8px;flex-shrink:0}
+  .admin-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+  .admin-modal-box{background:var(--ink);border:1px solid var(--hair);border-radius:16px;padding:32px;max-width:720px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
+  .admin-form-title{font-size:20px;font-weight:400;letter-spacing:-.02em;margin:0 0 20px;color:var(--white)}
+  .admin-form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .blog-loading,.blog-error,.blog-empty{font-size:15px;color:var(--muted);padding:24px 0}
+
   /* ---------- blog ---------- */
   .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:32px}
   .blog-card{background:rgba(247,246,242,.03);border:1px solid var(--hair);border-radius:14px;

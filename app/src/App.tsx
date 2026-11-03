@@ -14,6 +14,7 @@ import FAQPage from './pages/FAQ'
 import ContactPage from './pages/Contact'
 import BlogPage from './pages/Blog'
 import BlogPostPage from './pages/BlogPost'
+import BlogAdminPage from './pages/BlogAdmin'
 
 function AppShell() {
   const { pathname } = useLocation()
@@ -45,6 +46,8 @@ function AppShell() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/admin" element={<BlogAdminPage />} />
+        <Route path="/admin" element={<BlogAdminPage />} />
         <Route path="/blog" element={<BlogPage />} />
       </Routes>
       <Footer />
