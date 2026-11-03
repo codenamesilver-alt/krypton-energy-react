@@ -21,7 +21,7 @@ $main = static fn (string $query = ''): string => $siteRoot . 'index.html' . $qu
           <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <div class="absolute left-1/2 top-full z-40 w-64 -translate-x-1/2 pt-2">
-          <div class="rounded-2xl border border-[#e4d18e]/30 bg-[#0B0F17]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
+          <div class="rounded-2xl border border-[#e4d18e]/30 bg-[#1e222a]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
             <a href="<?= e($main('?page=page-residential-architecture')) ?>" class="block rounded-xl px-4 py-2.5 text-sm text-gray-200 transition-colors hover:bg-white/10 hover:text-[#e4d18e]">Solar for Home</a>
             <a href="<?= e($main('?page=page-business')) ?>" class="block rounded-xl px-4 py-2.5 text-sm text-gray-200 transition-colors hover:bg-white/10 hover:text-[#e4d18e]">Solar for Business</a>
             <a href="<?= e($main('?page=page-ev-charging')) ?>" class="block rounded-xl px-4 py-2.5 text-sm text-gray-200 transition-colors hover:bg-white/10 hover:text-[#e4d18e]">EV Chargers</a>
@@ -36,7 +36,7 @@ $main = static fn (string $query = ''): string => $siteRoot . 'index.html' . $qu
           <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <div class="absolute left-1/2 top-full z-40 w-64 -translate-x-1/2 pt-2">
-          <div class="rounded-2xl border border-[#e4d18e]/30 bg-[#0B0F17]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
+          <div class="rounded-2xl border border-[#e4d18e]/30 bg-[#1e222a]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
             <a href="<?= e($main('?page=page-rooftop-solar')) ?>" class="block rounded-xl px-4 py-2.5 text-sm text-gray-200 transition-colors hover:bg-white/10 hover:text-[#e4d18e]">Solar Panel</a>
             <a href="<?= e($main('?page=page-ev-charging')) ?>" class="block rounded-xl px-4 py-2.5 text-sm text-gray-200 transition-colors hover:bg-white/10 hover:text-[#e4d18e]">EV Charger</a>
             <a href="<?= e($main('?page=page-storage')) ?>" class="block rounded-xl px-4 py-2.5 text-sm text-gray-200 transition-colors hover:bg-white/10 hover:text-[#e4d18e]">Lithium Battery</a>
@@ -57,7 +57,7 @@ $main = static fn (string $query = ''): string => $siteRoot . 'index.html' . $qu
     </div>
   </div>
 
-  <div id="blog-mobile-menu" class="hidden border-t border-white/10 bg-[#0B0F17]/95 px-4 py-4 backdrop-blur-xl lg:hidden">
+  <div id="blog-mobile-menu" class="hidden border-t border-white/10 bg-[#1e222a]/95 px-4 py-4 backdrop-blur-xl lg:hidden">
     <nav class="grid gap-1 text-sm text-gray-200" aria-label="Mobile">
       <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="<?= e($main()) ?>">Home</a>
       <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="<?= e($main('?page=page-about')) ?>">About Us</a>

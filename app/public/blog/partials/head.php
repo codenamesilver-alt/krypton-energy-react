@@ -31,7 +31,7 @@ $blogRoot = $assetBase;
   <meta name="description" content="<?= e($pageDescription) ?>">
   <meta name="robots" content="<?= e($robots) ?>">
   <link rel="canonical" href="<?= e($canonical) ?>">
-  <meta name="theme-color" content="#0B0F17">
+  <meta name="theme-color" content="#1e222a">
   <link rel="icon" href="<?= e($siteRoot) ?>favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="<?= e($siteRoot) ?>favicon.svg">
 
@@ -60,5 +60,5 @@ $blogRoot = $assetBase;
   <link rel="stylesheet" href="<?= e($blogRoot) ?>assets/blog.css">
   <?= $extraHead ?>
 </head>
-<body class="min-h-screen bg-[#0B0F17] text-[#F3F4F6] antialiased<?= $isAdmin ? ' admin-body' : '' ?>">
+<body class="min-h-screen bg-[#1e222a] text-[#F3F4F6] antialiased<?= $isAdmin ? ' admin-body' : '' ?>">
 <a href="#main-content" class="skip-link">Skip to content</a>

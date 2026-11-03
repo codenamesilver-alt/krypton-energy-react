@@ -6,8 +6,8 @@ $siteRoot = $assetBase . '../';
 $main = static fn (string $query = ''): string => $siteRoot . 'index.html' . $query;
 $blogHome = $assetBase . 'index.php';
 ?>
-<footer data-krypton-footer class="relative z-30 mt-20 w-full border-t border-[#e4d18e]/20 bg-[#0B0F17]/35 backdrop-blur-xl">
-  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#0B0F17]/20 to-[#0B0F17]/60" aria-hidden="true"></div>
+<footer data-krypton-footer class="relative z-30 mt-20 w-full border-t border-[#e4d18e]/20 bg-[#1e222a]/35 backdrop-blur-xl">
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#1e222a]/20 to-[#1e222a]/60" aria-hidden="true"></div>
 
   <div class="relative mx-auto max-w-[92rem] px-4 pb-20 pt-6 sm:px-6 md:pb-2 lg:px-8">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-12 lg:gap-8">

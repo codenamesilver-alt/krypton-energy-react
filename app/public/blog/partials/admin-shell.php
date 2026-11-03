@@ -13,7 +13,7 @@ $currentAdmin = $currentAdmin ?? auth_user();
 $notice = flash('notice');
 $error = flash('error');
 ?>
-<div class="border-b border-white/10 bg-[#0B0F17]/70 backdrop-blur-xl">
+<div class="border-b border-white/10 bg-[#1e222a]/70 backdrop-blur-xl">
   <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <a href="<?= e($assetBase) ?>admin/dashboard.php" class="flex items-center gap-3">
       <img src="<?= e($assetBase) ?>../kryptonlogo.png" alt="Krypton Energy" class="h-10 w-auto">

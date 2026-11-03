@@ -1,9 +1,9 @@
 /* KRYPTON Energy — Journal theme
-   Shares the site's tokens: #0B0F17 ground, #e4d18e / #b48c48 gold, Poppins. */
+   Shares the site's tokens: #1e222a ground, #e4d18e / #b48c48 gold, Poppins. */
 
 :root {
-  --ink: #0B0F17;
-  --ink-soft: #111827;
+  --ink: #1e222a;
+  --ink-soft: #252a33;
   --paper: #F3F4F6;
   --gold: #e4d18e;
   --gold-deep: #b48c48;
@@ -57,7 +57,7 @@ select:focus-visible {
   z-index: 100;
   border-radius: 9999px;
   background: var(--gold);
-  color: #0B0F17;
+  color: #1e222a;
   padding: 0.6rem 1rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -277,7 +277,7 @@ select:focus-visible {
 
 .btn-gold {
   background: linear-gradient(90deg, var(--gold), var(--gold-deep));
-  color: #0B0F17;
+  color: #1e222a;
   box-shadow: 0 14px 30px -14px rgba(228, 209, 142, 0.55);
 }
 
@@ -557,7 +557,7 @@ select:focus-visible {
 .ql-toolbar.ql-snow .ql-stroke { stroke: #D1D5DB; }
 .ql-toolbar.ql-snow .ql-fill { fill: #D1D5DB; }
 .ql-toolbar.ql-snow .ql-picker { color: #D1D5DB; }
-.ql-toolbar.ql-snow .ql-picker-options { background: #111827; }
+.ql-toolbar.ql-snow .ql-picker-options { background: #252a33; }
 
 .ql-container.ql-snow {
   border-radius: 0 0 0.9rem 0.9rem;
