@@ -73,8 +73,8 @@
 .testi-stack {
   position: relative;
   width: 100%;
-  max-width: 760px;
-  height: 420px;
+  max-width: 920px;
+  height: 560px;
   transform-style: preserve-3d;
 }
 
@@ -84,8 +84,8 @@
   inset: 0;
   margin: auto;
   width: 100%;
-  max-width: 640px;
-  height: 380px;
+  max-width: 800px;
+  height: 520px;
   border-radius: 24px;
   padding: 36px 36px 28px;
   display: flex;
@@ -111,7 +111,7 @@
 .testi-card--left {
   z-index: 2;
   opacity: 0.55;
-  transform: translateX(calc(-50% - 320px)) translateZ(-60px) scale(0.86) rotateY(6deg);
+  transform: translateX(calc(-50% - 400px)) translateZ(-60px) scale(0.86) rotateY(6deg);
   background: rgba(207, 245, 228, 0.18);
   color: #eef4f1;
   backdrop-filter: blur(6px);
@@ -121,7 +121,7 @@
 .testi-card--right {
   z-index: 2;
   opacity: 0.55;
-  transform: translateX(calc(-50% + 320px)) translateZ(-60px) scale(0.86) rotateY(-6deg);
+  transform: translateX(calc(-50% + 400px)) translateZ(-60px) scale(0.86) rotateY(-6deg);
   background: rgba(207, 245, 228, 0.18);
   color: #eef4f1;
   backdrop-filter: blur(6px);
@@ -275,16 +275,16 @@
 
 /* responsive */
 @media (max-width: 900px) {
-  .testi-stage { padding: 20px 48px; min-height: 380px; }
-  .testi-stack { max-width: 100%; height: 360px; }
-  .testi-card { max-width: 100%; height: 340px; padding: 28px 24px 22px; }
-  .testi-card--left { transform: translateX(calc(-50% - 220px)) translateZ(-60px) scale(0.86) rotateY(6deg); }
-  .testi-card--right { transform: translateX(calc(-50% + 220px)) translateZ(-60px) scale(0.86) rotateY(-6deg); }
+  .testi-stage { padding: 20px 48px; min-height: 460px; }
+  .testi-stack { max-width: 100%; height: 440px; }
+  .testi-card { max-width: 100%; height: 420px; padding: 28px 24px 22px; }
+  .testi-card--left { transform: translateX(calc(-50% - 260px)) translateZ(-60px) scale(0.86) rotateY(6deg); }
+  .testi-card--right { transform: translateX(calc(-50% + 260px)) translateZ(-60px) scale(0.86) rotateY(-6deg); }
 }
 @media (max-width: 640px) {
-  .testi-stage { padding: 16px 40px; min-height: 360px; }
-  .testi-stack { height: 340px; }
-  .testi-card { height: 320px; padding: 24px 20px 20px; }
+  .testi-stage { padding: 16px 40px; min-height: 420px; }
+  .testi-stack { height: 400px; }
+  .testi-card { height: 380px; padding: 24px 20px 20px; }
   .testi-card--left,
   .testi-card--right { opacity: 0.35; transform: translateX(-50%) translateZ(-80px) scale(0.8); }
   .testi-text { font-size: 14px; }
