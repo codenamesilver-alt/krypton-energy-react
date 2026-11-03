@@ -12,7 +12,7 @@ export default function RoofToMeter() {
         <section className="rtm-timeline" aria-label="Four steps from roof survey to system handover">
           <div className="rtm-track" aria-hidden="true" />
 
-          <article className="rtm-step">
+          <article className="rtm-step reveal">
             <div className="rtm-icon-wrap">
               <svg viewBox="0 0 48 48" aria-hidden="true">
                 <path d="M5 25 24 9l19 16M11 22v18h26V22M19 40V28h10v12" />
@@ -25,7 +25,7 @@ export default function RoofToMeter() {
             <span className="rtm-pill">Assess your roof</span>
           </article>
 
-          <article className="rtm-step">
+          <article className="rtm-step reveal">
             <div className="rtm-icon-wrap">
               <svg viewBox="0 0 48 48" aria-hidden="true">
                 <path d="M8 39h32M12 35V13h24v22M17 19h14M17 25h14M17 31h8" />
@@ -38,7 +38,7 @@ export default function RoofToMeter() {
             <span className="rtm-pill">Designed for your needs</span>
           </article>
 
-          <article className="rtm-step">
+          <article className="rtm-step reveal">
             <div className="rtm-icon-wrap">
               <svg viewBox="0 0 48 48" aria-hidden="true">
                 <path d="m7 20 17-12 17 12M12 18v22h24V18M19 40V27h10v13" />
@@ -51,7 +51,7 @@ export default function RoofToMeter() {
             <span className="rtm-pill">Installed by our crew</span>
           </article>
 
-          <article className="rtm-step">
+          <article className="rtm-step reveal">
             <div className="rtm-icon-wrap">
               <svg viewBox="0 0 48 48" aria-hidden="true">
                 <rect x="9" y="6" width="30" height="36" rx="4" />
