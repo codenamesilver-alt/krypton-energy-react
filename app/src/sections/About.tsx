@@ -61,7 +61,7 @@ export default function About() {
             </div>
           </div>
           <div className="endorsement-grid">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
+            {[1, 2].map((n) => (
               <div className="endorsement-slot" key={n}>
                 <span className="placeholder-text">Logo {n}</span>
               </div>

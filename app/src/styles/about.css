@@ -23,12 +23,11 @@
 .founder-sign{font-size:13px;color:var(--gold-light);font-style:italic;margin-top:8px !important}
 .founder-signature{display:flex;align-items:center;gap:16px;margin-top:16px}
 .endorsements-section{padding:48px 0 32px}
-.endorsement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
-.endorsement-slot{aspect-ratio:3/2;background:var(--ink-2);border:1px dashed var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:border-color .25s,background .25s}
+.endorsement-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
+.endorsement-slot{aspect-ratio:16/9;background:var(--ink-2);border:1px dashed var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:border-color .25s,background .25s;min-height:260px}
 .endorsement-slot:hover{border-color:var(--gold);background:var(--ink-3)}
-.endorsement-slot .placeholder-text{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);opacity:.5}
-@media (max-width:900px){.endorsement-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:600px){.endorsement-grid{grid-template-columns:repeat(2,1fr)}}
+.endorsement-slot .placeholder-text{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);opacity:.5}
+@media (max-width:760px){.endorsement-grid{grid-template-columns:1fr}}
 .founder-logo{height:60px;width:auto;display:block;background:#000;padding:4px 8px;border-radius:4px}
 .founder-name{font-size:15px;font-weight:500;color:var(--white);letter-spacing:.02em}
 .founder-image{width:100%}
