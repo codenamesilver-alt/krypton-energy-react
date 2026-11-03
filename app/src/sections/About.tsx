@@ -54,7 +54,6 @@ export default function About() {
             <div className="kicker">Our approach</div>
             <h2>Built around you. <span>Built for Indian conditions.</span></h2>
           </div>
-          <p>Whether you run a home, a factory, a warehouse or a commercial complex, we start by understanding your energy needs, then design a system to match. Not a generic package.</p>
         </div>
         <div className="about-cards five">
           <div className="about-card"><h3>Solutions built around you</h3><p>No one-size-fits-all systems. Every design is tailor-made for how you actually use power.</p></div>
