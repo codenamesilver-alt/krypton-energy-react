@@ -53,7 +53,7 @@ export default function Hero() {
               <span className="line"><span>Powering a Smarter,</span></span>
               <span className="line"><span>Greener <em>Tomorrow.</em></span></span>
             </h1>
-            <p className="hero-sub">Solar panels, inverters, batteries and EV chargers — specified, installed and serviced by our team.</p>
+            <p className="hero-sub">Bringing Australian experience and innovative energy solutions to India. Empowering homes and businesses with cleaner energy, lower electricity costs and greater energy independence.</p>
             <div className="hero-actions">
               <button className="btn btn-gold" onClick={openQuote}>Get your Free Solar consultation</button>
             </div>
