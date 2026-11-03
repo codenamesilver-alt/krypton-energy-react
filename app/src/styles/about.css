@@ -5,6 +5,9 @@
 .founder-message h3{font-size:clamp(22px,2.4vw,30px);font-weight:300;letter-spacing:-.02em;line-height:1.2;margin:0 0 14px;color:var(--white)}
 .founder-message p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 12px;max-width:46ch}
 .founder-sign{font-size:13px;color:var(--gold-light);font-style:italic;margin-top:8px !important}
+.founder-signature{display:flex;align-items:center;gap:16px;margin-top:16px}
+.founder-logo{height:40px;width:auto;display:block}
+.founder-name{font-size:15px;font-weight:500;color:var(--white);letter-spacing:.02em}
 .founder-image{width:100%}
 @media (max-width:760px){.founder-split{grid-template-columns:1fr}.founder-image{max-width:100%}}
 .about-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));

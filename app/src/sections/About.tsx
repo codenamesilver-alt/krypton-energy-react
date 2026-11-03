@@ -1,5 +1,6 @@
 import '../styles/about.css'
 import ptyImg from '../assets/about/pty.jpg'
+import logo from '../assets/brand/krypton-logo.png'
 import { useQuoteModal } from '../context/QuoteModal'
 
 export default function About() {
@@ -36,6 +37,10 @@ export default function About() {
             <p>Our mission is simple: help you take control of rising electricity costs, reduce those never-ending power bills and increase the long-term value of your home or business.</p>
             <p>This is more than an expansion. It's a commitment to a greener future, greater energy independence and a better tomorrow for the next generation.</p>
             <p className="founder-sign">Australia to India. One Vision. One Mission.</p>
+            <div className="founder-signature">
+              <img src={logo} alt="Krypton Energy" className="founder-logo" />
+              <span className="founder-name">Azka Masumi (Founder)</span>
+            </div>
           </div>
           <div className="founder-image" style={{ aspectRatio: '1200 / 800', overflow: 'hidden', borderRadius: 2, background: '#151922' }}>
             <img src={ptyImg} alt="Krypton installation team — residential rooftop commissioning in Patna" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
