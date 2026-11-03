@@ -12,7 +12,7 @@ export default function TwoPaths() {
         </div>
 
         <div className="paths">
-          <article className="path path-home path-with-tiles">
+          <article className="path path-biz path-with-tiles">
             <div className="path-content">
               <div className="path-tag">For business</div>
               <h3>Commercial &amp; Industrial Solar Solutions</h3>
