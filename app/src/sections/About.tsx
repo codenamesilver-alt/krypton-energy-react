@@ -39,7 +39,7 @@ export default function About() {
             <p className="founder-sign">Australia to India. One Vision. One Mission.</p>
             <div className="founder-signature">
               <img src={logo} alt="Krypton Energy" className="founder-logo" />
-              <span className="founder-name">Azka Masumi (Founder)</span>
+              <span className="founder-name">Azka Masumi<br />(Founder)</span>
             </div>
           </div>
           <div className="founder-image" style={{ aspectRatio: '1200 / 800', overflow: 'hidden', borderRadius: 2, background: '#151922' }}>
