@@ -9,7 +9,7 @@ export default function CalculatorPage() {
   useEffect(() => {
     const onMsg = (e: MessageEvent) => {
       if (e.data && e.data.type === 'calcHeight' && typeof e.data.height === 'number') {
-        setHeight(e.data.height + 8)
+        setHeight(e.data.height)
       }
       if (e.data && e.data.type === 'requestQuote') {
         openQuote()
