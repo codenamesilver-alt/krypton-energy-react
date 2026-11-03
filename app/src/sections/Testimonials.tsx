@@ -16,6 +16,7 @@ const testimonials: Testimonial[] = [
   { name: 'Amin Nazari', role: 'Verified customer', company: 'Residential', text: 'Called and received calls many but found Krypton Group as the best one. Azka helped me a lot to choose the right options with the best possible price. I found him and his group very honest, professional and fair. Lucky anyone closing the deal with him and his company.', initials: 'AN', accent: '#f9a8d4' },
   { name: 'Frank Stevenson', role: 'Verified customer', company: 'Residential', text: 'Krypton was fabulous with my install. They gave me a perfect system that can bring my bills to $0. With Christmas around the corner and rising power costs, I am glad I made the jump to Solar now with Krypton. Excellent workmanship with excellent communication. Thank you!', initials: 'FS', accent: '#fcd34d' },
   { name: 'Angel Velazquez', role: 'Verified customer', company: 'Residential', text: 'Really happy with the service from krypton group. Job was done very nicely. Got the heat pump and solar installed from them. Communication was spot on and really quick install. Really impressed. Thank you, we will recommend krypton group to all friends and family.', initials: 'AV', accent: '#c4b5fd' },
+  { name: 'Opyulums Solutions', role: 'Verified customer', company: 'Residential', text: 'Absolute Stunner... The attention to details, the communication skills mixed with a high level of EQ/IQ. This is a snippet of my experience working with Krypton Energy.\n\nIf there was a 6 Star option, I would easily give it.\n\nAzka was my contact point. A talented matured intellectual who made my installation process simpler than ABC. He was detailed, transparent and very intentional with making the best of my installation. At a point, I could feel he was heavily invested into making my solar install/experience one of the best.\n\nI enjoyed the interactions and the technical know how of this amazing man and his team. He is a very patient person and takes the time to ensure you come out of the conversation clear on the deliverables.\n\nHis technicians were also very detailed and customer centric ready to listen and explain what they were doing both on the roof and in my home.\n\nI would readily recommend Krypton Energy to any one who needs a solar installation done. Absolutely fantastic!.\n\nBottom line...\n\nWhen it comes to Excellent Customer Service Delivery, Krypton Energy is the Excellence Of Execution.', initials: 'OS', accent: '#fca5a5' },
 ]
 
 export default function Testimonials() {
@@ -99,7 +100,11 @@ export default function Testimonials() {
                   aria-label={`${t.name}, ${t.role}`}
                 >
                   <span className="testi-quote" aria-hidden="true">“</span>
-                  <p className="testi-text">{t.text}</p>
+                  <div className="testi-text">
+                    {t.text.split(/\n\n+/).map((para, pi) => (
+                      <p key={pi}>{para.trim()}</p>
+                    ))}
+                  </div>
                   <div className="testi-author">
                     <span className="testi-avatar" style={{ background: t.accent }}>{t.initials}</span>
                     <div>
