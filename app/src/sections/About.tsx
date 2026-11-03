@@ -30,7 +30,11 @@ export default function About() {
         </div>
 
         <div className="founder-split">
-          <div className="founder-message">
+          <div className="founder-message founder-frame">
+            <span className="corner corner-tl" aria-hidden="true" />
+            <span className="corner corner-tr" aria-hidden="true" />
+            <span className="corner corner-bl" aria-hidden="true" />
+            <span className="corner corner-br" aria-hidden="true" />
             <div className="kicker">A message from our founder</div>
             <h3>KRYPTON ENERGY IS COMING TO INDIA!</h3>
             <p>Our journey began with a vision to make energy smarter, cleaner and more affordable. Having built our experience in Australia, we're now bringing that vision home to India!</p>
