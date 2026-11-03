@@ -3,23 +3,37 @@
   background:radial-gradient(circle,rgba(228,209,142,.08),transparent 70%);filter:blur(40px);
   animation:testiDrift 12s ease-in-out infinite alternate;pointer-events:none;z-index:0}
 #testimonials .wrap{position:relative;z-index:1}
-@keyframes testiDrift{from{transform:translate(0,0)}to{transform:translate(-8%,6%)}}
-.testi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}
+
+.testi-carousel{position:relative;overflow:hidden;margin-top:32px;padding:8px 0}
+.testi-track{display:flex;gap:24px;will-change:transform}
+.testi-slide{flex:0 0 auto;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.testi-slide.is-active .testi-card{border-color:rgba(228,209,142,.32);box-shadow:0 12px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(228,209,142,.12)}
+
 .testi-card{background:rgba(247,246,242,.04);border:1px solid rgba(228,209,142,.18);border-radius:14px;
-  padding:28px 30px 24px;position:relative;transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),opacity .8s var(--ease);
+  padding:28px 30px 24px;position:relative;transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
   overflow:hidden;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
-  box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(228,209,142,.08);
-  opacity:0;transform:translateY(22px)}
-.testi-card.reveal.in{opacity:1;transform:translateY(0)}
-.testi-card.reveal:nth-of-type(2){transition-delay:.15s}
-.testi-card.reveal:nth-of-type(3){transition-delay:.3s}
-.testi-card.reveal:nth-of-type(4){transition-delay:.45s}
-.testi-card::before{content:"\201C";position:absolute;top:-8px;left:18px;font-size:96px;
-  line-height:1;color:var(--gold-light);opacity:.18;font-family:Georgia,serif;pointer-events:none}
-.testi-card:hover{transform:translateY(-4px);border-color:var(--hair)}
+  box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(228,209,142,.08);height:100%}
 .testi-card .quote{font-size:15px;font-weight:300;color:var(--muted);line-height:1.7;margin:0 0 18px;position:relative;z-index:1}
 .testi-card .author{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--hair-soft)}
 .testi-card .author .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-light);flex-shrink:0}
 .testi-card .author .name{font-size:13px;font-weight:500;color:var(--white);letter-spacing:-.01em}
 .testi-card .author .role{font-size:11px;color:var(--muted-2);letter-spacing:.06em;margin-top:2px}
-@media (max-width:760px){.testi-grid{grid-template-columns:1fr}}
+
+.testi-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--hair);background:rgba(30,34,42,.6);color:var(--gold-light);font-size:22px;
+  cursor:pointer;transition:background .25s,border-color .25s,color .25s;backdrop-filter:blur(8px);z-index:2;
+  display:flex;align-items:center;justify-content:center;line-height:1}
+.testi-nav:hover{background:var(--gold-light);color:var(--ink);border-color:var(--gold-light)}
+.testi-prev{left:8px}
+.testi-next{right:8px}
+
+.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.testi-dot{width:8px;height:8px;border-radius:50%;background:rgba(228,209,142,.25);border:0;cursor:pointer;
+  transition:background .25s,transform .25s;padding:0}
+.testi-dot.is-active{background:var(--gold-light);transform:scale(1.3)}
+
+@keyframes testiDrift{from{transform:translate(0,0)}to{transform:translate(-8%,6%)}}
+@media (max-width:760px){
+  .testi-nav{width:36px;height:36px;font-size:18px}
+  .testi-prev{left:4px}.testi-next{right:4px}
+}

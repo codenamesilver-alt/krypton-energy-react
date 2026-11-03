@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import '../styles/testimonials.css'
 
 const testimonials = [
@@ -8,6 +9,40 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
+  const [index, setIndex] = useState(0)
+  const [slideWidth, setSlideWidth] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const pausedRef = useRef(false)
+  const count = testimonials.length
+
+  const gap = 24
+  const slidePct = 0.72 // each slide takes 72% of the viewport, leaving 14% peek on each side
+  const peek = (1 - slidePct) / 2
+
+  useEffect(() => {
+    const measure = () => {
+      if (containerRef.current) {
+        setSlideWidth(containerRef.current.clientWidth * slidePct)
+      }
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [])
+
+  useEffect(() => {
+    if (count <= 1) return
+    const id = setInterval(() => {
+      if (!pausedRef.current) setIndex((i) => (i + 1) % count)
+    }, 5500)
+    return () => clearInterval(id)
+  }, [count])
+
+  const prev = () => setIndex((i) => (i - 1 + count) % count)
+  const next = () => setIndex((i) => (i + 1) % count)
+
+  const translateX = slideWidth ? (containerRef.current!.clientWidth * peek) - index * (slideWidth + gap) : 0
+
   return (
     <section className="section" id="testimonials">
       <div className="wrap">
@@ -18,18 +53,45 @@ export default function Testimonials() {
           </div>
           <p>Real words from homeowners and businesses we’ve served.</p>
         </div>
-        <div className="testi-grid">
-          {testimonials.map((t, i) => (
-            <div className="testi-card reveal" key={i}>
-              <p className="quote">“{t.text}”</p>
-              <div className="author">
-                <span className="dot" />
-                <div>
-                  <div className="name">{t.author}</div>
-                  <div className="role">{t.role}</div>
+
+        <div
+          className="testi-carousel"
+          ref={containerRef}
+          onMouseEnter={() => (pausedRef.current = true)}
+          onMouseLeave={() => (pausedRef.current = false)}
+        >
+          <div
+            className="testi-track"
+            style={{ transform: `translateX(${translateX}px)`, transition: 'transform 0.6s cubic-bezier(.22,.61,.36,1)' }}
+          >
+            {testimonials.map((t, i) => (
+              <div className={`testi-slide${i === index ? ' is-active' : ''}`} key={i} style={{ width: slideWidth || '72%' }}>
+                <div className="testi-card">
+                  <p className="quote">“{t.text}”</p>
+                  <div className="author">
+                    <span className="dot" />
+                    <div>
+                      <div className="name">{t.author}</div>
+                      <div className="role">{t.role}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <button className="testi-nav testi-prev" onClick={prev} aria-label="Previous testimonial">‹</button>
+          <button className="testi-nav testi-next" onClick={next} aria-label="Next testimonial">›</button>
+        </div>
+
+        <div className="testi-dots">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              className={`testi-dot${i === index ? ' is-active' : ''}`}
+              onClick={() => setIndex(i)}
+              aria-label={`Go to testimonial ${i + 1}`}
+            />
           ))}
         </div>
       </div>
