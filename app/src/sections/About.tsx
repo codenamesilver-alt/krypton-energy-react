@@ -1,5 +1,4 @@
 import '../styles/about.css'
-import ptyImg from '../assets/about/pty.jpg'
 import logo from '../assets/brand/krypton-logo.png'
 import { useQuoteModal } from '../context/QuoteModal'
 import LocationsMap from './LocationsMap'
@@ -47,8 +46,8 @@ export default function About() {
               <span className="founder-name">Azka Masumi<br />(Founder)</span>
             </div>
           </div>
-          <div className="founder-image" style={{ aspectRatio: '1200 / 800', overflow: 'hidden', borderRadius: 2, background: '#151922' }}>
-            <img src={ptyImg} alt="Krypton installation team — residential rooftop commissioning in Patna" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          <div className="founder-image founder-placeholder">
+            <span className="placeholder-text">Photo placeholder</span>
           </div>
         </div>
       </div>

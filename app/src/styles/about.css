@@ -1,6 +1,8 @@
 #about h2 span{background:linear-gradient(180deg,#f8e7a8,#c9a24f);
   -webkit-background-clip:text;background-clip:text;color:transparent}
-.founder-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:40px}
+.founder-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;margin-top:40px}
+.founder-image.founder-placeholder{background:var(--ink-2);border:1px dashed var(--hair);border-radius:4px;display:flex;align-items:center;justify-content:center;min-height:100%}
+.founder-placeholder .placeholder-text{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);opacity:.6}
 .founder-message .kicker{font-size:12px;letter-spacing:.2em;font-weight:800;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 /* golden frame with curl corners around the founder message */
 .founder-frame{position:relative;padding:28px 32px;border:1px solid var(--gold);border-radius:4px;
