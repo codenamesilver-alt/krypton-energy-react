@@ -27,8 +27,16 @@ export default function About() {
           <div><b>Solar + EV + Battery</b>One complete energy setup</div>
         </div>
 
-        <div style={{ marginTop: 40, aspectRatio: '1200 / 800', overflow: 'hidden', borderRadius: 2, background: '#151922' }}>
-          <img src={ptyImg} alt="Krypton installation team — residential rooftop commissioning in Patna" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        <div className="founder-split">
+          <div className="founder-message">
+            <div className="kicker">A message from our founder</div>
+            <h3>Building a cleaner tomorrow, one rooftop at a time.</h3>
+            <p>At Krypton, we believe every home and business deserves access to clean, affordable energy. Our mission is to make solar simple, reliable and within reach — for everyone.</p>
+            <p className="founder-sign">— Founder, Krypton Energy</p>
+          </div>
+          <div className="founder-image" style={{ aspectRatio: '1200 / 800', overflow: 'hidden', borderRadius: 2, background: '#151922' }}>
+            <img src={ptyImg} alt="Krypton installation team — residential rooftop commissioning in Patna" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
         </div>
       </div>
 

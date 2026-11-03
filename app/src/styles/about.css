@@ -1,5 +1,12 @@
 #about h2 span{background:linear-gradient(180deg,#f8e7a8,#c9a24f);
   -webkit-background-clip:text;background-clip:text;color:transparent}
+.founder-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:40px}
+.founder-message .kicker{font-size:12px;letter-spacing:.2em;font-weight:800;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.founder-message h3{font-size:clamp(22px,2.4vw,30px);font-weight:300;letter-spacing:-.02em;line-height:1.2;margin:0 0 14px;color:var(--white)}
+.founder-message p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 12px;max-width:46ch}
+.founder-sign{font-size:13px;color:var(--gold-light);font-style:italic;margin-top:8px !important}
+.founder-image{width:100%}
+@media (max-width:760px){.founder-split{grid-template-columns:1fr}.founder-image{max-width:100%}}
 .about-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:40px}
 .about-strip div{background:var(--ink-2);padding:20px 22px;font-size:13.5px;color:var(--muted)}
