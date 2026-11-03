@@ -6,7 +6,7 @@
 .founder-message p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 12px;max-width:46ch}
 .founder-sign{font-size:13px;color:var(--gold-light);font-style:italic;margin-top:8px !important}
 .founder-signature{display:flex;align-items:center;gap:16px;margin-top:16px}
-.founder-logo{height:40px;width:auto;display:block}
+.founder-logo{height:60px;width:auto;display:block;background:#000;padding:4px 8px;border-radius:4px}
 .founder-name{font-size:15px;font-weight:500;color:var(--white);letter-spacing:.02em}
 .founder-image{width:100%}
 @media (max-width:760px){.founder-split{grid-template-columns:1fr}.founder-image{max-width:100%}}
