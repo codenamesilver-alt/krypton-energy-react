@@ -29,7 +29,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="head-actions">
-          <button className="btn btn-gold" onClick={openQuote}>Get a quote</button>
+          <button className="btn btn-gold btn-pill" onClick={openQuote}>Get a quote</button>
           <button
             className="menu-btn"
             aria-label="Menu"

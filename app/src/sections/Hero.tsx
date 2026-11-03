@@ -55,7 +55,7 @@ export default function Hero() {
             </h1>
             <p className="hero-sub">Bringing Australian experience and innovative energy solutions to India. Empowering homes and businesses with cleaner energy, lower electricity costs and greater energy independence.</p>
             <div className="hero-actions">
-              <button className="btn btn-gold" onClick={openQuote}>Get your Free Solar consultation</button>
+              <button className="btn btn-gold btn-pill" onClick={openQuote}>Get your Free Solar consultation</button>
             </div>
           </div>
         </div>
