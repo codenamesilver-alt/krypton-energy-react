@@ -7,10 +7,8 @@ export default function TwoPaths() {
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <div className="kicker">Two kinds of roofs</div>
-            <h2>One company. Two very different jobs.</h2>
+            <h2>Solar System Customised to your Energy Needs</h2>
           </div>
-          <p>A 3 kW roof in Patna and a 3 MW plant in Pune are not the same project. We staff, price and design them separately — so neither gets a diluted version of the other.</p>
         </div>
 
         <div className="paths">
