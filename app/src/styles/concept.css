@@ -157,6 +157,36 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);z-index:3}
 
+  /* ---------- products page ---------- */
+  .prod-hero{padding-top:120px;padding-bottom:80px}
+  .brand-filters{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 36px}
+  .brand-filter{font-size:13px;font-weight:500;letter-spacing:.02em;padding:10px 18px;border-radius:999px;
+    border:1px solid var(--hair);background:transparent;color:var(--muted);cursor:pointer;
+    transition:background .25s,color .25s,border-color .25s,transform .25s}
+  .brand-filter:hover{color:var(--white);border-color:rgba(228,209,142,.38)}
+  .brand-filter.is-active{background:var(--gold-light);color:var(--ink);border-color:var(--gold-light)}
+  .brand-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .brand-card{background:rgba(247,246,242,.03);border:1px solid var(--hair);border-radius:14px;
+    padding:24px 18px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;
+    gap:10px;transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    opacity:0;transform:translateY(18px)}
+  .brand-card.reveal.in{opacity:1;transform:translateY(0)}
+  .brand-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+  .brand-logo-wrap{width:100%;height:56px;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.04);border-radius:8px;padding:8px}
+  .brand-logo-wrap img{max-height:40px;max-width:100%;width:auto;height:auto;object-fit:contain;
+    filter:grayscale(1) brightness(1.4);transition:filter .3s var(--ease),transform .3s var(--ease)}
+  .brand-card:hover .brand-logo-wrap img{filter:grayscale(0) brightness(1);transform:scale(1.05)}
+  .brand-name{font-size:14px;font-weight:500;color:var(--white);letter-spacing:-.01em}
+  .brand-cat{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .brand-tag{font-size:12px;color:var(--muted);line-height:1.5;max-width:22ch}
+  .prod-cta{margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .prod-cta p{font-size:15px;color:var(--muted);margin:0}
+  @media (max-width:1080px){.brand-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media (max-width:760px){.brand-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:520px){.brand-grid{grid-template-columns:1fr}}
+
   /* ---------- roof to meter ---------- */
   .roof-to-meter{--deep:#1e222a;--deep2:#252a33;--green:#7fe3b0;--mint:#1f3a2c;--lime:#c9e96b;--gold2:#f1b84b;--ink2:#f7f6f2;--muted2:#a3a9b4;--paper2:#1e222a;--white2:#f7f6f2;--line2:#2c323c;background:var(--paper2);color:var(--ink2);padding:48px 0 32px}
   .roof-to-meter .wrap{max-width:1180px;margin:0 auto;padding:20px 22px 32px}
