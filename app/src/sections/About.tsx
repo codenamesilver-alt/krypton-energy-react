@@ -46,8 +46,8 @@ export default function About() {
               <span className="founder-name">Azka Masumi<br />(Founder)</span>
             </div>
           </div>
-          <div className="founder-image founder-placeholder">
-            <span className="placeholder-text">Photo placeholder</span>
+          <div className="founder-image">
+            <img src="/media/ymca.png" alt="YMCA" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>
