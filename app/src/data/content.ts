@@ -36,5 +36,5 @@ export const navLinks = [
   { to: '/about', label: 'About Us' },
   { to: '/products', label: 'Our Products' },
   { to: '/calculator', label: 'Calculator' },
-  { to: '/faq', label: 'FAQs' },
+  { to: '/contact', label: 'Contact Us' },
 ]

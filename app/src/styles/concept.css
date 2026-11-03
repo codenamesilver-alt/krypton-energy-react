@@ -155,6 +155,16 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);z-index:3}
 
+  /* ---------- contact page ---------- */
+  .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
+  .contact-card{background:var(--ink-2);border:1px solid var(--hair);border-radius:12px;padding:22px 24px}
+  .contact-card h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500}
+  .contact-card p{font-size:15px;color:var(--white);line-height:1.6;margin:0}
+  .contact-card a{color:var(--gold-light);border-bottom:1px solid rgba(228,209,142,.32)}
+  .contact-card a:hover{border-bottom-color:var(--gold-light)}
+  .contact-cta{margin-top:32px}
+  @media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+
   /* ---------- how solar works diagram ---------- */
   .system-diagram{border-bottom:1px solid var(--hair);background:var(--ink);position:relative;padding:48px 0 32px}
   .sys-head{margin-bottom:16px}

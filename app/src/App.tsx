@@ -11,6 +11,7 @@ import AboutPage from './pages/About'
 import ProductsPage from './pages/Products'
 import CalculatorPage from './pages/Calculator'
 import FAQPage from './pages/FAQ'
+import ContactPage from './pages/Contact'
 
 function AppShell() {
   const { pathname } = useLocation()
@@ -39,6 +40,7 @@ function AppShell() {
         <Route path="/success-stories" element={<Navigate to="/" replace />} />
         <Route path="/calculator" element={<CalculatorPage />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
       <ContactForm />
