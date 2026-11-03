@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { getPost, listPosts, type ApiPost } from '../lib/blogApi'
+import { markdownToHtml } from '../lib/markdown'
 
 function formatDate(iso: string | null) {
   if (!iso) return ''
@@ -59,7 +60,7 @@ export default function BlogPostPage() {
             </div>
           )}
 
-          <article className="blog-prose" dangerouslySetInnerHTML={{ __html: post.content_html }} />
+          <article className="blog-prose" dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content_html) }} />
 
           <div className="blog-cta">
             <p>Ready to make the switch to solar?</p>

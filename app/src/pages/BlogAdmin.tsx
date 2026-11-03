@@ -238,8 +238,9 @@ export default function BlogAdminPage() {
                 <textarea value={formExcerpt} onChange={(e) => setFormExcerpt(e.target.value)} maxLength={400} rows={2} />
               </div>
               <div className="field">
-                <label>Content (HTML) *</label>
-                <textarea value={formContent} onChange={(e) => setFormContent(e.target.value)} required rows={12} className="admin-content-textarea" />
+                <label>Content (Markdown) *</label>
+                <textarea value={formContent} onChange={(e) => setFormContent(e.target.value)} required rows={12} className="admin-content-textarea" placeholder={"# Heading\n\nParagraph text here.\n\n## Subheading\n\n- Bullet point\n- Another point\n\n> A quote or highlight\n\n**bold** and *italic* text"} />
+                <small className="admin-help">Supports: # headings, **bold**, *italic*, - lists, 1. numbered lists, &gt; quotes, [links](url), --- horizontal rule. Separate paragraphs with a blank line.</small>
               </div>
               <div className="field">
                 <label>Status</label>
