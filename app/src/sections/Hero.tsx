@@ -65,7 +65,7 @@ export default function Hero() {
             <span className="sep">·</span>
             <span>Smart EV Charging Solutions</span>
             <span className="sep">·</span>
-            <span>PM Surya Ghar: Muft Bijli Yojana – Residential Rooftop Solar Solutions</span>
+            <span>PM Surya Ghar: Muft Bijli Yojana</span>
             <span className="sep">·</span>
             <span>Sustainable Energy for a Greener Future</span>
           </div>
