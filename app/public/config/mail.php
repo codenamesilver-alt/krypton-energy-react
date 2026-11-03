@@ -6,13 +6,13 @@ if (!defined('KRYPTON_APP')) {
     exit;
 }
 return [
-    'smtp_host'       => 'smtp.gmail.com',
-    'smtp_port'       => 587,
-    'smtp_encryption' => 'tls',
-    'smtp_username'   => 'codenamesilver@gmail.com',
-    'smtp_password'   => 'rxcmuwloehsvfyag',
+    'smtp_host'       => 'smtp.hostinger.com',
+    'smtp_port'       => 465,
+    'smtp_encryption' => 'ssl',
+    'smtp_username'   => 'info@kryptonenergy.in',
+    'smtp_password'   => 'AB@#sd123',
     'smtp_timeout'    => 20,
-    'from_email'      => 'codenamesilver@gmail.com',
+    'from_email'      => 'info@kryptonenergy.in',
     'from_name'       => 'Krypton Energy Website',
     'to_email'        => 'info@kryptonenergy.in',
     'to_name'         => 'Krypton Energy',
