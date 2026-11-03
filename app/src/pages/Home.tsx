@@ -4,8 +4,6 @@ import Hero from '../sections/Hero'
 import TwoPaths from '../sections/TwoPaths'
 import Testimonials from '../sections/Testimonials'
 import RoofToMeter from '../sections/RoofToMeter'
-import Locations from '../sections/Locations'
-
 import ClosingCTA from '../sections/ClosingCTA'
 
 export default function Home() {
@@ -24,7 +22,6 @@ export default function Home() {
       <Hero />
       <TwoPaths />
       <RoofToMeter />
-      <Locations />
       <Testimonials />
       <ClosingCTA />
     </main>

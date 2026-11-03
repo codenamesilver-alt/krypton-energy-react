@@ -1,7 +1,6 @@
-import { useQuoteModal } from '../context/QuoteModal'
-import LocationsMap from './LocationsMap'
 import '../styles/about.css'
 import ptyImg from '../assets/about/pty.jpg'
+import { useQuoteModal } from '../context/QuoteModal'
 
 export default function About() {
   const { open: openQuote } = useQuoteModal()
@@ -97,8 +96,6 @@ export default function About() {
           <li>Quality panels, inverters and batteries backed by manufacturer warranties, plus our workmanship warranty</li>
         </ul>
       </div>
-
-      <LocationsMap />
 
       <div className="about-cta">
         <div className="hindi">अपनी बिजली बनाओ और पैसे बचाओ</div>
