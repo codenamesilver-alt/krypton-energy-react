@@ -44,13 +44,14 @@ $name = trim((string) ($data['name'] ?? ''));
 $phone = trim((string) ($data['phone'] ?? ''));
 $email = trim((string) ($data['email'] ?? ''));
 $city = trim((string) ($data['city'] ?? ''));
+$pincode = trim((string) ($data['pincode'] ?? ''));
 $type = trim((string) ($data['type'] ?? 'Residential'));
 
 $errors = [];
 if (mb_strlen($name) < 2) $errors['name'] = 'Name is required.';
 if ($phone === '' || strlen(preg_replace('/\D+/', '', $phone)) < 9) $errors['phone'] = 'Valid phone number required.';
-if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Valid email required.';
-if ($city === '') $errors['city'] = 'City is required.';
+if ($pincode === '' || !preg_match('/^\d{4,6}$/', $pincode)) $errors['pincode'] = 'Pincode required (4-6 digits).';
+if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Please enter a valid email address.';
 
 if ($errors) {
     http_response_code(422);
@@ -117,7 +118,11 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = $config['smtp_username'];
     $mail->Password = $config['smtp_password'];
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    if ($config['smtp_encryption'] === 'ssl') {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    } else {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    }
     $mail->Port = (int) $config['smtp_port'];
     $mail->Timeout = (int) $config['smtp_timeout'];
     $mail->CharSet = 'UTF-8';
