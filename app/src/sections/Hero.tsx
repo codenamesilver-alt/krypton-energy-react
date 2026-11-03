@@ -1,12 +1,52 @@
+import { useEffect, useState } from 'react'
 import { useQuoteModal } from '../context/QuoteModal'
 import { products } from '../data/content'
 
+const DESKTOP_VIDEO = '/media/krypton-hero.mp4'
+const MOBILE_VIDEO = '/media/krypton-hero-720.mp4'
+
+/** lighter encode on small screens; 16:9 crop keeps the frame composed */
+function useHeroVideoSrc() {
+  const [src, setSrc] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 760px)').matches
+      ? MOBILE_VIDEO
+      : DESKTOP_VIDEO,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 760px)')
+    const sync = () => setSrc(mq.matches ? MOBILE_VIDEO : DESKTOP_VIDEO)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
+  return src
+}
+
 export default function Hero() {
   const { open: openQuote } = useQuoteModal()
+  const videoSrc = useHeroVideoSrc()
 
   return (
     <>
       <section className="hero">
+        <div className="hero-media" aria-hidden="true">
+          <video
+            key={videoSrc}
+            className="hero-video"
+            src={videoSrc}
+            poster="/media/krypton-hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            tabIndex={-1}
+            disablePictureInPicture
+            disableRemotePlayback
+          />
+        </div>
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <h1>

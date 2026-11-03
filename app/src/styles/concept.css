@@ -101,14 +101,31 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   /* ---------- hero ---------- */
   .hero{position:relative;padding-top:164px;padding-bottom:0;overflow:hidden}
+  /* full-bleed background video; poster paints first so there is no black flash */
+  .hero-media{
+    position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+    background:#0b0d11 url('/media/krypton-hero-poster.jpg') center/cover no-repeat;
+  }
+  .hero-media video{
+    display:block;width:100%;height:100%;object-fit:cover;object-position:center;
+    opacity:.62;filter:saturate(.9) contrast(1.05);
+  }
+  /* scrim keeps the copy legible on the left and lets the footage breathe right */
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(90deg,rgba(14,16,21,.95) 0%,rgba(14,16,21,.88) 24%,rgba(14,16,21,.62) 52%,rgba(14,16,21,.45) 76%,rgba(14,16,21,.6) 100%),
+      linear-gradient(180deg,rgba(14,16,21,.92) 0%,rgba(14,16,21,.18) 34%,rgba(14,16,21,.55) 74%,var(--ink) 100%);
+  }
+  @media (prefers-reduced-motion:reduce){ .hero-media video{display:none} }
   .hero::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
     background:
       radial-gradient(680px 520px at 78% 24%,rgba(228,209,142,.11),transparent 68%),
       radial-gradient(900px 600px at 12% 0%,rgba(180,140,72,.07),transparent 70%);
   }
   .hero-grid{
-    position:relative;display:grid;grid-template-columns:minmax(0,1fr);
+    position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr);
     gap:clamp(24px,5vw,72px);align-items:center;
     min-height:calc(100svh - 150px - 160px);padding-bottom:34px;
   }
@@ -126,7 +143,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .hero-meta span{display:flex;align-items:center;gap:8px}
   .hero-meta span::before{content:"";width:3px;height:3px;background:var(--gold);border-radius:50%}
 
-  .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair)}
+  .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);z-index:3}
 
   /* ---------- product shelf ---------- */
   .shelf{border-bottom:1px solid var(--hair);background:var(--ink);position:relative}
@@ -267,6 +284,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:24px;gap:44px}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
+    /* copy fills the width on small screens, so the scrim goes vertical */
+    .hero-media video{opacity:.5}
+    .hero-media::after{
+      background:
+        linear-gradient(180deg,rgba(14,16,21,.94) 0%,rgba(14,16,21,.86) 42%,rgba(14,16,21,.9) 74%,var(--ink) 100%);
+    }
     .shelf-grid{grid-template-columns:1fr 1fr}
     .tile-wrap:nth-child(2n) .tile{border-right:0}
     .tile-wrap:nth-child(-n+2) .tile{border-bottom:1px solid var(--hair)}
