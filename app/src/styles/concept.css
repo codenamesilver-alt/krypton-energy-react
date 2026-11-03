@@ -288,6 +288,8 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   /* ---------- section shell ---------- */
   .section{padding-block:clamp(48px,6vw,80px)}
+  /* clear the fixed header on non-home pages whose first section is a .section */
+  main > .section:first-child{padding-top:calc(clamp(48px,6vw,80px) + 93px)}
   .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
   .sec-head h2{font-size:clamp(30px,3.6vw,48px);font-weight:200;line-height:1.08;letter-spacing:-.035em;max-width:16ch}
   .sec-head p{font-size:14.5px;color:var(--muted);max-width:46ch;justify-self:end}
