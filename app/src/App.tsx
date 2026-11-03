@@ -17,7 +17,15 @@ import BlogPostPage from './pages/BlogPost'
 import BlogAdminPage from './pages/BlogAdmin'
 
 function AppShell() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, hash])
   useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
