@@ -17,10 +17,10 @@ export default function TwoPaths() {
             <h3>Generate Your Own Solar Power</h3>
             <p>We design your solar system around your energy needs, manage the DISCOM approvals and PM Surya Ghar subsidy process, and provide continued support even after installation and commissioning.</p>
             <ul className="path-list">
-              <li>Free roof survey and shading check</li>
-              <li>Subsidy and net-metering paperwork</li>
-              <li>Local engineers in Patna, Delhi and Uttarakhand</li>
-              <li>Service response within 48 hours</li>
+              <li>Free rooftop inspection and sunlight assessment.</li>
+              <li>Customised solar system design for your home.</li>
+              <li>Assistance with government subsidy and net-metering applications.</li>
+              <li>Installation, setup and after-sales support by experienced solar engineers.</li>
             </ul>
             <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>
               Plan my rooftop
