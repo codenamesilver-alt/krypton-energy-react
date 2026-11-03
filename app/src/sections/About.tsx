@@ -2,6 +2,7 @@ import '../styles/about.css'
 import ptyImg from '../assets/about/pty.jpg'
 import logo from '../assets/brand/krypton-logo.png'
 import { useQuoteModal } from '../context/QuoteModal'
+import LocationsMap from './LocationsMap'
 
 export default function About() {
   const { open: openQuote } = useQuoteModal()
@@ -47,6 +48,8 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <LocationsMap />
 
       <div className="wrap" style={{ marginTop: 64 }}>
         <div className="sec-head">
