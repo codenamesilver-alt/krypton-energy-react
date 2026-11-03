@@ -137,7 +137,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     margin-bottom:28px;
   }
   .hero h1 em{font-style:normal;color:var(--gold-light);font-weight:200}
-  .hero-sub{font-size:clamp(15px,1.25vw,17.5px);line-height:1.7;color:rgba(247,246,242,.66);max-width:44ch;margin-bottom:38px}
+  .hero-sub{font-size:clamp(17px,1.25vw,19.5px);line-height:1.7;color:rgba(247,246,242,.66);max-width:44ch;margin-bottom:38px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
   .hero-meta{display:flex;flex-wrap:nowrap;gap:6px 16px;font-size:13px;color:var(--muted);letter-spacing:.03em;width:100vw;margin-left:calc(50% - 50vw + 8px);margin-right:calc(50% - 50vw + 8px);padding-inline:var(--pad);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
   .hero-meta::-webkit-scrollbar{display:none}
