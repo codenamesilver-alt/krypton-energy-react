@@ -101,27 +101,24 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:100svh;padding-top:314px;padding-bottom:0;overflow:hidden}
-  /* video sits in the right-hand column at its native 16:9 ratio, so the
-     whole frame — including the closing caption — stays visible */
+  /* full-bleed background video, framed from just under the fixed header
+     (92px bar + 1px border) so the whole frame, including the closing caption,
+     stays on screen and nothing sits behind the nav; contain keeps every
+     pixel of the 16:9 frame visible (no cropping) */
   .hero-media{
-    position:relative;width:100%;aspect-ratio:16/9;
-    border:1px solid var(--hair);background:#0b0d11;
-    overflow:hidden;pointer-events:none;
+    position:absolute;inset:93px 0 0;z-index:0;overflow:hidden;pointer-events:none;
+    background:#0b0d11 url('/media/krypton-hero-poster.jpg') center/contain no-repeat;
   }
   .hero-media video{
-    display:block;width:100%;height:100%;object-fit:contain;
+    display:block;width:100%;height:100%;object-fit:contain;object-position:center center;
   }
-  /* let the panel run to the outer edge of the wrap, then keep pushing
-     right toward the viewport edge on wider screens */
-  @media (min-width:1001px){
-    .hero-media{width:calc(100% + var(--pad) + clamp(0px, (100vw - 1280px)/2 - 8px, 1000px));transform:translateX(-15px)}
-    /* nudge the copy block left by up to 100px where there's room */
-    .hero-copy{transform:translateX(calc(-1 * min(100px, max(0px, (100vw - 1280px) / 2 + 40px))))}
+  /* footage plays at full brightness; a soft scrim sits only under the copy */
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(90deg,rgba(10,12,16,.88) 0%,rgba(10,12,16,.8) 25%,rgba(10,12,16,.6) 45%,rgba(10,12,16,.25) 60%,rgba(10,12,16,0) 72%);
   }
-  @media (prefers-reduced-motion:reduce){
-    .hero-media{background:#0b0d11 url('/media/krypton-hero-poster.jpg') center/contain no-repeat}
-    .hero-media video{display:none}
-  }
+  @media (prefers-reduced-motion:reduce){ .hero-media video{display:none} }
   .hero::before{
     content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
     background:
@@ -129,8 +126,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
       radial-gradient(900px 600px at 12% 0%,rgba(180,140,72,.07),transparent 70%);
   }
   .hero-grid{
-    position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
-    gap:clamp(24px,5vw,72px);align-items:center;
+    position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr);
     min-height:calc(100svh - 150px - 160px);padding-bottom:34px;
   }
   .hero-copy{max-width:760px}
@@ -290,8 +286,6 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:24px;gap:44px}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
-    /* copy fills the width on small screens, so the video stacks beneath it */
-    .hero-media{max-width:760px;margin-inline:auto}
     .shelf-grid{grid-template-columns:1fr 1fr}
     .tile-wrap:nth-child(2n) .tile{border-right:0}
     .tile-wrap:nth-child(-n+2) .tile{border-bottom:1px solid var(--hair)}

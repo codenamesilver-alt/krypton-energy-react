@@ -31,6 +31,22 @@ export default function Hero() {
   return (
     <>
       <section className="hero">
+        <div className="hero-media" aria-hidden="true">
+          <video
+            key={videoSrc}
+            className="hero-video"
+            src={videoSrc}
+            poster="/media/krypton-hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            tabIndex={-1}
+            disablePictureInPicture
+            disableRemotePlayback
+          />
+        </div>
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <h1>
@@ -48,22 +64,6 @@ export default function Hero() {
               <span className="sep">·</span>
               <span>Subsidy paperwork handled</span>
             </div>
-          </div>
-          <div className="hero-media" aria-hidden="true">
-            <video
-              key={videoSrc}
-              className="hero-video"
-              src={videoSrc}
-              poster="/media/krypton-hero-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              tabIndex={-1}
-              disablePictureInPicture
-              disableRemotePlayback
-            />
           </div>
         </div>
         <div className="hero-rule" />
