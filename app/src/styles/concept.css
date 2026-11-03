@@ -100,7 +100,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .link-arrow:hover svg{transform:translateX(5px)}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:100svh;padding-top:0;padding-bottom:0;overflow:hidden}
+  .hero{position:relative;min-height:100svh;padding-top:314px;padding-bottom:0;overflow:hidden}
   /* full-bleed background video, framed from just under the fixed header
      (92px bar + 1px border) so the whole frame, including the closing caption,
      stays on screen and nothing sits behind the nav */
