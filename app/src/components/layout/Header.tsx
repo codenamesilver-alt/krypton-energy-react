@@ -29,7 +29,6 @@ export default function Header() {
           ))}
         </nav>
         <div className="head-actions">
-          <a className="head-phone" href="tel:+919871140675">+91-9871140675</a>
           <button className="btn btn-gold" onClick={openQuote}>Get a quote</button>
           <button
             className="menu-btn"
