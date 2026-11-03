@@ -12,29 +12,30 @@ export default function TwoPaths() {
         </div>
 
         <div className="paths">
-          <article className="path path-home">
-            <div className="path-tag">For business</div>
-            <h3>Commercial &amp; Industrial Solar Solutions</h3>
-            <p>We provide solar solutions for factories, offices, warehouses, shops and other commercial spaces. Our systems help businesses generate their own electricity, reduce monthly power bills and depend less on grid electricity.</p>
-            <ul className="path-list">
-              <li>Site inspection and energy consumption assessment.</li>
-              <li>Customised solar solutions for businesses and industries.</li>
-              <li>Complete installation, setup and grid connection support.</li>
-              <li>Ongoing maintenance and after-sales service.</li>
-            </ul>
-            <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>
-              Talk to our C&amp;I team
-              <svg width="16" height="8" viewBox="0 0 16 8" fill="none"><path d="M0 4h14M11 1l3 3-3 3" stroke="currentColor" strokeWidth="1.2" /></svg>
-            </a>
+          <article className="path path-home path-with-tiles">
+            <div className="path-content">
+              <div className="path-tag">For business</div>
+              <h3>Commercial &amp; Industrial Solar Solutions</h3>
+              <p>We provide solar solutions for factories, offices, warehouses, shops and other commercial spaces. Our systems help businesses generate their own electricity, reduce monthly power bills and depend less on grid electricity.</p>
+              <ul className="path-list">
+                <li>Site inspection and energy consumption assessment.</li>
+                <li>Customised solar solutions for businesses and industries.</li>
+                <li>Complete installation, setup and grid connection support.</li>
+                <li>Ongoing maintenance and after-sales service.</li>
+              </ul>
+              <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>
+                Talk to our C&amp;I team
+                <svg width="16" height="8" viewBox="0 0 16 8" fill="none"><path d="M0 4h14M11 1l3 3-3 3" stroke="currentColor" strokeWidth="1.2" /></svg>
+              </a>
+            </div>
+            <div className="photo-tiles">
+              {[1,2,3,4,5,6].map((n) => (
+                <div className="photo-tile" key={n}>
+                  <img src={`/media/kry/kry-${n}.jpg`} alt={`Krypton project ${n}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
           </article>
-
-          <div className="photo-tiles">
-            {[1,2,3,4,5,6].map((n) => (
-              <div className="photo-tile" key={n}>
-                <img src={`/media/kry/kry-${n}.jpg`} alt={`Krypton project ${n}`} loading="lazy" />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -228,6 +228,11 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .photo-tile:hover img{transform:scale(1.06)}
   @media (max-width:760px){.photo-tiles{grid-template-columns:repeat(2,1fr)}}
   .path{padding:clamp(30px,4vw,52px);display:flex;flex-direction:column;min-height:420px;position:relative;overflow:hidden}
+  .path-with-tiles{flex-direction:row;align-items:stretch;gap:24px}
+  .path-with-tiles .path-content{flex:1 1 50%;display:flex;flex-direction:column;min-width:0}
+  .path-with-tiles .photo-tiles{flex:1 1 50%;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-content:start;align-self:center;margin-top:0}
+  .path-with-tiles .photo-tile{aspect-ratio:4/3}
+  @media (max-width:900px){.path-with-tiles{flex-direction:column}}
   .path-home{background:var(--paper);color:var(--ink)}
   .path-biz{background:var(--ink-2)}
   .path-tag{font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:auto}
