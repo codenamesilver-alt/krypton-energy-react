@@ -71,7 +71,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold-light);transition:right .35s var(--ease)}
   .nav a:hover{color:var(--white)}
   .nav a:hover::after{right:0}
-  .head-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;margin-left:auto;
+  .head-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;margin-left:auto;margin-right:-15px;
     /* align the quote button with the page content column */
     margin-right:calc(max(0px,(100vw - 1280px)/2) + clamp(20px,4vw,48px))}
 
