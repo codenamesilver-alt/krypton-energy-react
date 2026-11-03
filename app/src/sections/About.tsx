@@ -47,7 +47,7 @@ export default function About() {
             </div>
           </div>
           <div className="founder-image">
-            <img src="/media/ymca.png" alt="YMCA" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/media/kkk.png" alt="KKK" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>
