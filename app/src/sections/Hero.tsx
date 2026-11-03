@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useQuoteModal } from '../context/QuoteModal'
 import { products } from '../data/content'
 
 const DESKTOP_VIDEO = '/media/krypton-hero.mp4'
@@ -25,7 +24,6 @@ function useHeroVideoSrc() {
 }
 
 export default function Hero() {
-  const { open: openQuote } = useQuoteModal()
   const videoSrc = useHeroVideoSrc()
 
   return (
@@ -47,25 +45,7 @@ export default function Hero() {
             disableRemotePlayback
           />
         </div>
-        <div className="wrap hero-grid">
-          <div className="hero-copy">
-            <h1>
-              <span className="line"><span>Sunlight,</span></span>
-              <span className="line"><span>made <em>useful.</em></span></span>
-            </h1>
-            <p className="hero-sub">Solar panels, inverters, batteries and EV chargers — specified, installed and serviced by our team.</p>
-            <div className="hero-actions">
-              <button className="btn btn-gold" onClick={openQuote}>Get your Free Solar consultation</button>
-            </div>
-            <div className="hero-meta">
-              <span>MNRE-approved equipment</span>
-              <span className="sep">·</span>
-              <span>25-year performance warranty</span>
-              <span className="sep">·</span>
-              <span>Subsidy paperwork handled</span>
-            </div>
-          </div>
-        </div>
+
         <div className="hero-rule" />
       </section>
 
