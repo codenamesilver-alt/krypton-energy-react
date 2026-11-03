@@ -20,7 +20,7 @@ export default function Testimonials() {
         </div>
         <div className="testi-grid">
           {testimonials.map((t, i) => (
-            <div className="testi-card" key={i}>
+            <div className="testi-card reveal" key={i}>
               <p className="quote">“{t.text}”</p>
               <div className="author">
                 <span className="dot" />

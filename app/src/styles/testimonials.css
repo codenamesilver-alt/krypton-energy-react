@@ -1,9 +1,19 @@
-#testimonials{position:relative;background:radial-gradient(900px 500px at 80% 20%,rgba(228,209,142,.06),transparent 60%),radial-gradient(700px 400px at 10% 80%,rgba(127,227,176,.05),transparent 60%),var(--ink)}
+#testimonials{position:relative;background:radial-gradient(900px 500px at 80% 20%,rgba(228,209,142,.06),transparent 60%),radial-gradient(700px 400px at 10% 80%,rgba(127,227,176,.05),transparent 60%),var(--ink);overflow:hidden}
+#testimonials::before{content:"";position:absolute;top:-20%;right:-10%;width:60%;height:60%;border-radius:50%;
+  background:radial-gradient(circle,rgba(228,209,142,.08),transparent 70%);filter:blur(40px);
+  animation:testiDrift 12s ease-in-out infinite alternate;pointer-events:none;z-index:0}
+#testimonials .wrap{position:relative;z-index:1}
+@keyframes testiDrift{from{transform:translate(0,0)}to{transform:translate(-8%,6%)}}
 .testi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}
 .testi-card{background:rgba(247,246,242,.04);border:1px solid rgba(228,209,142,.18);border-radius:14px;
-  padding:28px 30px 24px;position:relative;transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+  padding:28px 30px 24px;position:relative;transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),opacity .8s var(--ease);
   overflow:hidden;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
-  box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(228,209,142,.08)}
+  box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(228,209,142,.08);
+  opacity:0;transform:translateY(22px)}
+.testi-card.reveal.in{opacity:1;transform:translateY(0)}
+.testi-card.reveal:nth-of-type(2){transition-delay:.15s}
+.testi-card.reveal:nth-of-type(3){transition-delay:.3s}
+.testi-card.reveal:nth-of-type(4){transition-delay:.45s}
 .testi-card::before{content:"\201C";position:absolute;top:-8px;left:18px;font-size:96px;
   line-height:1;color:var(--gold-light);opacity:.18;font-family:Georgia,serif;pointer-events:none}
 .testi-card:hover{transform:translateY(-4px);border-color:var(--hair)}
