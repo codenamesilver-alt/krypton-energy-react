@@ -101,12 +101,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
 
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:100svh;padding-top:314px;padding-bottom:0;overflow:hidden}
-  /* full-bleed background video, lowered 50px below the fixed header
-     (92px bar + 1px border + 50px) so the whole frame, including the closing
-     caption, stays on screen and nothing sits behind the nav; cover fills
-     the width so there are no side bars/cutoff */
+  /* full-bleed background video, framed from just under the fixed header
+     (92px bar + 1px border) so the whole frame, including the closing caption,
+     stays on screen and nothing sits behind the nav; cover fills the width so
+     there are no side bars/cutoff */
   .hero-media{
-    position:absolute;inset:143px 0 0;z-index:0;overflow:hidden;pointer-events:none;
+    position:absolute;inset:93px 0 0;z-index:0;overflow:hidden;pointer-events:none;
     background:#0b0d11 url('/media/krypton-hero-poster.jpg') center bottom/cover no-repeat;
   }
   /* cover fills the hero width on every screen so nothing is cut off on the
