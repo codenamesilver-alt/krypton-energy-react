@@ -58,11 +58,15 @@ export default function Hero() {
               <button className="btn btn-gold" onClick={openQuote}>Get your Free Solar consultation</button>
             </div>
             <div className="hero-meta">
-              <span>MNRE-approved equipment</span>
+              <span>☀️ Solar Solutions for Homes &amp; Businesses</span>
               <span className="sep">·</span>
-              <span>25-year performance warranty</span>
+              <span>🔋 Advanced Battery Storage &amp; Inverters</span>
               <span className="sep">·</span>
-              <span>Subsidy paperwork handled</span>
+              <span>⚡ Smart EV Charging Solutions</span>
+              <span className="sep">·</span>
+              <span>🏡 PM Surya Ghar: Muft Bijli Yojana – Residential Rooftop Solar Solutions</span>
+              <span className="sep">·</span>
+              <span>🌱 Sustainable Energy for a Greener Future</span>
             </div>
           </div>
         </div>
