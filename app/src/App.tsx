@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { QuoteModalProvider } from './context/QuoteModal'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -8,7 +8,6 @@ import WhatsAppFloat from './components/ui/WhatsAppFloat'
 import './styles/whatsapp.css'
 import Home from './pages/Home'
 import AboutPage from './pages/About'
-import LocationsPage from './pages/Locations'
 import ProductsPage from './pages/Products'
 import SuccessStoriesPage from './pages/SuccessStories'
 import CalculatorPage from './pages/Calculator'
@@ -35,7 +34,8 @@ function AppShell() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/locations" element={<LocationsPage />} />
+        {/* the Locations page now lives inside About Us */}
+        <Route path="/locations" element={<Navigate to="/about" replace />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/success-stories" element={<SuccessStoriesPage />} />
         <Route path="/calculator" element={<CalculatorPage />} />

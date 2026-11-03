@@ -16,8 +16,7 @@ export default function Footer() {
             <h4>Explore</h4>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About US</Link></li>
-              <li><Link to="/locations">Locations</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/products">Our Products</Link></li>
             </ul>
           </div>
