@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import Hero from '../sections/Hero'
 import TwoPaths from '../sections/TwoPaths'
 import Testimonials from '../sections/Testimonials'
-import Process from '../sections/Process'
+import RoofToMeter from '../sections/RoofToMeter'
 import Locations from '../sections/Locations'
 
 import ClosingCTA from '../sections/ClosingCTA'
@@ -23,7 +23,7 @@ export default function Home() {
     <main id="main">
       <Hero />
       <TwoPaths />
-      <Process />
+      <RoofToMeter />
       <Locations />
       <Testimonials />
       <ClosingCTA />
