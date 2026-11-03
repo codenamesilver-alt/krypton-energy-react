@@ -27,6 +27,14 @@ export default function TwoPaths() {
               <svg width="16" height="8" viewBox="0 0 16 8" fill="none"><path d="M0 4h14M11 1l3 3-3 3" stroke="currentColor" strokeWidth="1.2" /></svg>
             </a>
           </article>
+
+          <div className="photo-tiles">
+            {[1,2,3,4,5,6].map((n) => (
+              <div className="photo-tile" key={n}>
+                <img src={`/media/kry/kry-${n}.jpg`} alt={`Krypton project ${n}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

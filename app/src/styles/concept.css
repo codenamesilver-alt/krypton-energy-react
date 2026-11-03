@@ -221,7 +221,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:400}
 
   /* ---------- two paths ---------- */
-  .paths{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(228,209,142,.32);border:1px solid rgba(228,209,142,.32)}
+  .paths{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(228,209,142,.32);border:1px solid rgba(228,209,142,.32)}
+  .photo-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+  .photo-tile{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:4/3;background:var(--ink-2)}
+  .photo-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+  .photo-tile:hover img{transform:scale(1.06)}
+  @media (max-width:760px){.photo-tiles{grid-template-columns:repeat(2,1fr)}}
   .path{padding:clamp(30px,4vw,52px);display:flex;flex-direction:column;min-height:420px;position:relative;overflow:hidden}
   .path-home{background:var(--paper);color:var(--ink)}
   .path-biz{background:var(--ink-2)}
