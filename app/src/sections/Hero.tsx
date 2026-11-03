@@ -50,8 +50,8 @@ export default function Hero() {
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <h1>
-              <span className="line"><span>Sunlight,</span></span>
-              <span className="line"><span>made <em>useful.</em></span></span>
+              <span className="line"><span>Powering a Smarter,</span></span>
+              <span className="line"><span>Greener <em>Tomorrow.</em></span></span>
             </h1>
             <p className="hero-sub">Solar panels, inverters, batteries and EV chargers — specified, installed and serviced by our team.</p>
             <div className="hero-actions">
