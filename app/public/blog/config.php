@@ -15,7 +15,7 @@ return [
     'db_user'    => 'root',
     'db_pass'    => '',
     'db_charset' => 'utf8mb4',
-    'site_url'   => 'http://localhost/KRYPTON',
+    'site_url'   => 'http://localhost',
     'debug'      => false,
     'pretty_urls' => true,
     'install_token' => '',

@@ -32,7 +32,7 @@ export default function Footer() {
             <h4>Resources</h4>
             <ul>
               <li><Link to="/faq">FAQs</Link></li>
-              <li><a href="http://localhost/KRYPTON/blog/">Blog</a></li>
+              <li><a href="http://localhost/blog/">Blog</a></li>
             </ul>
           </div>
           <div>
