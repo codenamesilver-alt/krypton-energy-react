@@ -108,14 +108,13 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   }
   .hero-media video{
     display:block;width:100%;height:100%;object-fit:cover;object-position:center;
-    opacity:.62;filter:saturate(.9) contrast(1.05);
   }
-  /* scrim keeps the copy legible on the left and lets the footage breathe right */
+  /* footage plays at full brightness; a soft scrim sits only under the copy */
   .hero-media::after{
     content:"";position:absolute;inset:0;
     background:
-      linear-gradient(90deg,rgba(14,16,21,.95) 0%,rgba(14,16,21,.88) 24%,rgba(14,16,21,.62) 52%,rgba(14,16,21,.45) 76%,rgba(14,16,21,.6) 100%),
-      linear-gradient(180deg,rgba(14,16,21,.92) 0%,rgba(14,16,21,.18) 34%,rgba(14,16,21,.55) 74%,var(--ink) 100%);
+      linear-gradient(90deg,rgba(10,12,16,.88) 0%,rgba(10,12,16,.8) 25%,rgba(10,12,16,.6) 45%,rgba(10,12,16,.25) 60%,rgba(10,12,16,0) 72%),
+      linear-gradient(180deg,rgba(10,12,16,0) 84%,rgba(30,34,42,.92) 100%);
   }
   @media (prefers-reduced-motion:reduce){ .hero-media video{display:none} }
   .hero::before{
@@ -142,6 +141,8 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .hero-meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:16px;color:var(--muted);letter-spacing:.03em}
   .hero-meta span{display:flex;align-items:center;gap:8px}
   .hero-meta span::before{content:"";width:3px;height:3px;background:var(--gold);border-radius:50%}
+  /* keep the smaller copy crisp where the scrim is lighter */
+  .hero h1,.hero-sub,.hero-meta{text-shadow:0 2px 20px rgba(0,0,0,.6)}
 
   .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);z-index:3}
 
@@ -285,10 +286,10 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
     /* copy fills the width on small screens, so the scrim goes vertical */
-    .hero-media video{opacity:.5}
+    .hero-media video{opacity:1}
     .hero-media::after{
       background:
-        linear-gradient(180deg,rgba(14,16,21,.94) 0%,rgba(14,16,21,.86) 42%,rgba(14,16,21,.9) 74%,var(--ink) 100%);
+        linear-gradient(180deg,rgba(10,12,16,.62) 0%,rgba(10,12,16,.72) 30%,rgba(10,12,16,.78) 72%,var(--ink) 100%);
     }
     .shelf-grid{grid-template-columns:1fr 1fr}
     .tile-wrap:nth-child(2n) .tile{border-right:0}
