@@ -59,7 +59,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
      while the quote button stays anchored to the content column */
   .head-inner{display:flex;align-items:center;justify-content:flex-start;height:92px;
     gap:clamp(32px,3.6vw,52px);padding-left:clamp(14px,5vw,72px)}
-  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;margin-left:80px}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;margin-left:70px}
   /* keep the tight mid-size header from losing more horizontal room */
   @media (max-width:1150px) and (min-width:1001px){ .head-inner{padding-left:14px;gap:16px} }
 
