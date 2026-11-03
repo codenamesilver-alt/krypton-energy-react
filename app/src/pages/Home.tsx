@@ -4,7 +4,6 @@ import Hero from '../sections/Hero'
 import TwoPaths from '../sections/TwoPaths'
 import Testimonials from '../sections/Testimonials'
 import RoofToMeter from '../sections/RoofToMeter'
-import ClosingCTA from '../sections/ClosingCTA'
 
 export default function Home() {
   const { hash } = useLocation()
@@ -23,7 +22,6 @@ export default function Home() {
       <TwoPaths />
       <RoofToMeter />
       <Testimonials />
-      <ClosingCTA />
     </main>
   )
 }
