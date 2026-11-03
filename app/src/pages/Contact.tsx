@@ -29,6 +29,10 @@ export default function ContactPage() {
               <p>B-12, Okhla Industrial Area Phase-2, New Delhi – 110020</p>
             </div>
             <div className="contact-card">
+              <h3>Patna office</h3>
+              <p>Shop #1 GF, Krishna Apt Coloney, More Kankarbagh, Patna, 800020</p>
+            </div>
+            <div className="contact-card">
               <h3>We serve</h3>
               <p>Patna · Delhi · Uttarakhand · Commercial &amp; industrial projects across India</p>
             </div>
