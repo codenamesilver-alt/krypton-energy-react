@@ -1,11 +1,9 @@
-import { useState } from 'react'
-
-type Category = 'all' | 'solar' | 'inverter' | 'battery' | 'ev'
+type Category = 'solar' | 'inverter' | 'battery' | 'ev'
 
 type Brand = {
   name: string
   logo: string
-  category: Exclude<Category, 'all'>
+  category: Category
   tagline: string
 }
 
@@ -30,15 +28,7 @@ const brands: Brand[] = [
   { name: 'MG Motor', logo: '/media/sol/mg-motor.webp', category: 'ev', tagline: 'Electric SUVs & connected cars' },
 ]
 
-const filters: { key: Category; label: string }[] = [
-  { key: 'all', label: 'All brands' },
-  { key: 'solar', label: 'Solar panels' },
-  { key: 'inverter', label: 'Inverters' },
-  { key: 'battery', label: 'Batteries' },
-  { key: 'ev', label: 'EV charging' },
-]
-
-const categoryLabel: Record<Exclude<Category, 'all'>, string> = {
+const categoryLabel: Record<Category, string> = {
   solar: 'Solar',
   inverter: 'Inverter',
   battery: 'Battery',
@@ -46,8 +36,7 @@ const categoryLabel: Record<Exclude<Category, 'all'>, string> = {
 }
 
 export default function ProductsPage() {
-  const [active, setActive] = useState<Category>('all')
-  const visible = active === 'all' ? brands : brands.filter((b) => b.category === active)
+  const visible = brands
 
   return (
     <main id="main">
@@ -59,20 +48,6 @@ export default function ProductsPage() {
               <h2>Brands we <span>trust and install.</span></h2>
             </div>
             <p>Krypton Energy specifies, installs and services equipment from the world\u2019s most trusted solar, inverter, battery and EV charging brands \u2014 chosen for performance, reliability and long-term support in Indian conditions.</p>
-          </div>
-
-          <div className="brand-filters" role="tablist" aria-label="Filter brands by category">
-            {filters.map((f) => (
-              <button
-                key={f.key}
-                role="tab"
-                aria-selected={active === f.key}
-                className={`brand-filter${active === f.key ? ' is-active' : ''}`}
-                onClick={() => setActive(f.key)}
-              >
-                {f.label}
-              </button>
-            ))}
           </div>
 
           <div className="brand-grid">
