@@ -47,8 +47,8 @@
       </div>
       <div class="roi"><span>Simple payback estimate</span><strong id="payback">1.8 years</strong></div>
       <div class="footnotes"><p><span class="subsidy-label">Subsidy:</span> ₹1,08,000 assumed illustrative amount, capped at system cost and subject to current scheme rules and eligibility.</p><p id="roofStatus"></p><p>Generation and savings are estimates. Actual output and bill reduction vary with location, shade, orientation, tariff, self-consumption, export credits, and system losses.</p></div>
-      <div style={{ marginTop: 22 }}>
-        <button class="btn" onClick="openQuote()">Request Quote</button>
+      <div style="margin-top: 22px;">
+        <button class="btn" onclick="window.parent.postMessage({type:'requestQuote'}, '*')">Request Quote</button>
       </div>
     </div>
   </section>
