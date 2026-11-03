@@ -140,9 +140,11 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .hero h1 em{font-style:normal;color:var(--gold-light);font-weight:200}
   .hero-sub{font-size:clamp(17px,1.25vw,19.5px);line-height:1.7;color:rgba(247,246,242,.66);max-width:720px;margin-bottom:38px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
-  .hero-points{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:6px 16px;margin:0;padding:0;font-size:13px;color:var(--muted);letter-spacing:.02em}
-  .hero-points li{display:flex;align-items:center;gap:8px}
+  .hero-points-wrap{overflow:hidden;width:100%;mask-image:linear-gradient(90deg,transparent,black 5%,black 95%,transparent)}
+  .hero-points{list-style:none;display:flex;flex-wrap:nowrap;gap:6px 32px;margin:0;padding:0;font-size:13px;color:var(--muted);letter-spacing:.02em;width:max-content;animation:hero-marquee 22s linear infinite}
+  .hero-points li{display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap}
   .hero-points li::before{content:"";width:3px;height:3px;background:var(--gold);border-radius:50%;flex-shrink:0}
+  @keyframes hero-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .hero-meta{display:flex;flex-wrap:nowrap;gap:6px 16px;font-size:13px;color:var(--muted);letter-spacing:.03em;width:100vw;margin-left:calc(50% - 50vw + 8px);margin-right:calc(50% - 50vw + 8px);padding-inline:var(--pad);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
   .hero-meta::-webkit-scrollbar{display:none}
   .hero-meta span{display:flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap}
