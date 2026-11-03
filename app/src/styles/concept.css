@@ -101,7 +101,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .link-arrow:hover svg{transform:translateX(5px)}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:100svh;padding-top:384px;padding-bottom:0;overflow:hidden}
+  .hero{position:relative;min-height:100svh;padding-top:354px;padding-bottom:0;overflow:hidden}
   /* full-bleed background video, framed from just under the fixed header
      (92px bar + 1px border) so the whole frame, including the closing caption,
      stays on screen and nothing sits behind the nav */
@@ -309,7 +309,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .menu-btn{display:flex}
   }
   @media (max-width:560px){
-    .hero{padding-top:350px}
+    .hero{padding-top:320px}
     .tile{padding:13px 14px 15px}
     .tile-name{font-size:16px}
     .tile-spec{font-size:10px}
@@ -327,7 +327,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   }
   /* short laptop viewports: keep the product shelf on the first screen */
   @media (max-height:840px) and (min-width:1001px){
-    .hero{padding-top:342px}
+    .hero{padding-top:312px}
     .place-line{margin-bottom:22px}
     .hero h1{font-size:clamp(36px,4.8vw,62px);margin-bottom:20px}
     .hero-sub{font-size:15px;margin-bottom:26px}
