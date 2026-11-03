@@ -52,6 +52,24 @@ export default function About() {
         </div>
       </div>
 
+      <section className="endorsements-section">
+        <div className="wrap">
+          <div className="sec-head" style={{ marginBottom: 24 }}>
+            <div>
+              <div className="kicker">Our endorsements</div>
+              <h2>Trusted For Our Work. <span>Recommended For Our Services.</span></h2>
+            </div>
+          </div>
+          <div className="endorsement-grid">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div className="endorsement-slot" key={n}>
+                <span className="placeholder-text">Logo {n}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <LocationsMap />
 
       <div className="wrap" style={{ marginTop: 64 }}>
