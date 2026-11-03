@@ -179,11 +179,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .brand-logo-wrap img{max-height:40px;max-width:100%;width:auto;height:auto;object-fit:contain;
     filter:none;transition:transform .4s var(--ease)}
   .brand-card:hover .brand-logo-wrap img{transform:scale(1.08)}
-  /* subtle shine sweep on hover */
+  /* continuous slow shine sweep (70% slower than the original hover sweep) */
   .brand-card::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(115deg,transparent 40%,rgba(228,209,142,.18) 50%,transparent 60%);
-    transform:translateX(-100%);transition:transform .6s var(--ease)}
-  .brand-card:hover::after{transform:translateX(100%)}
+    background:linear-gradient(115deg,transparent 40%,rgba(228,209,142,.22) 50%,transparent 60%);
+    transform:translateX(-100%);
+    animation:brandShine 2s linear infinite}
+  @keyframes brandShine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
   .brand-name{font-size:14px;font-weight:500;color:var(--white);letter-spacing:-.01em}
   .brand-cat{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .brand-tag{font-size:12px;color:var(--muted);line-height:1.5;max-width:22ch}
