@@ -30,7 +30,7 @@ export default function TwoPaths() {
 
           <article className="path path-biz" id="business">
             <div className="path-tag">For business</div>
-            <h3>Solar at the scale your operations actually run.</h3>
+            <h3>Commercial &amp; Industrial Solar Solutions</h3>
             <p>Feasibility, engineering, EPC and O&amp;M for industrial and commercial sites — anywhere in India, with production downtime treated as a design constraint.</p>
             <ul className="path-list">
               <li>Load study and feasibility report</li>
