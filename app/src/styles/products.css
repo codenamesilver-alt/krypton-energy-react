@@ -1,5 +1,5 @@
 .prod-section{padding-block:clamp(52px,6vw,88px);border-top:1px solid var(--hair)}
-.prod-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(28px,4vw,44px)}
+.prod-head{display:grid;grid-template-columns:1fr;gap:clamp(12px,2vw,20px);align-items:start;margin-bottom:clamp(28px,4vw,44px)}
 .prod-head .kicker{margin-bottom:10px}
 .prod-head h2{font-size:calc(clamp(44px,6.3vw,88px) - 22px);font-weight:200;letter-spacing:-.045em;line-height:.98;margin:0;color:var(--white)}
 .prod-head h2 span{color:#e4d18e;font-weight:200}

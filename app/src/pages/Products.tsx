@@ -48,8 +48,8 @@ export default function ProductsPage() {
             <div>
               <div className="kicker">Our products</div>
               <h2>Brands we <span>trust and install.</span></h2>
+              <p>Krypton Energy specifies, installs and services equipment from the world’s most trusted solar, inverter, battery and EV charging brands — chosen for performance, reliability and long-term support in Indian conditions.</p>
             </div>
-            <p>Krypton Energy specifies, installs and services equipment from the world’s most trusted solar, inverter, battery and EV charging brands — chosen for performance, reliability and long-term support in Indian conditions.</p>
           </div>
 
           <div className="brand-ribbon" aria-label="Brands we trust and install">
