@@ -83,6 +83,6 @@
   .kr-main h2{font-size:42px}
   .kr-facts{grid-template-columns:1fr;gap:20px}
   .kr-principles{grid-template-columns:1fr;gap:28px}
-  .kr-button{display:block;text-align:center}
+  .kr-button{display:inline-block;text-align:center;margin-left:12px}
   .kr-cta .kr-hindi{font-size:26px}
 }
