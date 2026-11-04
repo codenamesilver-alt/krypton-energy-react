@@ -20,7 +20,7 @@ export default function Footer() {
             <h4>Explore</h4>
             <ul>
               <li><Link to="/" onClick={toTop}>Home</Link></li>
-              <li><Link to="/backup" onClick={toTop}>About Us</Link></li>
+              <li><Link to="/about-us" onClick={toTop}>About Us</Link></li>
               <li><Link to="/products" onClick={toTop}>Our Products</Link></li>
             </ul>
           </div>

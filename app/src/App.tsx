@@ -62,7 +62,8 @@ function AppShell() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-and-conditions" element={<TermsConditionsPage />} />
-        <Route path="/backup" element={<BackupPage />} />
+        <Route path="/about-us" element={<BackupPage />} />
+        <Route path="/backup" element={<Navigate to="/about-us" replace />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/admin" element={<BlogAdminPage />} />
