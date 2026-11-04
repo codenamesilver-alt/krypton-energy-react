@@ -285,7 +285,8 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   /* ---------- roof to meter ---------- */
   .roof-to-meter{--deep:#1e222a;--deep2:#252a33;--green:#e4d18e;--mint:#1f3a2c;--lime:#c9e96b;--gold2:#f1b84b;--ink2:#f7f6f2;--muted2:#a3a9b4;--paper2:#1e222a;--white2:#f7f6f2;--line2:#2c323c;background:var(--paper2);color:var(--ink2);padding:48px 0 32px}
   .roof-to-meter .wrap{max-width:1180px;margin:0 auto;padding:20px 22px 32px}
-  .rtm-heading{text-align:center;max-width:760px;margin:0 auto 34px}
+  .rtm-heading{text-align:left;max-width:760px;margin:0 0 34px}
+  .rtm-heading .rtm-title,.rtm-title{font-size:calc(clamp(44px,6.3vw,88px) - 22px);font-weight:200;line-height:.98;letter-spacing:-.045em;margin:12px 0;color:var(--white)}
   .roof-to-meter .kicker{font-size:12px;letter-spacing:.2em;font-weight:800;color:#b48c48;text-transform:uppercase}
   .rtm-heading h1{font-size:clamp(30px,3.6vw,48px);font-weight:200;line-height:1.08;letter-spacing:-.035em;color:var(--white2);margin:12px 0}
   .rtm-heading .lead{font-size:clamp(16px,2vw,19px);font-weight:700;color:var(--gold-light);margin:0 0 10px}
@@ -330,7 +331,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   /* ---------- how solar works diagram ---------- */
   .system-diagram{border-bottom:1px solid var(--hair);background:var(--ink);position:relative;padding:48px 0 32px}
   .sys-head{text-align:left;margin-bottom:16px}
-  .sys-title{font-size:calc(clamp(44px,6.3vw,88px) - 18px);font-weight:200;line-height:.98;letter-spacing:-.045em;margin:8px 0 6px;color:var(--white)}
+  .sys-title{font-size:calc(clamp(44px,6.3vw,88px) - 22px);font-weight:200;line-height:.98;letter-spacing:-.045em;margin:8px 0 6px;color:var(--white)}
   .sys-sub{font-size:15px;color:var(--muted);margin:0 0 14px;max-width:60ch}
   .system-diagram .tabs{display:flex;gap:8px;margin-bottom:12px}
   .system-diagram button{font:inherit;color:var(--white);background:var(--ink-2);border:1px solid var(--ink-3);padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;transition:background .2s,color .2s,border-color .2s}
@@ -391,6 +392,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   main > .section:first-child{padding-top:calc(clamp(48px,6vw,80px) + 93px)}
   .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
   .sec-head h2{font-size:clamp(30px,3.6vw,48px);font-weight:200;line-height:1.08;letter-spacing:-.035em;max-width:16ch}
+  .sec-head .paths-title,.paths-title{font-size:calc(clamp(44px,6.3vw,88px) - 22px);font-weight:200;line-height:.98;letter-spacing:-.045em;margin:8px 0 6px;color:var(--white)}
   .sec-head p{font-size:14.5px;color:var(--muted);max-width:46ch;justify-self:end}
   .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:400}
 
@@ -545,10 +547,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero-copy{margin-top:60px}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
-    .sys-title{font-size:calc(clamp(42px,9vw,68px) - 18px);font-weight:200;line-height:.98;letter-spacing:-.045em;color:var(--white);text-align:left;margin:8px 0 6px}
+    .sys-title{font-size:calc(clamp(42px,9vw,68px) - 22px);font-weight:200;line-height:.98;letter-spacing:-.045em;color:var(--white);text-align:left;margin:8px 0 6px}
     .sec-head h2{font-size:clamp(42px,9vw,68px)}
+    .sec-head .paths-title,.paths-title{font-size:calc(clamp(42px,9vw,68px) - 22px)}
     .rtm-heading{text-align:left}
     .rtm-heading h1{font-size:clamp(42px,9vw,68px);text-align:left;margin:12px 0;color:var(--white)}
+    .rtm-heading .rtm-title,.rtm-title{font-size:calc(clamp(42px,9vw,68px) - 22px)}
     .shelf-grid{grid-template-columns:1fr 1fr}
     .tile-wrap:nth-child(2n) .tile{border-right:0}
     .tile-wrap:nth-child(-n+2) .tile{border-bottom:1px solid var(--hair)}

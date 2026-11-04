@@ -4,7 +4,7 @@ export default function RoofToMeter() {
       <div className="wrap">
         <header className="rtm-heading">
           <div className="kicker">From Roof to Meter</div>
-          <h1>From Planning to Power, Every Step Made Simple</h1>
+          <h1 className="rtm-title">From Planning to Power, Every Step Made <span style={{ color: '#e4d18e' }}>Simple</span></h1>
           <p className="lead">Your solar journey, managed from start to finish.</p>
           <p className="intro">The paperwork and net meter matter too. We treat them as part of the job—not as your problem.</p>
         </header>
