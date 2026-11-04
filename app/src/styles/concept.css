@@ -330,7 +330,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   /* ---------- how solar works diagram ---------- */
   .system-diagram{border-bottom:1px solid var(--hair);background:var(--ink);position:relative;padding:48px 0 32px}
   .sys-head{text-align:left;margin-bottom:16px}
-  .sys-title{font-size:clamp(44px,6.3vw,88px);font-weight:200;line-height:.98;letter-spacing:-.045em;margin:8px 0 6px;color:var(--white)}
+  .sys-title{font-size:calc(clamp(44px,6.3vw,88px) - 10px);font-weight:200;line-height:.98;letter-spacing:-.045em;margin:8px 0 6px;color:var(--white)}
   .sys-sub{font-size:15px;color:var(--muted);margin:0 0 14px;max-width:60ch}
   .system-diagram .tabs{display:flex;gap:8px;margin-bottom:12px}
   .system-diagram button{font:inherit;color:var(--white);background:var(--ink-2);border:1px solid var(--ink-3);padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;transition:background .2s,color .2s,border-color .2s}
@@ -545,7 +545,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero-copy{margin-top:60px}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
-    .sys-title{font-size:clamp(42px,9vw,68px);font-weight:200;line-height:.98;letter-spacing:-.045em;color:var(--white);text-align:left;margin:8px 0 6px}
+    .sys-title{font-size:calc(clamp(42px,9vw,68px) - 10px);font-weight:200;line-height:.98;letter-spacing:-.045em;color:var(--white);text-align:left;margin:8px 0 6px}
     .sec-head h2{font-size:clamp(42px,9vw,68px)}
     .rtm-heading{text-align:left}
     .rtm-heading h1{font-size:clamp(42px,9vw,68px);text-align:left;margin:12px 0;color:var(--white)}
