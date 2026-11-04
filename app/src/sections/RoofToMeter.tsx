@@ -4,7 +4,7 @@ export default function RoofToMeter() {
       <div className="wrap">
         <header className="rtm-heading">
           <h1 className="rtm-title">From Planning to Power, Every Step Made <span style={{ color: '#e4d18e' }}>Simple</span></h1>
-          <p className="lead">Your solar journey, managed from start to finish.</p>
+
 
         </header>
 
