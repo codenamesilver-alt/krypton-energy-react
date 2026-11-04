@@ -121,7 +121,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero-media video{object-fit:cover;object-position:center center}
     .hero-grid{position:relative;min-height:auto;padding-top:8px;gap:16px}
     .hero-copy{margin-top:0}
-    .hero-points-wrap{position:relative;left:auto;right:auto;bottom:auto;z-index:2;overflow:hidden;
+    .hero-points-wrap{position:relative !important;top:0;left:auto;right:auto;bottom:auto;z-index:2;overflow:hidden;
       mask-image:linear-gradient(90deg,transparent 0px,black 20px,black calc(100% - 20px),transparent 100%);
       -webkit-mask-image:linear-gradient(90deg,transparent 0px,black 20px,black calc(100% - 20px),transparent 100%)}
   }

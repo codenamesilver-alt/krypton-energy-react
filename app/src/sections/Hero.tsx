@@ -45,18 +45,6 @@ export default function Hero() {
           disableRemotePlayback
         />
       </div>
-      <div className="wrap hero-grid">
-        <div className="hero-copy">
-          <h1>
-            <span className="line"><span>Powering a Smarter,</span></span>
-            <span className="line"><span>Greener <em>Tomorrow.</em></span></span>
-          </h1>
-          <p className="hero-sub">Bringing Australian expertise to India with smarter energy solutions that help homes and businesses lower electricity bills and build a greener future.</p>
-          <div className="hero-actions">
-            <button className="btn btn-gold btn-pill" onClick={openQuote}>Get your Free Solar consultation</button>
-          </div>
-        </div>
-      </div>
       <div className="hero-points-wrap">
         <ul className="hero-points">
           <li>Solar Solutions for Homes &amp; Businesses</li>
@@ -70,6 +58,18 @@ export default function Hero() {
           <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
           <li>Smart &amp; Sustainable Energy Solutions</li>
         </ul>
+      </div>
+      <div className="wrap hero-grid">
+        <div className="hero-copy">
+          <h1>
+            <span className="line"><span>Powering a Smarter,</span></span>
+            <span className="line"><span>Greener <em>Tomorrow.</em></span></span>
+          </h1>
+          <p className="hero-sub">Bringing Australian expertise to India with smarter energy solutions that help homes and businesses lower electricity bills and build a greener future.</p>
+          <div className="hero-actions">
+            <button className="btn btn-gold btn-pill" onClick={openQuote}>Get your Free Solar consultation</button>
+          </div>
+        </div>
       </div>
       <div className="hero-rule" />
     </section>
