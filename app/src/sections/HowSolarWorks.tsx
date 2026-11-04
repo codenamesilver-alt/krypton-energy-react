@@ -63,7 +63,6 @@ export default function HowSolarWorks() {
     <section className="system-diagram" aria-label="How your solar system works">
       <div className="wrap">
         <div className="sys-head">
-          <span className="kicker">How it works</span>
           <h2 className="sys-title">How your solar system works</h2>
           <p className="sys-sub">Follow the glowing lines to see where the power goes.</p>
         </div>
