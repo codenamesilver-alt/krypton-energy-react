@@ -511,7 +511,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .closing .btn-ghost:hover{background:rgba(30,34,42,.05);border-color:var(--ink)}
 
   /* ---------- footer ---------- */
-  .foot{background:#000;border-top:1px solid rgba(228,209,142,.18);padding-block:56px 28px}
+  .foot{background:rgba(0,0,0,.55);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);border-top:1px solid rgba(228,209,142,.28);padding-block:56px 28px;position:relative}
   .foot-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px;margin-bottom:44px}
   .foot-social{display:flex;gap:10px;margin-top:14px}
   .foot-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
