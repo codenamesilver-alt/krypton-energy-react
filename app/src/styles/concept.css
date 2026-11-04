@@ -536,6 +536,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .nav{display:none}
     .head-actions .btn{display:none}
     .head-inner{padding-left:14px;gap:14px}
+    .brand{margin-left:0}
     .menu-btn{display:flex}
   }
   @media (max-width:560px){
