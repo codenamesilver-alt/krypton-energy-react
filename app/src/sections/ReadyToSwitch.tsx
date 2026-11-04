@@ -9,7 +9,7 @@ export default function ReadyToSwitch() {
         <div className="about-cta">
           <h2>Ready to make <span>the switch?</span></h2>
           <p>Talk to our team and discover a solar solution designed around you. Let’s power a cleaner, more reliable future together.</p>
-          <button className="btn btn-gold" onClick={openQuote}>Get a Free Consultation</button>
+          <button className="btn btn-gold btn-pill" onClick={openQuote}>Get a Free Consultation</button>
           <p className="calc-note" style={{ marginTop: 16, textAlign: 'center' }}>No obligation. Honest advice.</p>
         </div>
       </div>
