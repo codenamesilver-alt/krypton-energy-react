@@ -16,4 +16,4 @@
 .prod-card ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
 .prod-card li{font-size:13px;color:var(--muted-2);padding-left:14px;position:relative;line-height:1.5}
 .prod-card li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:1px;background:var(--gold-light)}
-@media (max-width:860px){.prod-head{grid-template-columns:1fr;gap:16px}.prod-head h2{font-size:calc(clamp(42px,9vw,68px) - 22px)}.prod-cards.two,.prod-cards.three{grid-template-columns:1fr}}
+@media (max-width:860px){.prod-head{grid-template-columns:1fr;gap:16px}.prod-head h2{font-size:42px}.prod-cards.two,.prod-cards.three{grid-template-columns:1fr}}
