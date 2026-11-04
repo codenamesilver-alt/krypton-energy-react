@@ -1,7 +1,7 @@
 .prod-section{padding-block:clamp(52px,6vw,88px);border-top:1px solid var(--hair)}
 .prod-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:clamp(28px,4vw,44px)}
 .prod-head .kicker{margin-bottom:10px}
-.prod-head h2{font-size:clamp(28px,3.4vw,46px);font-weight:300;letter-spacing:-.035em;line-height:1.05;margin:0}
+.prod-head h2{font-size:58px;font-weight:400;letter-spacing:-.035em;line-height:1.05;margin:0}
 .prod-head h2 span{background:linear-gradient(180deg,#f8e7a8,#c9a24f);-webkit-background-clip:text;background-clip:text;color:transparent}
 .prod-head p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:52ch}
 .prod-cards{display:grid;gap:16px}

@@ -1,4 +1,5 @@
 import { useQuoteModal } from '../context/QuoteModal'
+import '../styles/products.css'
 
 type Category = 'solar' | 'inverter' | 'battery' | 'ev'
 
