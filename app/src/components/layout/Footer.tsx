@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/brand/krypton-logo.png'
 
 const toTop = () => {
@@ -7,8 +7,10 @@ const toTop = () => {
 }
 
 export default function Footer() {
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
   return (
-    <footer className="foot">
+    <footer className={`foot${isHome ? ' foot--home' : ''}`}>
       <div className="shell">
         <div className="foot-grid">
           <div className="foot-brand">
