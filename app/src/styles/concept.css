@@ -167,7 +167,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     color:var(--white);font-size:14px;font-family:inherit;transition:border-color .2s}
   .admin-login-form input:focus,.admin-login-form textarea:focus,.admin-login-form select:focus,
   .admin-form input:focus,.admin-form textarea:focus,.admin-form select:focus{border-color:var(--gold);outline:none}
-  .admin-form textarea.admin-content-textarea{font-family:monospace;font-size:13px;min-height:200px}
+  .admin-form textarea.admin-content-textarea{font-family:'Poppins',system-ui,-apple-system,sans-serif;font-size:13px;min-height:200px}
   .admin-error{color:#ff6b6b;font-size:13px;margin:0}
   .admin-help{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
   .admin-topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
