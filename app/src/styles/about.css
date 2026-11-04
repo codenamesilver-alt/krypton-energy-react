@@ -38,6 +38,7 @@
   box-shadow:0 30px 60px rgba(0,0,0,.45),0 8px 20px rgba(0,0,0,.25);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .endorse-doc--front{z-index:3;transform:translate(-50%,-50%) rotate(-2deg) translateZ(0);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px rgba(228,209,142,.3)}
 .endorse-doc--back{z-index:2;transform:translate(calc(-50% + 60px),calc(-50% + 20px)) rotate(4deg) translateZ(-40px) scale(.94);opacity:.85}
+.endorse-doc--third{z-index:1;transform:translate(calc(-50% + 100px),calc(-50% + 36px)) rotate(7deg) translateZ(-80px) scale(.88);opacity:.7}
 .endorse-doc img{width:100%;height:100%;object-fit:contain;display:block;background:#f5f3ee}
 .endorse-doc:hover{z-index:4;transform:translate(-50%,-50%) rotate(0deg) translateZ(20px) scale(1.03);box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 0 1px var(--gold-light)}
 
@@ -58,6 +59,7 @@
   .endorse-stage{min-height:460px}
   .endorse-doc{width:min(60%,360px)}
   .endorse-doc--back{transform:translate(calc(-50% + 40px),calc(-50% + 12px)) rotate(4deg) translateZ(-40px) scale(.94)}
+.endorse-doc--third{transform:translate(calc(-50% + 64px),calc(-50% + 20px)) rotate(6deg) translateZ(-70px) scale(.9)}
   .endorse-panel--sage{width:50%;height:60%}
   .endorse-panel--emerald{width:46%;height:56%}
 }
@@ -65,11 +67,13 @@
   .endorse-stage{min-height:420px;padding:10px 0}
   .endorse-doc{width:min(80%,320px)}
   .endorse-doc--back{transform:translate(calc(-50% + 24px),calc(-50% + 8px)) rotate(3deg) translateZ(-30px) scale(.95);opacity:.7}
+.endorse-doc--third{transform:translate(calc(-50% + 40px),calc(-50% + 12px)) rotate(5deg) translateZ(-55px) scale(.92);opacity:.6}
   .endorse-panel--sage,.endorse-panel--emerald{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   .endorse-doc,.endorse-panel{transition:none;animation:none;transform:none}
   .endorse-doc--back{transform:translate(-50%,-50%) scale(.94)}
+.endorse-doc--third{transform:translate(-50%,-50%) scale(.9)}
 }
 .endorsement-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
 .endorsement-slot{aspect-ratio:16/9;background:var(--ink-2);border:1px dashed var(--hair);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:border-color .25s,background .25s;min-height:260px}

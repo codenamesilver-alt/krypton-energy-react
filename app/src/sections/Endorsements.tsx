@@ -3,6 +3,7 @@ import { useState } from 'react'
 const docs = [
   { src: '/media/endorsements/bendigo.png', alt: 'Bendigo recommendation letter', label: 'Bendigo' },
   { src: '/media/endorsements/ymca.png', alt: 'YMCA recommendation letter', label: 'YMCA' },
+  { src: '/media/endorsements/Opylums.png', alt: 'Opylums recommendation letter', label: 'Opylums' },
 ]
 
 export default function Endorsements() {
@@ -22,6 +23,15 @@ export default function Endorsements() {
         <div className="endorse-stage">
           <div className="endorse-panel endorse-panel--sage" aria-hidden="true" />
           <div className="endorse-panel endorse-panel--emerald" aria-hidden="true" />
+
+          <button
+            type="button"
+            className="endorse-doc endorse-doc--third"
+            onClick={() => setLightbox(docs[2].src)}
+            aria-label="View Opylums recommendation letter"
+          >
+            <img src={docs[2].src} alt={docs[2].alt} loading="lazy" />
+          </button>
 
           <button
             type="button"
@@ -48,6 +58,9 @@ export default function Endorsements() {
           </button>
           <button type="button" className="endorse-view-btn" onClick={() => setLightbox(docs[1].src)}>
             View YMCA letter
+          </button>
+          <button type="button" className="endorse-view-btn" onClick={() => setLightbox(docs[2].src)}>
+            View Opylums letter
           </button>
         </div>
       </div>
