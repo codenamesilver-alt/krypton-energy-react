@@ -47,6 +47,7 @@ export default function Header() {
           {navLinks.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>
           ))}
+          <button className="btn btn-gold btn-pill mobile-quote" onClick={() => { setOpen(false); openQuote() }}>Get a quote</button>
           <a href="tel:+919871140675" onClick={() => setOpen(false)}>+91-9871140675</a>
         </nav>
       )}

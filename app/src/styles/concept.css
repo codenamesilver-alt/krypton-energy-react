@@ -534,8 +534,10 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .place-desc{grid-column:1/-1}
     .place-row .link-arrow{grid-column:1/-1;margin-top:6px}
     .nav{display:none}
-    .head-inner{padding-left:14px;gap:14px}
-    .menu-btn{display:flex}
+    .head-inner{padding-left:14px;gap:14px;position:relative}
+    .head-actions{flex:0 0 auto;margin-left:0;margin-right:0}
+    .head-actions .btn{display:inline-flex;padding:8px 14px;font-size:12px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+    .menu-btn{display:flex;position:absolute;right:14px;top:50%;transform:translateY(-50%)}
   }
   @media (max-width:560px){
     .hero{padding-top:320px}
@@ -576,6 +578,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   font-size:16px;z-index:99}
 .mobile-menu a{font-size:16.5px;color:rgba(247,246,242,.78);padding-block:4px}
 .mobile-menu a:hover{color:var(--gold-light)}
+.mobile-menu .mobile-quote{align-self:flex-start;margin-top:6px}
 
   /* ---------- quote modal ---------- */
   .quote-modal{position:fixed;inset:0;background:rgba(6,8,13,.82);backdrop-filter:blur(6px);
