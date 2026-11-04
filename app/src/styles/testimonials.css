@@ -42,7 +42,17 @@
   letter-spacing: -0.035em;
   line-height: 1.08;
   color: #e4d18e;
+  margin: 0 0 8px;
+}
+.testi-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
   margin: 0 0 14px;
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* stage */
