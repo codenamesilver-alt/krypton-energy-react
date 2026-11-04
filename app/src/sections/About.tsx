@@ -1,5 +1,4 @@
 import '../styles/about.css'
-import LocationsMap from './LocationsMap'
 import Endorsements from './Endorsements'
 
 export default function About() {
@@ -50,8 +49,6 @@ export default function About() {
       </div>
 
       <Endorsements />
-
-      <LocationsMap />
 
       <div className="wrap" style={{ marginTop: 64 }}>
         <div className="sec-head">

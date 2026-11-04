@@ -1,4 +1,6 @@
 import '../styles/backup.css'
+import '../styles/locations.css'
+import indiaMap from '../assets/india-map.svg?raw'
 import { useEffect, useState } from 'react'
 
 export default function BackupPage() {
@@ -76,7 +78,9 @@ export default function BackupPage() {
       {/* 4. WHERE WE WORK */}
       <section className="kr-section">
         <div className="kr-wrap kr-where">
-          <div className="kr-map-slot">Place the existing India map here</div>
+          <div className="kr-map-slot">
+            <div className="india-map" dangerouslySetInnerHTML={{ __html: indiaMap }} />
+          </div>
           <div>
             <h2>Where we <em>work.</em></h2>
             <ul className="kr-regions">
