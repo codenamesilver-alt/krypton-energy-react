@@ -8,7 +8,7 @@ export default function BackupPage() {
       {/* 1. HERO */}
       <section className="kr-hero">
         <div className="kr-wrap">
-          <h1>Clean energy, <em>designed around you.</em></h1>
+          <h1>Clean energy, designed <em>around you.</em></h1>
           <p className="kr-lead">Solar, battery storage and EV charging for homes, factories and commercial sites across India.</p>
           <ul className="kr-facts">
             <li><strong>Since 2022</strong><span>Established in Australia</span></li>
