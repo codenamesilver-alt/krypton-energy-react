@@ -66,7 +66,7 @@ export default function Testimonials() {
   return (
     <section className="section testi-section" id="testimonials" aria-label="What customers say about us">
       <div className="wrap">
-        <h2 className="testi-title">Real Customers, Real Results</h2>
+        <h2 className="testi-title">Real Customers, Real <span style={{ color: '#e4d18e' }}>Results</span></h2>
         <p className="testi-subtitle">What our Australian customers are saying</p>
         <div className="testi-rule testi-rule--lg" aria-hidden="true" />
 
