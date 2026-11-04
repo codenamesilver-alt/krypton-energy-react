@@ -136,10 +136,10 @@ export default function PrivacyPolicyPage() {
             <h2>13. Contact Information and Grievance Redressal</h2>
             <p>If you have any questions, concerns, complaints, or requests relating to this Privacy Policy or the handling of your personal information, you may contact us using the details below:</p>
             <p><strong>Krypton Energy Private Limited</strong></p>
-            <p><strong>Email:</strong> [Insert Official Company Email]<br />
-            <strong>Phone:</strong> [Insert Official Contact Number]<br />
-            <strong>Address:</strong> [Insert Registered Office Address]<br />
-            <strong>Website:</strong> [Insert Website URL]</p>
+            <p><strong>Email:</strong> info@kryptonenergy.in<br />
+            <strong>Phone:</strong> 09871140675<br />
+            <strong>Address:</strong> B-12, Okhla Industrial Area Phase-2, New Delhi – 110020<br />
+            <strong>Website:</strong> www.kryptonenergy.in</p>
             <p>We will make reasonable efforts to acknowledge and address your privacy-related concerns within the timelines prescribed under applicable laws.</p>
 
             <hr style={{ border: 0, borderTop: '1px solid var(--hair)', margin: '32px 0' }} />
