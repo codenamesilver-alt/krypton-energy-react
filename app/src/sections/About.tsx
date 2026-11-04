@@ -1,7 +1,8 @@
 import '../styles/about.css'
-
+import { useQuoteModal } from '../context/QuoteModal'
 
 export default function About() {
+  const { open: openQuote } = useQuoteModal()
   return (
     <section className="section" id="about">
       <div className="wrap">
@@ -116,6 +117,7 @@ export default function About() {
       <div className="about-commit">
         <div className="kicker">Our commitment</div>
         <h3>Let’s gift our children <span>a green tomorrow.</span></h3>
+        <button className="btn btn-gold btn-pill" onClick={openQuote} style={{ marginTop: 24 }}>Get a Free Consultation</button>
         <div className="cov">
           <div><b>Residential installations</b>Delhi · Uttarakhand · Bihar</div>
           <div><b>Commercial installations</b>Pan India</div>
