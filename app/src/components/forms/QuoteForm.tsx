@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-const CONTACT_API = import.meta.env.VITE_CONTACT_API_URL || 'http://localhost/contact.php'
+const CONTACT_API = import.meta.env.VITE_CONTACT_API_URL || '/contact.php'
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false)
