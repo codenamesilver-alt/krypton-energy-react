@@ -24,15 +24,23 @@ export default function Home() {
       <div className="home-ribbon hero-points-wrap">
         <ul className="hero-points">
           <li>Solar Solutions for Homes &amp; Businesses</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>Battery Storage &amp; Inverters</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>EV Charging Solutions</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>Smart &amp; Sustainable Energy Solutions</li>
           <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>Solar Solutions for Homes &amp; Businesses</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>Battery Storage &amp; Inverters</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>EV Charging Solutions</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
+          <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
           <li>Smart &amp; Sustainable Energy Solutions</li>
           <li className="ribbon-logo"><img src="/media/pm-surya-ghar.png" alt="PM Surya Ghar Muft Bijli Yojana" /></li>
         </ul>
