@@ -68,8 +68,8 @@
 @media (max-width:959px){
   .kr-section{padding:72px 0}
   .kr-hero{padding:88px 0 56px}
-  .kr-main h1{font-size:44px}
-  .kr-main h2{font-size:40px}
+  .kr-main h1{font-size:42px}
+  .kr-main h2{font-size:42px}
   .kr-story,.kr-where{grid-template-columns:1fr;gap:40px}
   .kr-photo-slot{aspect-ratio:16/10}
   .kr-map-slot{aspect-ratio:4/3}
@@ -77,8 +77,8 @@
 @media (max-width:599px){
   .kr-wrap{padding:0 20px}
   .kr-section{padding:56px 0}
-  .kr-main h1{font-size:36px}
-  .kr-main h2{font-size:32px}
+  .kr-main h1{font-size:42px}
+  .kr-main h2{font-size:42px}
   .kr-facts{grid-template-columns:1fr;gap:20px}
   .kr-principles{grid-template-columns:1fr;gap:28px}
   .kr-button{display:block;text-align:center}

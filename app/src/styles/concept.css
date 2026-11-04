@@ -558,12 +558,12 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .hero-copy{margin-top:60px}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
-    .sys-title{font-size:calc(clamp(42px,9vw,68px) - 22px);font-weight:200;line-height:.98;letter-spacing:-.045em;color:var(--white);text-align:left;margin:8px 0 6px}
-    .sec-head h2{font-size:clamp(42px,9vw,68px)}
-    .sec-head .paths-title,.paths-title{font-size:calc(clamp(42px,9vw,68px) - 22px)}
+    .sys-title{font-size:42px;font-weight:200;line-height:.98;letter-spacing:-.045em;color:var(--white);text-align:left;margin:8px 0 6px}
+    .sec-head h2{font-size:42px}
+    .sec-head .paths-title,.paths-title{font-size:42px}
     .rtm-heading{text-align:left}
-    .rtm-heading h1{font-size:clamp(42px,9vw,68px);text-align:left;margin:12px 0;color:var(--white)}
-    .rtm-heading .rtm-title,.rtm-title{font-size:calc(clamp(42px,9vw,68px) - 22px)}
+    .rtm-heading h1{font-size:42px;text-align:left;margin:12px 0;color:var(--white)}
+    .rtm-heading .rtm-title,.rtm-title{font-size:42px}
     .shelf-grid{grid-template-columns:1fr 1fr}
     .tile-wrap:nth-child(2n) .tile{border-right:0}
     .tile-wrap:nth-child(-n+2) .tile{border-bottom:1px solid var(--hair)}
