@@ -5,6 +5,7 @@ import HowSolarWorks from '../sections/HowSolarWorks'
 import TwoPaths from '../sections/TwoPaths'
 import Testimonials from '../sections/Testimonials'
 import ReadyToSwitch from '../sections/ReadyToSwitch'
+import RoofToMeter from '../sections/RoofToMeter'
 
 export default function Home() {
   const { hash } = useLocation()
@@ -47,6 +48,7 @@ export default function Home() {
       <div className="home-hindi-line">अपनी बिजली बनाओ और पैसे बचाओ</div>
       <HowSolarWorks />
       <TwoPaths />
+      <RoofToMeter />
       <Testimonials />
       <ReadyToSwitch />
     </main>
