@@ -37,7 +37,7 @@
   margin-bottom: 40px;
 }
 .testi-title {
-  font-size: clamp(30px, 3.6vw, 48px);
+  font-size: calc(clamp(44px, 6.3vw, 88px) - 22px);
   font-weight: 200;
   letter-spacing: -0.035em;
   line-height: 1.08;
