@@ -34,7 +34,9 @@
 .kr-closing{margin-top:48px;color:var(--white);font-size:18px;max-width:52ch}
 
 .kr-where{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.kr-map-slot{aspect-ratio:1/1;border:1px solid var(--hair);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.kr-map-slot{border:1px solid var(--hair);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.kr-map-slot .india-map{max-width:100%;max-height:100%}
+.kr-map-slot .india-map svg{max-width:100%;max-height:100%;width:auto;height:auto}
 .kr-regions{list-style:none;margin:8px 0 0;padding:0}
 .kr-regions li{padding:16px 0;border-top:1px solid var(--hair)}
 .kr-regions li:last-child{border-bottom:1px solid var(--hair)}
@@ -72,7 +74,7 @@
   .kr-main h2{font-size:42px}
   .kr-story,.kr-where{grid-template-columns:1fr;gap:40px}
   .kr-photo-slot{aspect-ratio:16/10}
-  .kr-map-slot{aspect-ratio:4/3}
+  .kr-map-slot{aspect-ratio:auto}
 }
 @media (max-width:599px){
   .kr-wrap{padding:0 20px}
