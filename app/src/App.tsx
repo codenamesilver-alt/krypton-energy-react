@@ -19,11 +19,16 @@ import BlogAdminPage from './pages/BlogAdmin'
 function AppShell() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
     if (hash) {
       const el = document.querySelector(hash)
       if (el) el.scrollIntoView({ behavior: 'smooth' })
     } else {
       window.scrollTo(0, 0)
+      const t = setTimeout(() => window.scrollTo(0, 0), 50)
+      return () => clearTimeout(t)
     }
   }, [pathname, hash])
   useEffect(() => {
