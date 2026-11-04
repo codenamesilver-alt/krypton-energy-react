@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 export default function BackupPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
   const [selected, setSelected] = useState<number | null>(null)
+  const [lightbox, setLightbox] = useState<string | null>(null)
   return (
     <main id="main" className="kr-main">
       {/* 1. HERO */}
@@ -99,7 +100,34 @@ export default function BackupPage() {
       <section className="kr-section">
         <div className="kr-wrap">
           <h2>Trusted by those <em>we've worked with.</em></h2>
-          <div className="kr-letters-slot">Place the existing client letters carousel here, with a caption naming the client, place and country</div>
+          <div className="kr-letters">
+            {[
+              { src: '/media/endorsements/bendigo.png', alt: 'Bendigo recommendation letter', label: 'Bendigo' },
+              { src: '/media/endorsements/ymca.png', alt: 'YMCA recommendation letter', label: 'YMCA' },
+              { src: '/media/endorsements/Opylums.png', alt: 'Opylums recommendation letter', label: 'Opylums' },
+            ].map((d) => (
+              <button
+                type="button"
+                key={d.label}
+                className="kr-letter"
+                onClick={() => setLightbox(d.src)}
+                aria-label={`View ${d.label} recommendation letter`}
+              >
+                <img src={d.src} alt={d.alt} loading="lazy" />
+                <span className="kr-letter-label">{d.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {lightbox && (
+            <div className="kr-lightbox" onClick={() => setLightbox(null)} role="dialog" aria-modal="true" aria-label="Recommendation letter preview">
+              <button type="button" className="kr-lightbox-close" onClick={() => setLightbox(null)} aria-label="Close preview">×</button>
+              <div className="kr-lightbox-inner" onClick={(e) => e.stopPropagation()}>
+                <img src={lightbox} alt="Recommendation letter full preview" />
+                <a className="kr-lightbox-open" href={lightbox} target="_blank" rel="noopener noreferrer">Open original</a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

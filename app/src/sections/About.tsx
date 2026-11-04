@@ -1,5 +1,5 @@
 import '../styles/about.css'
-import Endorsements from './Endorsements'
+
 
 export default function About() {
   return (
@@ -47,8 +47,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <Endorsements />
 
       <div className="wrap" style={{ marginTop: 64 }}>
         <div className="sec-head">
