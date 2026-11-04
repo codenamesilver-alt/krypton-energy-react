@@ -33,7 +33,7 @@ export const promises = [
 
 export const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'Alpha' },
+  { to: '/backup', label: 'About Us' },
   { to: '/products', label: 'Our Products' },
   { to: '/calculator', label: 'Calculator' },
   { to: '/contact', label: 'Contact Us' },

@@ -20,7 +20,7 @@ export default function Footer() {
             <h4>Explore</h4>
             <ul>
               <li><Link to="/" onClick={toTop}>Home</Link></li>
-              <li><Link to="/about" onClick={toTop}>Alpha</Link></li>
+              <li><Link to="/backup" onClick={toTop}>About Us</Link></li>
               <li><Link to="/products" onClick={toTop}>Our Products</Link></li>
             </ul>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
               <li><Link to="/blog">Our Blog</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/terms-and-conditions">Terms &amp; Conditions</Link></li>
-              <li><Link to="/backup">Backup</Link></li>
+              <li><Link to="/about" onClick={toTop}>Alpha</Link></li>
             </ul>
           </div>
           <div>
