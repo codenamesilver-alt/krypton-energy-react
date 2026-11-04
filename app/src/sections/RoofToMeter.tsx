@@ -47,7 +47,7 @@ export default function RoofToMeter() {
             </div>
             <div className="rtm-step-no">STEP 03</div>
             <h2>Install</h2>
-            <p>Our own crew handles mounting, cabling, earthing and commissioning in 2–4 days for a typical home.</p>
+            <p>Our team handles mounting, cabling, earthing and commissioning.</p>
             <span className="rtm-pill">Installed by our crew</span>
           </article>
 
