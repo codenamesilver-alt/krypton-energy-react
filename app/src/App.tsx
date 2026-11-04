@@ -12,6 +12,7 @@ import ProductsPage from './pages/Products'
 import CalculatorPage from './pages/Calculator'
 import FAQPage from './pages/FAQ'
 import ContactPage from './pages/Contact'
+import PrivacyPolicyPage from './pages/PrivacyPolicy'
 import BlogPage from './pages/Blog'
 import BlogPostPage from './pages/BlogPost'
 import BlogAdminPage from './pages/BlogAdmin'
@@ -57,6 +58,7 @@ function AppShell() {
         <Route path="/calculator" element={<CalculatorPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/admin" element={<BlogAdminPage />} />
