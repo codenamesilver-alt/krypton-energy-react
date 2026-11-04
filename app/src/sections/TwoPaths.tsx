@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { useQuoteModal } from '../context/QuoteModal'
 
 export default function TwoPaths() {
   const { open: openQuote } = useQuoteModal()
+  const [selected, setSelected] = useState<number | null>(null)
   return (
     <section className="section" id="homes">
       <div className="wrap">
@@ -24,7 +26,11 @@ export default function TwoPaths() {
             </div>
             <div className="photo-tiles">
               {[1,2,3,4,5,6].map((n) => (
-                <div className="photo-tile" key={n}>
+                <div
+                  className={`photo-tile${selected === n ? ' is-selected' : ''}`}
+                  key={n}
+                  onClick={() => setSelected((prev) => (prev === n ? null : n))}
+                >
                   <img src={`/media/kry/kry-${n}.jpg`} alt={`Krypton project ${n}`} loading="lazy" />
                 </div>
               ))}
