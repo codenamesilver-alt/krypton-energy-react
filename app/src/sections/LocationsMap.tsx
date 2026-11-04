@@ -8,7 +8,7 @@ export default function LocationsMap() {
         <div className="sec-head">
           <div>
             <div className="kicker">Where we work</div>
-            <h2>Close enough to come back.</h2>
+            <h2>Our Footprint</h2>
           </div>
           <p>Residential work is local by nature. The map shows where our own teams survey, install and service — not a dealer with our logo on a van.</p>
         </div>

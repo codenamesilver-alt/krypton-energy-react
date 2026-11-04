@@ -36,8 +36,6 @@ const categoryLabel: Record<Category, string> = {
 }
 
 export default function ProductsPage() {
-  const visible = brands
-
   return (
     <main id="main">
       <section className="section prod-hero" id="products">
@@ -50,17 +48,24 @@ export default function ProductsPage() {
             <p>Krypton Energy specifies, installs and services equipment from the world’s most trusted solar, inverter, battery and EV charging brands — chosen for performance, reliability and long-term support in Indian conditions.</p>
           </div>
 
-          <div className="brand-grid">
-            {visible.map((b, i) => (
-              <div className="brand-card reveal" key={b.name} style={{ transitionDelay: `${i * 60}ms` }}>
-                <div className="brand-logo-wrap">
-                  <img src={b.logo} alt={`${b.name} logo`} loading="lazy" />
+          <div className="brand-ribbon" aria-label="Brands we trust and install">
+            <div className="brand-track">
+              {[0, 1].map((copy) => (
+                <div className="brand-group" key={copy} aria-hidden={copy === 1 || undefined}>
+                  {brands.map((b) => (
+                    <div className="brand-chip" key={`${copy}-${b.name}`} title={b.tagline}>
+                      <span className="brand-chip-logo">
+                        <img src={b.logo} alt={`${b.name} logo`} loading="eager" />
+                      </span>
+                      <span className="brand-chip-text">
+                        <span className="brand-chip-name">{b.name}</span>
+                        <span className="brand-chip-cat">{categoryLabel[b.category]}</span>
+                      </span>
+                    </div>
+                  ))}
                 </div>
-                <div className="brand-name">{b.name}</div>
-                <div className="brand-cat">{categoryLabel[b.category]}</div>
-                <div className="brand-tag">{b.tagline}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <div className="prod-cta">

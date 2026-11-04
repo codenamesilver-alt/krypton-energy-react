@@ -1,5 +1,4 @@
 import '../styles/about.css'
-import logo from '../assets/brand/krypton-logo.png'
 import { useQuoteModal } from '../context/QuoteModal'
 import LocationsMap from './LocationsMap'
 import Endorsements from './Endorsements'
@@ -43,12 +42,11 @@ export default function About() {
             <p>This is more than an expansion. It's a commitment to a greener future, greater energy independence and a better tomorrow for the next generation.</p>
             <p className="founder-sign">Australia to India. One Vision. One Mission.</p>
             <div className="founder-signature">
-              <img src={logo} alt="Krypton Energy" className="founder-logo" />
               <span className="founder-name">Azka Masumi<br />(Founder)</span>
             </div>
           </div>
           <div className="founder-image">
-            <img src="/media/kkk.png" alt="KKK" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/media/ffg.png" alt="Krypton Energy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         </div>
       </div>

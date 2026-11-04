@@ -77,11 +77,11 @@ export default function QuoteForm() {
       </div>
       <div className="qf">
         <label htmlFor="q-email">Email</label>
-        <input id="q-email" required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" />
+        <input id="q-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com (optional)" />
       </div>
       <div className="qf">
         <label htmlFor="q-city">City</label>
-        <input id="q-city" required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} placeholder="Patna, Delhi, Uttarakhand…" />
+        <input id="q-city" value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} placeholder="Patna, Delhi, Uttarakhand… (optional)" />
       </div>
       <div className="qf">
         <label htmlFor="q-pincode">Pincode</label>

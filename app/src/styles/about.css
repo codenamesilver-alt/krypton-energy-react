@@ -76,7 +76,6 @@
 .endorsement-slot:hover{border-color:var(--gold);background:var(--ink-3)}
 .endorsement-slot .placeholder-text{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);opacity:.5}
 @media (max-width:760px){.endorsement-grid{grid-template-columns:1fr}}
-.founder-logo{height:60px;width:auto;display:block;background:#000;padding:4px 8px;border-radius:4px}
 .founder-name{font-size:15px;font-weight:500;color:var(--white);letter-spacing:.02em}
 .founder-image{width:100%}
 @media (max-width:760px){.founder-split{grid-template-columns:1fr}.founder-image{max-width:100%}}
