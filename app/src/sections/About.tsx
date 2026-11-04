@@ -1,10 +1,8 @@
 import '../styles/about.css'
-import { useQuoteModal } from '../context/QuoteModal'
 import LocationsMap from './LocationsMap'
 import Endorsements from './Endorsements'
 
 export default function About() {
-  const { open: openQuote } = useQuoteModal()
   return (
     <section className="section" id="about">
       <div className="wrap">
@@ -119,13 +117,6 @@ export default function About() {
         </ul>
       </div>
 
-      <div className="about-cta">
-        <div className="hindi">अपनी बिजली बनाओ और पैसे बचाओ</div>
-        <h2>Ready to make <span>the switch?</span></h2>
-        <p>Talk to our team and discover a solar solution designed around you. Let’s power a cleaner, more reliable future together.</p>
-        <button className="btn btn-gold" onClick={openQuote}>Get a Free Consultation</button>
-        <p className="calc-note" style={{ marginTop: 16 }}>No obligation. Honest advice. A plain-language answer to every question.</p>
-      </div>
 
       <div className="about-commit">
         <div className="kicker">Our commitment</div>

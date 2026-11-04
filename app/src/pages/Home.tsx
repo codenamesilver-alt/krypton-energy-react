@@ -4,6 +4,7 @@ import Hero from '../sections/Hero'
 import HowSolarWorks from '../sections/HowSolarWorks'
 import TwoPaths from '../sections/TwoPaths'
 import Testimonials from '../sections/Testimonials'
+import ReadyToSwitch from '../sections/ReadyToSwitch'
 import RoofToMeter from '../sections/RoofToMeter'
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <TwoPaths />
       <RoofToMeter />
       <Testimonials />
+      <ReadyToSwitch />
     </main>
   )
 }
