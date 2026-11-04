@@ -270,7 +270,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .brand-chip-name{font-size:12.5px}}
 
   /* ---------- roof to meter ---------- */
-  .roof-to-meter{--deep:#1e222a;--deep2:#252a33;--green:#7fe3b0;--mint:#1f3a2c;--lime:#c9e96b;--gold2:#f1b84b;--ink2:#f7f6f2;--muted2:#a3a9b4;--paper2:#1e222a;--white2:#f7f6f2;--line2:#2c323c;background:var(--paper2);color:var(--ink2);padding:48px 0 32px}
+  .roof-to-meter{--deep:#1e222a;--deep2:#252a33;--green:#e4d18e;--mint:#1f3a2c;--lime:#c9e96b;--gold2:#f1b84b;--ink2:#f7f6f2;--muted2:#a3a9b4;--paper2:#1e222a;--white2:#f7f6f2;--line2:#2c323c;background:var(--paper2);color:var(--ink2);padding:48px 0 32px}
   .roof-to-meter .wrap{max-width:1180px;margin:0 auto;padding:20px 22px 32px}
   .rtm-heading{text-align:center;max-width:760px;margin:0 auto 34px}
   .roof-to-meter .kicker{font-size:12px;letter-spacing:.2em;font-weight:800;color:#b48c48;text-transform:uppercase}
