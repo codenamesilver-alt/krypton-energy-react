@@ -21,3 +21,5 @@ Thumbs.db
 app/*.png
 mockups/shots/
 *.standalone.html
+# build zips
+*.zip
