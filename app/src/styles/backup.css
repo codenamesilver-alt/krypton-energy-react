@@ -1,0 +1,71 @@
+/* ---------- Backup (revised About) page ---------- */
+.kr-main{font-family:'Poppins',system-ui,-apple-system,sans-serif;color:var(--muted);text-align:left;background:var(--ink)}
+.kr-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.kr-section{padding:96px 0}
+.kr-section + .kr-section{border-top:1px solid var(--hair)}
+.kr-main h1,.kr-main h2,.kr-main h3,.kr-main p{margin:0}
+.kr-main h1{font-size:56px;font-weight:300;line-height:1.15;color:var(--white);max-width:14em}
+.kr-main h1 em,.kr-main h2 em{font-style:normal;color:var(--gold-light)}
+.kr-main h2{font-size:48px;font-weight:300;line-height:1.2;color:var(--white);margin-bottom:24px}
+.kr-main h3{font-size:18px;font-weight:500;line-height:1.35;color:var(--white);margin-bottom:8px}
+.kr-main p{font-size:16px;font-weight:300;line-height:1.65;max-width:62ch;color:var(--muted)}
+
+.kr-hero{padding:120px 0 80px}
+.kr-hero p.kr-lead{margin-top:28px;font-size:18px;max-width:52ch}
+.kr-facts{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid var(--hair);padding-top:32px}
+.kr-facts strong{display:block;font-size:24px;font-weight:300;color:var(--gold);margin-bottom:4px}
+.kr-facts span{font-size:15px;font-weight:300}
+
+.kr-story{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+.kr-story p + p{margin-top:16px}
+.kr-tagline{margin-top:28px !important;font-size:20px;color:var(--gold)}
+.kr-sign{margin-top:24px !important;color:var(--white);font-weight:500}
+.kr-sign span{display:block;font-weight:300;color:var(--muted);font-size:14px}
+.kr-photo-slot{aspect-ratio:4/5;border:1px dashed var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--gold);font-size:14px;padding:24px}
+
+.kr-principles{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:40px 64px}
+.kr-principles li{border-top:1px solid var(--gold);padding-top:20px}
+.kr-principles p{max-width:44ch}
+.kr-closing{margin-top:48px;color:var(--white);font-size:18px;max-width:52ch}
+
+.kr-where{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.kr-map-slot{aspect-ratio:1/1;border:1px dashed var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--gold);font-size:14px;padding:24px}
+.kr-regions{list-style:none;margin:8px 0 0;padding:0}
+.kr-regions li{padding:16px 0;border-top:1px solid var(--hair)}
+.kr-regions li:last-child{border-bottom:1px solid var(--hair)}
+.kr-regions h3{margin-bottom:4px}
+.kr-regions p{font-size:15px}
+.kr-legend{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:24px;font-size:14px;font-weight:300}
+.kr-legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:8px;vertical-align:-1px;background:var(--gold)}
+.kr-legend span + span::before{background:var(--gold-light)}
+
+.kr-letters-slot{margin-top:40px;min-height:360px;border:1px dashed var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--gold);font-size:14px;padding:24px}
+
+.kr-cta{text-align:center}
+.kr-cta .kr-hindi{font-size:32px;font-weight:300;color:var(--gold);max-width:none;margin:0 auto 16px}
+.kr-cta h2{margin-bottom:12px}
+.kr-cta p{margin:0 auto}
+.kr-button{display:inline-block;margin-top:32px;padding:14px 32px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:16px;font-weight:500;text-decoration:none}
+.kr-button:hover{background:var(--gold-light)}
+.kr-button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.kr-note{margin-top:20px !important;font-size:14px}
+
+@media (max-width:959px){
+  .kr-section{padding:72px 0}
+  .kr-hero{padding:88px 0 56px}
+  .kr-main h1{font-size:44px}
+  .kr-main h2{font-size:40px}
+  .kr-story,.kr-where{grid-template-columns:1fr;gap:40px}
+  .kr-photo-slot{aspect-ratio:16/10}
+  .kr-map-slot{aspect-ratio:4/3}
+}
+@media (max-width:599px){
+  .kr-wrap{padding:0 20px}
+  .kr-section{padding:56px 0}
+  .kr-main h1{font-size:36px}
+  .kr-main h2{font-size:32px}
+  .kr-facts{grid-template-columns:1fr;gap:20px}
+  .kr-principles{grid-template-columns:1fr;gap:28px}
+  .kr-button{display:block;text-align:center}
+  .kr-cta .kr-hindi{font-size:26px}
+}
