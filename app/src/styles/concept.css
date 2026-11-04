@@ -274,7 +274,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .roof-to-meter .wrap{max-width:1180px;margin:0 auto;padding:20px 22px 32px}
   .rtm-heading{text-align:center;max-width:760px;margin:0 auto 34px}
   .roof-to-meter .kicker{font-size:12px;letter-spacing:.2em;font-weight:800;color:#b48c48;text-transform:uppercase}
-  .rtm-heading h1{font-size:clamp(32px,4.5vw,52px);line-height:1.06;color:var(--white2);margin:12px 0;font-weight:600}
+  .rtm-heading h1{font-size:clamp(30px,3.6vw,48px);font-weight:200;line-height:1.08;letter-spacing:-.035em;color:var(--white2);margin:12px 0}
   .rtm-heading .lead{font-size:clamp(16px,2vw,19px);font-weight:700;color:var(--gold-light);margin:0 0 10px}
   .rtm-heading .intro{font-size:15px;line-height:1.65;color:var(--muted2);margin:0}
   .rtm-timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
