@@ -1,8 +1,9 @@
 import '../styles/backup.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function BackupPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
+  const [selected, setSelected] = useState<number | null>(null)
   return (
     <main id="main" className="kr-main">
       {/* 1. HERO */}
@@ -21,7 +22,7 @@ export default function BackupPage() {
       {/* 2. FOUNDER'S MESSAGE */}
       <section className="kr-section">
         <div className="kr-wrap kr-story">
-          <div>
+          <div className="kr-founder-frame">
             <h2>Krypton Energy is coming to <em>India!</em></h2>
             <p>Our journey began with a vision to make energy smarter, cleaner and more affordable. Having built our experience in Australia, we’re now bringing that vision home to India!</p>
             <p>From Solar Solutions, Battery Storage, EV Chargers, Inverters and Smart Energy Solutions, we’re here to power homes and businesses with technology built for a sustainable future.</p>
@@ -30,7 +31,19 @@ export default function BackupPage() {
             <p className="kr-tagline">Australia to India. One Vision. One Mission.</p>
             <p className="kr-sign">Azka Masumi <span>Founder</span></p>
           </div>
-          <div className="kr-photo-slot">Replace with a real photo of the founder, team or an Indian installation</div>
+          <div className="kr-photo-tiles has-photo-tiles">
+            <div className="photo-tiles">
+              {[1,2,3,4,5,6].map((n) => (
+                <div
+                  className={`photo-tile${selected === n ? ' is-selected' : ''}`}
+                  key={n}
+                  onClick={() => setSelected((prev) => (prev === n ? null : n))}
+                >
+                  <img src={`/media/kry/kry-${n}.jpg`} alt={`Krypton project ${n}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

@@ -22,6 +22,8 @@
 .kr-sign{margin-top:24px !important;color:var(--white);font-weight:500}
 .kr-sign span{display:block;font-weight:300;color:var(--muted);font-size:14px}
 .kr-photo-slot{aspect-ratio:4/5;border:1px dashed var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--gold);font-size:14px;padding:24px}
+.kr-founder-frame{border:2px solid var(--gold);border-radius:16px;padding:32px 28px;background:rgba(228,209,142,.04);box-shadow:0 0 0 1px rgba(228,209,142,.15),0 18px 44px rgba(0,0,0,.35)}
+.kr-photo-tiles .photo-tiles{grid-template-columns:repeat(2,1fr);gap:10px}
 
 .kr-principles{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:40px 64px}
 .kr-principles li{border-top:1px solid var(--gold);padding-top:20px}
