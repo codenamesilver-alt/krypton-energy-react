@@ -116,8 +116,14 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     display:block;width:100%;height:100%;object-fit:cover;object-position:center top;
   }
   @media (max-width:760px){
-    .hero-media{background:#0b0d11}
-    .hero-media video{object-fit:contain;object-position:center center}
+    .hero{min-height:auto;padding-top:92px;overflow:visible}
+    .hero-media{position:relative;inset:auto;width:100%;aspect-ratio:16/9;height:auto;background:#0b0d11}
+    .hero-media video{object-fit:cover;object-position:center center}
+    .hero-grid{position:relative;min-height:auto;padding-top:8px;gap:16px}
+    .hero-copy{margin-top:0}
+    .hero-points-wrap{position:relative;left:auto;right:auto;bottom:auto;z-index:2;overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent 0px,black 20px,black calc(100% - 20px),transparent 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0px,black 20px,black calc(100% - 20px),transparent 100%)}
   }
   /* footage plays at full brightness; a soft scrim sits only under the copy */
   .hero-media::after{
@@ -518,7 +524,8 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   @keyframes fade{to{opacity:1}}
 
   @media (max-width:1000px){
-    .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:24px;gap:44px}
+    .hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:8px;gap:24px}
+    .hero-copy{margin-top:0}
     .hero h1{font-size:clamp(42px,9vw,68px)}
     .hero-sub{max-width:52ch}
     .shelf-grid{grid-template-columns:1fr 1fr}
@@ -544,7 +551,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
     .menu-btn{display:flex}
   }
   @media (max-width:560px){
-    .hero{padding-top:320px}
+    .hero{padding-top:92px}
     .tile{padding:13px 14px 15px}
     .tile-name{font-size:16px}
     .tile-spec{font-size:10px}
