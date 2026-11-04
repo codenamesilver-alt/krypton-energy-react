@@ -73,7 +73,7 @@ export default function ProductsPage() {
 
           <div className="prod-cta">
             <p>Not sure which brand or system is right for you? We’ll help you choose.</p>
-            <a className="link-arrow" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>Talk to our team
+            <a className="btn btn-gold btn-pill" href="#quote" onClick={(e) => { e.preventDefault(); openQuote() }}>Talk to our team
               <svg width="16" height="8" viewBox="0 0 16 8" fill="none"><path d="M0 4h14M11 1l3 3-3 3" stroke="currentColor" strokeWidth="1.2" /></svg>
             </a>
           </div>
