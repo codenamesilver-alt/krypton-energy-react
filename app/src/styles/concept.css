@@ -144,7 +144,6 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   }
   .hero-copy{max-width:760px;margin-top:50px}
   @media (min-width:1001px){ .hero-copy{transform:translateX(-40px)} }
-  @media (min-width:1001px){ .hero{padding-bottom:75px} }
   .place-line{display:flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;font-weight:400;margin-bottom:34px}
   .place-line .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-light);box-shadow:0 0 10px var(--gold-light)}
   .hero h1{
@@ -167,7 +166,8 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .hero h1,.hero-sub,.hero-meta{text-shadow:0 2px 20px rgba(0,0,0,.6)}
 
   .hero-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hair);z-index:3}
-  .home-hindi-line{text-align:center;margin-top:90px;padding-inline:var(--pad);
+  .home-ribbon{position:relative;left:auto;right:auto;bottom:auto;z-index:2;overflow:hidden;margin-top:40px}
+  .home-hindi-line{text-align:center;margin-top:50px;padding-inline:var(--pad);
     font-size:clamp(20px,3vw,30px);color:#b48c48;font-weight:300;line-height:1.2}
 
   /* ---------- blog admin ---------- */

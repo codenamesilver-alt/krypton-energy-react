@@ -21,6 +21,20 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <div className="home-ribbon hero-points-wrap">
+        <ul className="hero-points">
+          <li>Solar Solutions for Homes &amp; Businesses</li>
+          <li>Battery Storage &amp; Inverters</li>
+          <li>EV Charging Solutions</li>
+          <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
+          <li>Smart &amp; Sustainable Energy Solutions</li>
+          <li>Solar Solutions for Homes &amp; Businesses</li>
+          <li>Battery Storage &amp; Inverters</li>
+          <li>EV Charging Solutions</li>
+          <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
+          <li>Smart &amp; Sustainable Energy Solutions</li>
+        </ul>
+      </div>
       <div className="home-hindi-line">अपनी बिजली बनाओ और पैसे बचाओ</div>
       <HowSolarWorks />
       <TwoPaths />

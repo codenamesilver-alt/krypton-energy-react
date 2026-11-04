@@ -45,20 +45,6 @@ export default function Hero() {
           disableRemotePlayback
         />
       </div>
-      <div className="hero-points-wrap">
-        <ul className="hero-points">
-          <li>Solar Solutions for Homes &amp; Businesses</li>
-          <li>Battery Storage &amp; Inverters</li>
-          <li>EV Charging Solutions</li>
-          <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
-          <li>Smart &amp; Sustainable Energy Solutions</li>
-          <li>Solar Solutions for Homes &amp; Businesses</li>
-          <li>Battery Storage &amp; Inverters</li>
-          <li>EV Charging Solutions</li>
-          <li>PM Surya Ghar Yojana – Rooftop Solar Solutions</li>
-          <li>Smart &amp; Sustainable Energy Solutions</li>
-        </ul>
-      </div>
       <div className="wrap hero-grid">
         <div className="hero-copy">
           <h1>
