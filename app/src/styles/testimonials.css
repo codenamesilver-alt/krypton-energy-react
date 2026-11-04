@@ -41,7 +41,7 @@
   font-weight: 200;
   letter-spacing: -0.035em;
   line-height: 1.08;
-  color: #e4d18e;
+  color: var(--white);
   margin: 0 0 8px;
 }
 .testi-subtitle {
