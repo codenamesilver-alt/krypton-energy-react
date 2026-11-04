@@ -408,7 +408,7 @@ svg text,svg tspan{font-family:'Poppins',system-ui,-apple-system,sans-serif}
   .path-biz{background:var(--ink-2)}
   .path-tag{font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:auto}
   .path-home .path-tag{color:rgba(30,34,42,.55)}
-  .path-biz .path-tag{color:rgba(228,209,142,.7)}
+  .path-biz .path-tag{color:#b48c48}
   .path h3{font-size:clamp(28px,2.8vw,38px);font-weight:300;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
   .path p{font-size:16px;line-height:1.7;max-width:36ch;margin-bottom:26px}
   .path-home p{color:var(--muted-dark)}
