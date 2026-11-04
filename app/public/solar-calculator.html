@@ -57,12 +57,6 @@ input[type=range]{width:100%;accent-color:var(--accent)}
   <p class="sub">Upload your electricity bill or enter details, see your rooftop system in 3D and your expected savings.</p>
   <div class="grid">
     <div class="card">
-      <div class="scan" id="scanBox">
-        <b>Scan your electricity bill</b>
-        <span class="cap">Upload a photo or screenshot (JPG/PNG) and we read the units, tariff and bill amount for you. Your image is only used to read the bill.</span>
-        <input type="file" id="billFile" accept="image/*">
-        <button class="btn" id="scanBtn" disabled>Scan bill</button>
-        <div class="status" id="scanStatus"></div>
       </div>
       <label>I need solar for</label>
       <div class="seg" id="type"><button data-v="res" class="on">Home</button><button data-v="com">Business</button><button data-v="ind">Industry</button></div>
@@ -203,8 +197,6 @@ document.querySelectorAll('#type button').forEach(function(b){b.onclick=function
   document.querySelectorAll('#type button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');type=b.dataset.v;calc()}});
 $('bill').addEventListener('input',function(){billUnits=null;calc()});
 ['city','roof','tariff'].forEach(function(id){$(id).addEventListener('input',function(){if(id==='tariff')billUnits=billUnits;calc()})});
-$('billFile').addEventListener('change',function(e){billFile=e.target.files[0]||null;$('scanBtn').disabled=!(billFile&&sample);setStatus(billFile?(sample?'Ready to scan: '+billFile.name:''):'')});
-$('scanBtn').onclick=scanBill;
 $('quote').onclick=function(){
   try { window.parent.postMessage({type:'requestQuote'}, '*'); } catch(e){}
 };
@@ -212,15 +204,7 @@ STATES.forEach(function(s,i){var o=document.createElement('option');o.value=i;o.
 $('city').value=STATES.findIndex(function(s){return s[0]==='Delhi'});
 $('verTxt').textContent=VERIFIED;
 calc();
-(async function(){
-  try{
-    sample=(window.claude&&await claude.use('sample'))||null;
-    var lim=sample&&sample.limits?await sample.limits():null;
-    if(sample&&lim&&!lim.images)sample=null;
-  }catch(e){sample=null}
-  if(!sample){$('scanBox').querySelector('.cap').textContent='Bill scanning is not available here. Please enter your bill amount and tariff below.';$('billFile').style.display='none';$('scanBtn').style.display='none'}
-  else if(billFile)$('scanBtn').disabled=false;
-})();
+(async function(){ sample=null; })();
 /* height reporting for iframe auto-resize */
 (function(){
   function report(){ try { window.parent.postMessage({type:'calcHeight', height: document.documentElement.scrollHeight}, '*'); } catch(e){} }
