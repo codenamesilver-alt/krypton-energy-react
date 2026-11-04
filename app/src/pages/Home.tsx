@@ -21,6 +21,7 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <div className="home-hindi-line">अपनी बिजली बनाओ और पैसे बचाओ</div>
       <HowSolarWorks />
       <TwoPaths />
       <RoofToMeter />
