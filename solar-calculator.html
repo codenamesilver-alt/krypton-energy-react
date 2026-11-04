@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solar Savings Calculator – Krypton Energy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1e222a;--card:#252a33;--text:#f7f6f2;--muted:rgba(247,246,242,.62);--line:rgba(228,209,142,.22);--accent:#b48c48;--accent-text:#1e222a;--navy:#2c323c;--good:#7fe3b0;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px}
+.logo{display:block;width:min(340px,75%);height:auto;margin:0 0 18px}
+h1{font-size:calc(clamp(44px,6.3vw,88px) - 22px);font-weight:200;margin:0 0 4px;color:var(--text)}h1 span{color:#e4d18e}
+.sub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:1fr 1.15fr;gap:18px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}h1{font-size:42px;font-weight:200}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+label{display:block;font-weight:500;font-size:.88rem;margin:14px 0 6px}
+label:first-child{margin-top:0}
+select,input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#111;color:var(--text);font:inherit}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;background:#111;color:var(--text);font:inherit;cursor:pointer}
+.seg button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-text);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.row{display:flex;justify-content:space-between;align-items:baseline}
+.big{font-weight:700}
+.scan{border:1px dashed var(--accent);border-radius:12px;padding:14px;margin-bottom:6px;background:#0f0d08}
+.scan b{display:block;margin-bottom:2px}
+.scan input[type=file]{width:100%;font:inherit;font-size:.8rem;color:var(--muted);margin-top:8px}
+.btn{padding:11px 14px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-text);font:inherit;font-weight:600;cursor:pointer;margin-top:8px}
+.btn:disabled{opacity:.5;cursor:default}
+.status{font-size:.8rem;margin-top:8px;color:var(--muted)}
+.status.ok{color:var(--good)}
+.hero{background:var(--navy);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hero small{opacity:.75;display:block;font-size:.75rem}
+.hero .v{font-size:1.9rem;font-weight:700;color:var(--accent);line-height:1.1}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:12px}
+.stat small{color:var(--muted);display:block;font-size:.74rem}
+.stat b{font-size:1.05rem}
+.bars{display:flex;align-items:flex-end;gap:3px;height:80px;margin:14px 0 4px}
+.bars i{flex:1;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px}
+.bars i.neg{background:var(--line)}
+.cap,.note{font-size:.74rem;color:var(--muted)}
+.note{margin-top:12px}
+.cta{display:block;width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;background:var(--accent);color:var(--accent-text);font:inherit;font-weight:600;font-size:1rem;cursor:pointer}
+.ver{margin-top:18px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  
+  <h1>Solar Savings <span>Calculator</span></h1>
+  <div class="grid">
+    <div class="card">
+      <label>I need solar for</label>
+      <div class="seg" id="type"><button data-v="res" class="on">Home</button><button data-v="com">Business</button><button data-v="ind">Industry</button></div>
+      <label for="city">State / Union Territory</label>
+      <select id="city"></select>
+      <label><span class="row"><span>Average monthly electricity bill</span><span class="big" id="billOut"></span></span></label>
+      <input type="range" id="bill" min="1000" max="200000" step="500" value="5000">
+      <label for="tariff">Tariff per unit (₹/kWh) <span class="cap">– auto-filled from your bill</span></label>
+      <input type="number" id="tariff" min="1" max="30" step="0.1">
+      <label for="roof">Shadow-free roof area (sq ft)</label>
+      <input type="number" id="roof" min="50" value="600">
+      <p class="note">About 100 sq ft is needed per kW of solar.</p>
+    </div>
+    <div class="card">
+      <div class="hero">
+        <div><small>Recommended system</small><span class="v" id="kw">–</span></div>
+        <div><small>Solar panels</small><span class="v" id="panels">–</span></div>
+        <div><small>Avg. sun hours / day</small><span class="v" id="psh">–</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><small>System cost</small><b id="cost">–</b></div>
+        <div class="stat"><small>Govt. subsidy (central + state)</small><b id="sub">–</b></div>
+        <div class="stat"><small>Yearly generation</small><b id="gen">–</b></div>
+        <div class="stat"><small>Monthly savings</small><b id="save">–</b></div>
+        <div class="stat"><small>Payback period</small><b id="pay">–</b></div>
+        <div class="stat"><small>25-year savings</small><b id="life">–</b></div>
+      </div>
+      <p class="note" id="subNote"></p>
+      <div class="bars" id="bars"></div>
+      <div class="cap">Cumulative net position over 25 years (grey = still paying back). CO₂ avoided: <span id="co2"></span> per year.</div>
+      <button class="cta" id="quote">Get a free site survey &amp; quote</button>
+      <p class="note">Estimates only. Final cost, generation and subsidy depend on a site survey, equipment, your DISCOM and current government policy. Our team will confirm exact figures.</p>
+    </div>
+  </div>
+  <p class="cap ver">Subsidy rates last verified: <span id="verTxt"></span></p>
+</div>
+<script>
+/* ================= EDIT HERE – all prices, tariffs and subsidies ================= */
+var VERIFIED = 'November 2026';
+var WHATSAPP_NUMBER = '';                      // e.g. '919876543210' (country code + number, no +)
+var COST_PER_KW = {res:58000, com:52000, ind:48000};   // ₹ per kW, before subsidy
+var TARIFF = {res:7.5, com:9.5, ind:8.5};              // default ₹ per unit if no bill is scanned
+var PR = 0.75;            // performance ratio (system losses)
+var PANEL_W = 550;        // watts per panel
+var TARIFF_GROWTH = 0.03, DEGRADATION = 0.005, CO2_PER_KWH = 0.82;
+var CENTRAL = {general:{r1:30000, r2:18000}, special:{r1:33000, r2:19800}}; // PM Surya Ghar, homes only
+// [state, average peak-sun-hours per day (approximate), special-category flag]
+var STATES = [
+['Andaman & Nicobar Islands',5.0,1],['Andhra Pradesh',5.4],['Arunachal Pradesh',4.2,1],['Assam',4.2,1],['Bihar',4.8],['Chandigarh',5.0],['Chhattisgarh',5.2],['Dadra & Nagar Haveli and Daman & Diu',5.5],['Delhi',5.0],['Goa',5.2],['Gujarat',5.6],['Haryana',5.0],['Himachal Pradesh',4.8,1],['Jammu & Kashmir',4.8,1],['Jharkhand',5.0],['Karnataka',5.4],['Kerala',5.0],['Ladakh',6.0,1],['Lakshadweep',5.3,1],['Madhya Pradesh',5.5],['Maharashtra',5.4],['Manipur',4.2,1],['Meghalaya',4.2,1],['Mizoram',4.2,1],['Nagaland',4.2,1],['Odisha',5.0],['Puducherry',5.3],['Punjab',5.0],['Rajasthan',5.8],['Sikkim',4.0,1],['Tamil Nadu',5.3],['Telangana',5.4],['Tripura',4.2,1],['Uttar Pradesh',4.9],['Uttarakhand',4.8,1],['West Bengal',4.6]
+];
+// State top-ups for homes (from news reports; confirm on official state sites)
+var TOP = {
+'Delhi':{f:function(k){return Math.min(k*10000,30000)},n:'Delhi adds ₹10,000/kW (max ₹30,000).'},
+'Uttar Pradesh':{f:function(k){return Math.min(k*15000,30000)},n:'UP adds ₹15,000/kW (max ₹30,000).'},
+'Bihar':{f:function(k){return Math.min(k*10000,20000)},n:'Bihar adds ₹10,000/kW (max ₹20,000).'},
+'West Bengal':{f:function(k){return Math.min(k*5000,15000)},n:'West Bengal adds ₹5,000/kW (max ₹15,000).'},
+'Tamil Nadu':{f:function(k){return k>=3?22000:k>=2?10000:k>=1?5000:0},n:'Tamil Nadu adds ₹22,000 at 3 kW and above (smaller sizes get less).'},
+'Gujarat':{f:function(){return 0},n:'Gujarat announced an extra subsidy for systems up to 2.18 kW (Oct 2026); not included, please confirm.'}
+};
+/* ================================================================================== */
+var type='res', last={}, billUnits=null, billFile=null, sample=null;
+var $=function(id){return document.getElementById(id)};
+var inr=function(n){n=Math.round(n);if(n>=1e7)return '₹'+(n/1e7).toFixed(2)+' Cr';if(n>=1e5)return '₹'+(n/1e5).toFixed(2)+' L';return '₹'+n.toLocaleString('en-IN')};
+function stateInfo(){var s=STATES[+$('city').value];return {name:s[0],psh:s[1],sp:!!s[2]}}
+function subsidy(kw){
+  if(type!=='res')return 0;
+  var st=stateInfo(),c=st.sp?CENTRAL.special:CENTRAL.general;
+  var central=Math.min(kw,2)*c.r1+Math.min(Math.max(kw-2,0),1)*c.r2;
+  var t=TOP[st.name];return central+(t?t.f(kw):0);
+}
+function calc(){
+  var st=stateInfo(),bill=+$('bill').value,roof=+$('roof').value||0;
+  $('tariff').placeholder=TARIFF[type];
+  var tariff=(+$('tariff').value)||TARIFF[type];
+  $('billOut').textContent='₹'+bill.toLocaleString('en-IN');
+  var units=billUnits||bill/tariff;
+  var perKw=st.psh*365*PR;
+  var need=units*12/perKw,maxRoof=roof/100;
+  var kw=Math.max(1,Math.round(Math.min(need,maxRoof>=1?maxRoof:1)*2)/2);
+  var gen=kw*perKw,cost=kw*COST_PER_KW[type],sub=subsidy(kw),net=cost-sub;
+  var used=Math.min(gen,units*12),yr1=used*tariff;
+  var cum=-net,series=[],pay=null,total=0;
+  for(var y=1;y<=25;y++){
+    var s=yr1*Math.pow(1+TARIFF_GROWTH,y-1)*Math.pow(1-DEGRADATION,y-1);
+    var prev=cum;cum+=s;series.push(cum);
+    if(pay===null&&cum>=0)pay=(y-1)+(-prev/s);
+  }
+  total=cum;var n=Math.ceil(kw*1000/PANEL_W);
+  $('kw').textContent=kw+' kW';$('panels').textContent=n;$('psh').textContent=st.psh.toFixed(1)+' hrs';
+  $('cost').textContent=inr(cost);
+  $('sub').textContent=type==='res'?inr(sub):'Not applicable';
+  var t=TOP[st.name],msg;
+  if(type!=='res')msg='PM Surya Ghar subsidy is for homes only. Businesses and industry can use accelerated depreciation and other benefits instead.';
+  else msg='Central PM Surya Ghar: '+(st.sp?'₹33,000/kW for the first 2 kW and ₹19,800 for the 3rd kW (special-category state/UT), max ₹85,800.':'₹30,000/kW for the first 2 kW and ₹18,000 for the 3rd kW, max ₹78,000.')+' '+(t?t.n:'No extra state top-up confirmed.');
+  $('subNote').textContent=msg;
+  $('gen').textContent=Math.round(gen).toLocaleString('en-IN')+' kWh';
+  $('save').textContent=inr(yr1/12);
+  $('pay').textContent=pay?pay.toFixed(1)+' years':'> 25 years';
+  $('life').textContent=inr(total);
+  $('co2').textContent=(used*CO2_PER_KWH/1000).toFixed(1)+' tonnes';
+  var max=Math.max.apply(null,series.concat([1])),el=$('bars');el.innerHTML='';
+  series.forEach(function(v){var i=document.createElement('i');i.style.height=Math.max(2,Math.abs(v)/max*100)+'%';if(v<0)i.className='neg';el.appendChild(i)});
+  last={kw:kw,bill:bill,net:net,city:st.name};
+}
+/* ---------- bill scanning (uses Claude when this page is opened inside Claude) ---------- */
+function setStatus(t,ok){var e=$('scanStatus');e.textContent=t;e.className='status'+(ok?' ok':'')}
+function matchState(name){
+  if(!name)return -1;name=name.toLowerCase();
+  for(var i=0;i<STATES.length;i++){var s=STATES[i][0].toLowerCase();if(name.indexOf(s)>-1||s.indexOf(name)>-1)return i}
+  return -1;
+}
+async function scanBill(){
+  if(!billFile||!sample)return;
+  $('scanBtn').disabled=true;setStatus('Reading your bill… this can take up to a minute.');
+  var prompt='This is a photo of an Indian electricity bill. Read it and reply with ONLY a JSON object, no other text: '+
+  '{"state":string|null,"discom":string|null,"category":"residential"|"commercial"|"industrial"|null,"units_kwh":number|null (units consumed in this billing month),'+
+  '"bill_amount":number|null (total amount payable in rupees),"tariff_per_unit":number|null (the energy charge in rupees per unit for the highest slab used; if not shown divide the energy charges by units),'+
+  '"sanctioned_load_kw":number|null}. Use null for anything you cannot read clearly. Never guess.';
+  try{
+    var d=await sample.json(prompt,{images:[billFile],modelTier:'default'});
+    var got=[];
+    var si=matchState(d.state);if(si>-1){$('city').value=si;got.push(STATES[si][0])}
+    var cat={residential:'res',commercial:'com',industrial:'ind'}[d.category];
+    if(cat){type=cat;document.querySelectorAll('#type button').forEach(function(b){b.classList.toggle('on',b.dataset.v===cat)})}
+    if(d.bill_amount>0){$('bill').value=Math.min(200000,Math.max(1000,Math.round(d.bill_amount/500)*500));got.push('bill ₹'+Math.round(d.bill_amount).toLocaleString('en-IN'))}
+    if(d.units_kwh>0){billUnits=d.units_kwh;got.push(Math.round(d.units_kwh)+' units')}
+    if(d.tariff_per_unit>0&&d.tariff_per_unit<30){$('tariff').value=(+d.tariff_per_unit).toFixed(2);got.push('tariff ₹'+(+d.tariff_per_unit).toFixed(2)+'/unit')}
+    else if(d.bill_amount>0&&d.units_kwh>0){$('tariff').value=(d.bill_amount/d.units_kwh).toFixed(2);got.push('average rate ₹'+(d.bill_amount/d.units_kwh).toFixed(2)+'/unit')}
+    setStatus(got.length?'Found: '+got.join(', ')+'. Please check the values below.':'Could not read this bill clearly. Please enter the details manually.',got.length>0);
+    calc();
+  }catch(e){
+    setStatus(e&&e.code==='not_granted'?'Bill scanning was not allowed. You can enter details manually.':'Could not scan this bill. Please try a clearer image or enter details manually.');
+  }
+  $('scanBtn').disabled=false;
+}
+/* ---------- wiring ---------- */
+document.querySelectorAll('#type button').forEach(function(b){b.onclick=function(){
+  document.querySelectorAll('#type button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');type=b.dataset.v;calc()}});
+$('bill').addEventListener('input',function(){billUnits=null;calc()});
+['city','roof','tariff'].forEach(function(id){$(id).addEventListener('input',function(){if(id==='tariff')billUnits=billUnits;calc()})});
+$('quote').onclick=function(){
+  try { window.parent.postMessage({type:'requestQuote'}, '*'); } catch(e){}
+};
+STATES.forEach(function(s,i){var o=document.createElement('option');o.value=i;o.textContent=s[0];$('city').appendChild(o)});
+$('city').value=STATES.findIndex(function(s){return s[0]==='Delhi'});
+$('verTxt').textContent=VERIFIED;
+calc();
+(async function(){ sample=null; })();
+/* height reporting for iframe auto-resize */
+(function(){
+  function report(){ try { window.parent.postMessage({type:'calcHeight', height: document.documentElement.scrollHeight}, '*'); } catch(e){} }
+  window.addEventListener('load', report);
+  window.addEventListener('resize', report);
+  new ResizeObserver(report).observe(document.body);
+  report();
+})();
+</script>
+</body>
+</html>
