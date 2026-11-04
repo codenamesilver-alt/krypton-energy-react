@@ -6,7 +6,7 @@ export default function ContactPage() {
           <div className="sec-head">
             <div>
               <div className="kicker">Contact us</div>
-              <h2>Let's talk <span>solar.</span></h2>
+              <h2>Let's Talk <span style={{ color: '#e4d18e' }}>Solar.</span></h2>
             </div>
             <p>Reach out for a free consultation, a quote, or any question about going solar.</p>
           </div>
