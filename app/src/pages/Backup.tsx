@@ -2,11 +2,13 @@ import '../styles/backup.css'
 import '../styles/locations.css'
 import indiaMap from '../assets/india-map.svg?raw'
 import { useEffect, useState } from 'react'
+import { useQuoteModal } from '../context/QuoteModal'
 
 export default function BackupPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
   const [selected, setSelected] = useState<number | null>(null)
   const [lightbox, setLightbox] = useState<string | null>(null)
+  const { open: openQuote } = useQuoteModal()
   return (
     <main id="main" className="kr-main">
       {/* 1. HERO */}
@@ -137,7 +139,7 @@ export default function BackupPage() {
           <p className="kr-hindi" lang="hi">अपनी बिजली बनाओ और पैसे बचाओ</p>
           <h2>Ready to make <em>the switch?</em></h2>
           <p>Talk to our team and get a solar solution designed around you.</p>
-          <a className="kr-button" href="/contact">Get a free consultation</a>
+          <button className="kr-button" onClick={openQuote}>Get a free consultation</button>
           <p className="kr-note">No obligation. Honest advice.</p>
         </div>
       </section>
