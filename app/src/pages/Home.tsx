@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Hero from '../sections/Hero'
+import HowSolarWorks from '../sections/HowSolarWorks'
 import TwoPaths from '../sections/TwoPaths'
 import Testimonials from '../sections/Testimonials'
 import RoofToMeter from '../sections/RoofToMeter'
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <HowSolarWorks />
       <TwoPaths />
       <RoofToMeter />
       <Testimonials />
