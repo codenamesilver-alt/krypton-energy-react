@@ -47,6 +47,13 @@ function AppShell() {
     return () => io.disconnect()
   }, [pathname])
 
+  // Google Analytics SPA page-view tracking
+  useEffect(() => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'page_view', { page_path: pathname });
+    }
+  }, [pathname])
+
   return (
     <>
       <Header />
